@@ -92,7 +92,7 @@ export default function ContactPage() {
 
       {/* MAIN CONTACT */}
       <section className="bg-[#0D0F12] py-16 md:py-[100px] px-6 md:px-[60px]">
-        <div className="grid gap-20" style={{ gridTemplateColumns: '1fr 1.4fr' }}>
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_1.4fr] gap-12 md:gap-20">
           {/* Contact Info */}
           <Reveal>
             <div
@@ -153,14 +153,14 @@ export default function ContactPage() {
               </h3>
               <p className="text-[14px] text-[#8A8F9E]">Fill in the form below and our team will contact you within one business day with a free quote.</p>
             </div>
-            <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4">
+            <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 { label: 'First Name', name: 'firstName', type: 'text', placeholder: 'e.g. Michael', full: false },
                 { label: 'Last Name', name: 'lastName', type: 'text', placeholder: 'e.g. Tan', full: false },
                 { label: 'Phone Number', name: 'phone', type: 'tel', placeholder: '+65 9XXX XXXX', full: false },
                 { label: 'Email Address', name: 'email', type: 'email', placeholder: 'you@example.com', full: false },
               ].map((field) => (
-                <div key={field.name} className={`flex flex-col gap-2 ${field.full ? 'col-span-2' : ''}`}>
+                <div key={field.name} className={`flex flex-col gap-2 ${field.full ? 'sm:col-span-2' : ''}`}>
                   <label className="text-[10px] tracking-[2px] uppercase text-[#C9A84C]">{field.label}</label>
                   <input
                     type={field.type}
@@ -178,7 +178,7 @@ export default function ContactPage() {
                 { label: 'Property Type', name: 'propertyType', options: propertyTypes },
                 { label: 'Service Required', name: 'serviceType', options: serviceTypes },
               ].map((select) => (
-                <div key={select.name} className="flex flex-col gap-2 col-span-2">
+                <div key={select.name} className="flex flex-col gap-2 sm:col-span-2">
                   <label className="text-[10px] tracking-[2px] uppercase text-[#C9A84C]">{select.label}</label>
                   <select
                     name={select.name}
@@ -196,7 +196,7 @@ export default function ContactPage() {
                 </div>
               ))}
 
-              <div className="flex flex-col gap-2 col-span-2">
+              <div className="flex flex-col gap-2 sm:col-span-2">
                 <label className="text-[10px] tracking-[2px] uppercase text-[#C9A84C]">Message</label>
                 <textarea
                   name="message"
@@ -209,7 +209,7 @@ export default function ContactPage() {
                 />
               </div>
 
-              <div className="col-span-2 mt-2">
+              <div className="sm:col-span-2 mt-2">
                 <button
                   type="submit"
                   className="w-full bg-[#C9A84C] text-[#0D0F12] border-2 border-[#C9A84C] py-[18px] font-bold text-[13px] tracking-[2px] uppercase transition-all duration-200 hover:bg-transparent hover:text-[#C9A84C] cursor-pointer"

@@ -418,7 +418,7 @@ export default function HomePage() {
             </Reveal>
           </div>
           <Reveal>
-            <div className="flex gap-1">
+            <div className="flex flex-wrap gap-2 md:gap-1">
               {['All', 'Membrane Repair', 'Metal Roof', 'Waterproofing'].map((tab, i) => (
                 <button
                   key={i}

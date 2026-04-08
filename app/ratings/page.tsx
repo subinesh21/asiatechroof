@@ -51,8 +51,8 @@ export default function RatingsPage() {
       />
 
       {/* RATING SUMMARY */}
-      <section className="bg-[#141820] py-20 px-6 md:px-[60px]">
-        <div className="grid gap-20 items-center" style={{ gridTemplateColumns: 'auto 1fr' }}>
+      <section className="bg-[#141820] py-16 md:py-20 px-6 md:px-[60px]">
+        <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-12 md:gap-20 items-center">
           <Reveal>
             <div className="text-center px-6 md:px-[60px] py-12 border border-[rgba(201,168,76,0.2)]">
               <div className="leading-none text-[#C9A84C]" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: '96px' }}>4.9</div>

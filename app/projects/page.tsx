@@ -115,10 +115,10 @@ export default function ProjectsPage() {
 
       {/* STATS BAR */}
       <div className="bg-[#141820] py-12 px-6 md:px-[60px] border-b border-[rgba(201,168,76,0.2)]">
-        <div className="flex justify-around">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-y-10 md:gap-y-0 justify-around">
           {stats.map((stat, i) => (
             <Reveal key={i} delay={i as 0 | 1 | 2 | 3}>
-              <div className={`text-center px-10 ${i < stats.length - 1 ? 'border-r border-[rgba(201,168,76,0.2)]' : ''}`}>
+              <div className={`text-center md:px-10 ${i % 2 === 0 ? 'border-r border-[rgba(201,168,76,0.2)]' : 'border-r-0'} ${i < stats.length - 1 ? 'md:border-r md:border-[rgba(201,168,76,0.2)]' : 'md:border-r-0'}`}>
                 <div className="text-[52px] text-[#C9A84C] leading-none" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>{stat.num}</div>
                 <div className="text-[11px] text-[#8A8F9E] tracking-[2px] uppercase mt-1">{stat.label}</div>
               </div>
@@ -146,11 +146,11 @@ export default function ProjectsPage() {
         </div>
 
         <Reveal>
-          <div className="grid grid-cols-3 gap-1 auto-rows-[280px] grid-flow-row-dense">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-1 auto-rows-[280px] grid-flow-row-dense">
             {portfolioItems.map((item, i) => (
               <div
                 key={i}
-                className={`relative overflow-hidden cursor-pointer bg-[#1C2130] group ${item.featured ? 'col-span-2' : ''} ${item.tall ? 'row-span-2' : ''}`}
+                className={`relative overflow-hidden cursor-pointer bg-[#1C2130] group ${item.featured ? 'md:col-span-2' : ''} ${item.tall ? 'md:row-span-2' : ''}`}
               >
                 {item.label && (
                   <div className="absolute top-5 left-5 z-10 bg-[#C9A84C] text-[#0D0F12] text-[9px] font-bold tracking-[2px] uppercase px-3 py-1.5">
@@ -178,8 +178,8 @@ export default function ProjectsPage() {
       </section>
 
       {/* FEATURED CASE STUDY */}
-      <section className="bg-[#141820] py-20 px-6 md:px-[60px]">
-        <div className="grid grid-cols-2 gap-20 items-center">
+      <section className="bg-[#141820] py-16 md:py-20 px-6 md:px-[60px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
           <Reveal>
             <div
               className="h-[520px] relative"
