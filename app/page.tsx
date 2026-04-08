@@ -123,37 +123,37 @@ const projects = [
     img: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1000&q=80',
     type: 'Industrial · Metal Roof',
     name: 'Jurong Industrial Complex — Full Roof Overhaul',
-    gridArea: '1 / 1 / 3 / 3', // rows 1-2, cols 1-2 (tall featured)
+    spanClasses: 'lg:col-span-2 lg:row-span-2', // rows 1-2, cols 1-2 (tall featured)
   },
   {
     img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
     type: 'Commercial · Waterproofing',
     name: 'Orchard Mall — Flat Roof Waterproofing',
-    gridArea: '1 / 3 / 2 / 4', // row 1, col 3
+    spanClasses: 'lg:col-span-1 lg:row-span-1', // row 1, col 3
   },
   {
     img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80',
     type: 'Residential · Leak Repair',
     name: 'Bukit Timah Bungalow — Leak Repair',
-    gridArea: '2 / 3 / 3 / 4', // row 2, col 3
+    spanClasses: 'lg:col-span-1 lg:row-span-1', // row 2, col 3
   },
   {
     img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80',
     type: 'Residential · Membrane Repair',
     name: 'Sentosa Cove — Terrace Waterproofing',
-    gridArea: '3 / 1 / 4 / 2', // row 3, col 1
+    spanClasses: 'lg:col-span-1 lg:row-span-1', // row 3, col 1
   },
   {
     img: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80',
     type: 'Industrial · Structural Works',
     name: 'Tuas Warehouse Complex',
-    gridArea: '3 / 2 / 4 / 3', // row 3, col 2
+    spanClasses: 'lg:col-span-1 lg:row-span-1', // row 3, col 2
   },
   {
     img: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80',
     type: 'Residential · Full Re-Roof',
     name: 'Nassim Road Bungalow',
-    gridArea: '3 / 3 / 4 / 4', // row 3, col 3
+    spanClasses: 'lg:col-span-1 lg:row-span-1', // row 3, col 3
   },
 ];
 
@@ -176,7 +176,7 @@ export default function HomePage() {
           style={{ background: 'linear-gradient(to bottom, transparent 60%, #0D0F12 100%)' }}
         />
 
-        <div className="relative z-10 px-[60px] max-w-[900px] pt-[76px]">
+        <div className="relative z-10 px-6 md:px-[60px] max-w-[900px] pt-[120px] md:pt-[76px]">
           <div className="inline-flex items-center gap-2 border border-[#C9A84C] px-4 py-1.5 text-[10px] tracking-[3px] uppercase text-[#C9A84C] mb-8">
             <span className="w-1.5 h-1.5 bg-[#C9A84C] rounded-full pulse-gold" />
             Singapore&apos;s Roofing Specialist Since 2004
@@ -186,7 +186,7 @@ export default function HomePage() {
             className="leading-[0.92] text-[#F0EDE6] mb-7 tracking-[2px]"
             style={{
               fontFamily: 'var(--font-bebas, sans-serif)',
-              fontSize: 'clamp(72px, 10vw, 130px)',
+              fontSize: 'clamp(56px, 12vw, 130px)',
             }}
           >
             ROOFING
@@ -200,24 +200,24 @@ export default function HomePage() {
             Expert roofing, waterproofing &amp; leak repair for residential, commercial, and industrial properties across Singapore.
           </p>
 
-          <div className="flex gap-4 flex-wrap mb-[72px]">
+          <div className="flex flex-col sm:flex-row gap-4 mb-16 md:mb-[72px]">
             <Link
               href="/contact"
-              className="bg-[#C9A84C] text-[#0D0F12] border-2 border-[#C9A84C] px-8 py-[15px] font-bold text-[12px] tracking-[2px] uppercase transition-all duration-200 hover:bg-transparent hover:text-[#C9A84C] no-underline inline-block"
+              className="w-full sm:w-auto text-center bg-[#C9A84C] text-[#0D0F12] border-2 border-[#C9A84C] px-8 py-[15px] font-bold text-[12px] tracking-[2px] uppercase transition-all duration-200 hover:bg-transparent hover:text-[#C9A84C] no-underline inline-block"
               style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
             >
               Get Free Inspection
             </Link>
             <Link
               href="/projects"
-              className="bg-transparent text-[#F0EDE6] border-2 border-[rgba(240,237,230,0.3)] px-8 py-[15px] font-bold text-[12px] tracking-[2px] uppercase transition-all duration-200 hover:border-[#C9A84C] hover:text-[#C9A84C] no-underline inline-block"
+              className="w-full sm:w-auto text-center bg-transparent text-[#F0EDE6] border-2 border-[rgba(240,237,230,0.3)] px-8 py-[15px] font-bold text-[12px] tracking-[2px] uppercase transition-all duration-200 hover:border-[#C9A84C] hover:text-[#C9A84C] no-underline inline-block"
               style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
             >
               View Our Projects
             </Link>
           </div>
 
-          <div className="flex border-t border-[rgba(201,168,76,0.2)] pt-8">
+          <div className="grid grid-cols-2 md:flex gap-y-8 md:gap-y-0 border-t border-[rgba(201,168,76,0.2)] pt-8">
             {[
               { num: '20+', label: 'Years Experience' },
               { num: '500+', label: 'Projects Completed' },
@@ -226,7 +226,7 @@ export default function HomePage() {
             ].map((stat, i) => (
               <div
                 key={i}
-                className={`pr-10 mr-10 ${i < 3 ? 'border-r border-[rgba(201,168,76,0.2)]' : ''}`}
+                className={`md:pr-10 md:mr-10 ${i % 2 === 0 ? 'border-r border-[rgba(201,168,76,0.2)] pr-4 mr-4 md:pr-10 md:mr-10' : ''} ${i < 3 ? 'md:border-r md:border-[rgba(201,168,76,0.2)]' : 'border-r-0'}`}
               >
                 <div
                   className="text-[44px] text-[#C9A84C] leading-none"
@@ -257,7 +257,7 @@ export default function HomePage() {
       </div>
 
       {/* SERVICES */}
-      <section className="bg-[#141820] py-[100px] px-[60px]">
+      <section className="bg-[#141820] py-16 md:py-[100px] px-6 md:px-[60px]">
         <div className="flex justify-between items-end mb-[60px] flex-wrap gap-6">
           <div>
             <Reveal><span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-4 block">Our Expertise</span></Reveal>
@@ -286,7 +286,7 @@ export default function HomePage() {
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-4 gap-[2px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[2px]">
           {services.map((svc, i) => (
             <Reveal key={i} delay={i as 0 | 1 | 2 | 3} className="h-full">
               <div className="h-full bg-[#1C2130] p-[44px_32px] border-t-[3px] border-transparent transition-all duration-300 cursor-pointer relative overflow-hidden group hover:border-[#C9A84C] hover:-translate-y-1">
@@ -320,7 +320,7 @@ export default function HomePage() {
       </section>
 
       {/* WHO WE SERVE */}
-      <section className="bg-[#0D0F12] py-[100px] px-[60px]">
+      <section className="bg-[#0D0F12] py-16 md:py-[100px] px-6 md:px-[60px]">
         <div className="mb-12">
           <Reveal><span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-4 block">Who We Serve</span></Reveal>
           <Reveal delay={1}>
@@ -333,7 +333,7 @@ export default function HomePage() {
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-3 gap-[3px]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-[3px]">
           {servePanels.map((panel, i) => (
             <Reveal key={i} delay={i as 0 | 1 | 2}>
               <div className="relative h-[480px] overflow-hidden cursor-pointer group">
@@ -368,8 +368,8 @@ export default function HomePage() {
       </section>
 
       {/* WHY US */}
-      <section className="bg-[#141820] py-[100px] px-[60px]">
-        <div className="grid grid-cols-2 gap-20 items-center">
+      <section className="bg-[#141820] py-16 md:py-[100px] px-6 md:px-[60px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
           <Reveal>
             <blockquote
               className="leading-[1.05] text-[#F0EDE6] mb-8"
@@ -404,7 +404,7 @@ export default function HomePage() {
       </section>
 
       {/* PROJECTS */}
-      <section className="bg-[#0D0F12] py-[100px] px-[60px]">
+      <section className="bg-[#0D0F12] py-16 md:py-[100px] px-6 md:px-[60px]">
         <div className="flex justify-between items-end mb-12 flex-wrap gap-6">
           <div>
             <Reveal><span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-4 block">Featured Projects</span></Reveal>
@@ -435,9 +435,9 @@ export default function HomePage() {
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-3 gap-[3px] auto-rows-[240px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[3px] auto-rows-[240px]">
           {projects.map((proj, i) => (
-            <Reveal key={i} delay={(i % 3) as 0 | 1 | 2} style={{ gridArea: proj.gridArea }} className="h-full">
+            <Reveal key={i} delay={(i % 3) as 0 | 1 | 2} className={`h-full ${proj.spanClasses}`}>
               <div className={`relative overflow-hidden cursor-pointer bg-[#1C2130] group h-full`}>
                 <div
                   className={`w-full h-full bg-cover bg-center transition-transform duration-[600ms] group-hover:scale-[1.05]`}

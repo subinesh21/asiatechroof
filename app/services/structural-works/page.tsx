@@ -40,11 +40,11 @@ export default function StructuralWorksPage() {
       <Navbar />
       <PageHero breadcrumb="Services / Structural Works" title={<>STRUCTURAL<br />WORKS</>} subtitle="Beyond surface repairs — we address the structural integrity of your roof framework for long-lasting protection." />
       <div className="bg-[#141820] border-b border-[rgba(201,168,76,0.2)]">
-        <div className="flex px-[60px]">
+        <div className="flex px-6 md:px-[60px]">
           {services.map((s) => (<Link key={s.href} href={s.href} className={`px-6 py-4 text-[11px] tracking-[2px] uppercase font-semibold no-underline transition-all duration-200 border-b-[2px] ${s.active ? 'border-[#C9A84C] text-[#C9A84C]' : 'border-transparent text-[#8A8F9E] hover:text-[#C9A84C] hover:border-[#C9A84C]'}`} style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}>{s.label}</Link>))}
         </div>
       </div>
-      <section className="bg-[#0D0F12] py-[100px] px-[60px]">
+      <section className="bg-[#0D0F12] py-16 md:py-[100px] px-6 md:px-[60px]">
         <div className="grid grid-cols-2 gap-20 items-center">
           <Reveal>
             <div className="h-[560px] bg-cover bg-center relative" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80')" }}>

@@ -51,10 +51,10 @@ export default function RatingsPage() {
       />
 
       {/* RATING SUMMARY */}
-      <section className="bg-[#141820] py-20 px-[60px]">
+      <section className="bg-[#141820] py-20 px-6 md:px-[60px]">
         <div className="grid gap-20 items-center" style={{ gridTemplateColumns: 'auto 1fr' }}>
           <Reveal>
-            <div className="text-center px-[60px] py-12 border border-[rgba(201,168,76,0.2)]">
+            <div className="text-center px-6 md:px-[60px] py-12 border border-[rgba(201,168,76,0.2)]">
               <div className="leading-none text-[#C9A84C]" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: '96px' }}>4.9</div>
               <div className="text-[#C9A84C] text-[24px] tracking-[4px] my-2">★★★★★</div>
               <div className="text-[12px] text-[#8A8F9E] tracking-[1px]">Based on 150+ reviews</div>
@@ -82,14 +82,14 @@ export default function RatingsPage() {
       </section>
 
       {/* PLATFORMS */}
-      <section className="bg-[#0D0F12] py-20 px-[60px]">
+      <section className="bg-[#0D0F12] py-20 px-6 md:px-[60px]">
         <Reveal><span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-4 block">Platforms</span></Reveal>
         <Reveal delay={1}>
           <h2 className="leading-none text-[#F0EDE6] mb-12" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(44px, 6vw, 72px)' }}>
             Find Us On
           </h2>
         </Reveal>
-        <div className="grid grid-cols-3 gap-[2px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[2px]">
           {platforms.map((p, i) => (
             <Reveal key={i} delay={i as 0 | 1 | 2}>
               <a
@@ -113,7 +113,7 @@ export default function RatingsPage() {
       </section>
 
       {/* FEATURED REVIEW */}
-      <section className="bg-[#0D0F12] py-20 px-[60px]">
+      <section className="bg-[#0D0F12] py-20 px-6 md:px-[60px]">
         <Reveal>
           <div className="max-w-[800px] mx-auto text-center">
             <div className="text-[#C9A84C] text-[48px] mb-6" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>❝</div>
@@ -141,14 +141,14 @@ export default function RatingsPage() {
       </section>
 
       {/* REVIEWS GRID */}
-      <section className="bg-[#141820] py-[100px] px-[60px]">
+      <section className="bg-[#141820] py-16 md:py-[100px] px-6 md:px-[60px]">
         <Reveal><span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-4 block">What Clients Say</span></Reveal>
         <Reveal delay={1}>
           <h2 className="leading-none text-[#F0EDE6] mb-[60px]" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(44px, 6vw, 72px)' }}>
             Recent Reviews
           </h2>
         </Reveal>
-        <div className="grid grid-cols-3 gap-[2px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[2px]">
           {reviews.map((review, i) => (
             <Reveal key={i} delay={(i % 3) as 0 | 1 | 2}>
               <div className="bg-[#1C2130] p-[36px_32px]">

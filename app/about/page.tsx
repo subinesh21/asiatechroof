@@ -64,7 +64,7 @@ export default function AboutPage() {
       />
 
       {/* MVV */}
-      <section className="bg-[#141820] py-[100px] px-[60px]">
+      <section className="bg-[#141820] py-16 md:py-[100px] px-6 md:px-[60px]">
         <Reveal><span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-4 block">Our Foundation</span></Reveal>
         <Reveal delay={1}>
           <h2
@@ -74,7 +74,7 @@ export default function AboutPage() {
             What Drives Us
           </h2>
         </Reveal>
-        <div className="grid grid-cols-3 gap-[2px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[2px]">
           {mvvCards.map((card, i) => (
             <Reveal key={i} delay={i as 0 | 1 | 2}>
               <div
@@ -106,8 +106,8 @@ export default function AboutPage() {
       </section>
 
       {/* STORY */}
-      <section className="bg-[#0D0F12] py-[100px] px-[60px]">
-        <div className="grid grid-cols-2 gap-[100px] items-center">
+      <section className="bg-[#0D0F12] py-16 md:py-[100px] px-6 md:px-[60px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-[100px] items-center">
           <Reveal>
             <div className="relative h-[560px]">
               <div
@@ -138,7 +138,7 @@ export default function AboutPage() {
             <p className="text-[15px] text-[#8A8F9E] leading-[1.9]">
               Our team of certified workers brings not just technical skill, but genuine care for every client's property. We treat each roof as if it were our own.
             </p>
-            <div className="flex gap-10 mt-10 pt-10 border-t border-[rgba(201,168,76,0.2)]">
+            <div className="flex flex-wrap gap-8 md:gap-10 mt-10 pt-10 border-t border-[rgba(201,168,76,0.2)]">
               {[{ num: '500+', label: 'Projects Done' }, { num: '100%', label: 'Certified Team' }, { num: '24hr', label: 'Response' }].map((s, i) => (
                 <div key={i}>
                   <div className="text-[44px] text-[#C9A84C] leading-none" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>{s.num}</div>
@@ -151,7 +151,7 @@ export default function AboutPage() {
       </section>
 
       {/* TIMELINE */}
-      <section className="bg-[#141820] py-[100px] px-[60px]">
+      <section className="bg-[#141820] py-16 md:py-[100px] px-6 md:px-[60px]">
         <div className="mb-[72px]">
           <Reveal><span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-4 block">Our Journey</span></Reveal>
           <Reveal delay={1}>
@@ -164,7 +164,7 @@ export default function AboutPage() {
         <div className="relative max-w-[860px] mx-auto timeline-line">
           {timeline.map((item, i) => (
             <Reveal key={i}>
-              <div className="grid grid-cols-2 gap-[60px] mb-[60px] relative">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-[60px] mb-[60px] relative">
                 {item.side === 'left' ? (
                   <>
                     <div className="text-right pr-10">
@@ -196,14 +196,14 @@ export default function AboutPage() {
       </section>
 
       {/* CERTIFICATIONS */}
-      <section className="bg-[#0D0F12] py-[80px] px-[60px]">
+      <section className="bg-[#0D0F12] py-12 md:py-[80px] px-6 md:px-[60px]">
         <Reveal><span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-4 block">Accreditations</span></Reveal>
         <Reveal delay={1}>
           <h2 className="leading-none text-[#F0EDE6] mb-12" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(44px, 6vw, 72px)' }}>
             Certified &<br />Recognised
           </h2>
         </Reveal>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-[2px]">
+        <div className="grid grid-cols-2 md:grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[2px]">
           {certs.map((cert, i) => (
             <Reveal key={i} delay={i as 0 | 1 | 2 | 3} className="h-full">
               <div className="h-full bg-[#1C2130] p-[36px_28px] flex flex-col xl:flex-row xl:items-center gap-5 border border-[rgba(201,168,76,0.2)] transition-all duration-200 hover:border-[#C9A84C]">

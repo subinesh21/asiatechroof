@@ -2,8 +2,8 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#080A0D] border-t border-[rgba(201,168,76,0.2)] pt-[72px] px-[60px] pb-9">
-      <div className="grid gap-[60px] mb-[60px]" style={{ gridTemplateColumns: '2fr 1fr 1fr 1.5fr' }}>
+    <footer className="bg-[#080A0D] border-t border-[rgba(201,168,76,0.2)] pt-16 md:pt-[72px] px-6 md:px-[60px] pb-9">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1.5fr] gap-10 md:gap-[60px] mb-12 md:mb-[60px]">
         {/* Brand */}
         <div>
           <Link href="/" className="flex items-center gap-3 no-underline mb-5 inline-flex">
@@ -15,12 +15,12 @@ export default function Footer() {
             </div>
             <div className="flex flex-col">
               <span
-                className="text-[22px] text-[#F0EDE6] tracking-[2px]"
+                className="text-[20px] md:text-[22px] text-[#F0EDE6] tracking-[2px]"
                 style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}
               >
                 ASIA TECH
               </span>
-              <span className="text-[9px] text-[#C9A84C] tracking-[3px] uppercase">ROOFING SPECIALIST</span>
+              <span className="text-[8px] md:text-[9px] text-[#C9A84C] tracking-[3px] uppercase">ROOFING SPECIALIST</span>
             </div>
           </Link>
           <p className="text-[13px] text-[#8A8F9E] leading-[1.7] max-w-[260px] mb-7 mt-4">
@@ -95,8 +95,8 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-[rgba(201,168,76,0.2)] pt-7 flex justify-between items-center flex-wrap gap-3">
-        <p className="text-[11px] text-[#8A8F9E] tracking-[0.5px]">© 2024 Asia Tech Roofing. All rights reserved. Singapore.</p>
+      <div className="border-t border-[rgba(201,168,76,0.2)] pt-7 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p className="text-[11px] text-[#8A8F9E] tracking-[0.5px] text-center md:text-left">© 2024 Asia Tech Roofing. All rights reserved. Singapore.</p>
         <div className="flex gap-7">
           <a href="#" className="text-[11px] text-[#8A8F9E] no-underline tracking-[0.5px] hover:text-[#C9A84C]">Privacy Policy</a>
           <a href="#" className="text-[11px] text-[#8A8F9E] no-underline tracking-[0.5px] hover:text-[#C9A84C]">Terms of Service</a>

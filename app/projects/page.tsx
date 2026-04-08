@@ -114,7 +114,7 @@ export default function ProjectsPage() {
       />
 
       {/* STATS BAR */}
-      <div className="bg-[#141820] py-12 px-[60px] border-b border-[rgba(201,168,76,0.2)]">
+      <div className="bg-[#141820] py-12 px-6 md:px-[60px] border-b border-[rgba(201,168,76,0.2)]">
         <div className="flex justify-around">
           {stats.map((stat, i) => (
             <Reveal key={i} delay={i as 0 | 1 | 2 | 3}>
@@ -128,7 +128,7 @@ export default function ProjectsPage() {
       </div>
 
       {/* PORTFOLIO */}
-      <section className="bg-[#0D0F12] py-20 px-[60px] pb-[100px]">
+      <section className="bg-[#0D0F12] py-20 px-6 md:px-[60px] pb-[100px]">
         <div className="flex gap-1 mb-12 flex-wrap">
           {filterTabs.map((tab, i) => (
             <button
@@ -178,7 +178,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* FEATURED CASE STUDY */}
-      <section className="bg-[#141820] py-20 px-[60px]">
+      <section className="bg-[#141820] py-20 px-6 md:px-[60px]">
         <div className="grid grid-cols-2 gap-20 items-center">
           <Reveal>
             <div

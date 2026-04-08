@@ -75,7 +75,7 @@ export default function ContactPage() {
       />
 
       {/* EMERGENCY BANNER */}
-      <div className="bg-[#C9A84C] py-5 px-[60px]">
+      <div className="bg-[#C9A84C] py-5 px-6 md:px-[60px]">
         <div className="flex items-center justify-between flex-wrap gap-4">
           <div className="font-bold text-[13px] text-[#0D0F12] tracking-[1px]" style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}>
             🚨 Emergency Roof Leak? <span className="opacity-70 font-normal ml-2">We offer 24-hour emergency response across Singapore.</span>
@@ -91,7 +91,7 @@ export default function ContactPage() {
       </div>
 
       {/* MAIN CONTACT */}
-      <section className="bg-[#0D0F12] py-[100px] px-[60px]">
+      <section className="bg-[#0D0F12] py-16 md:py-[100px] px-6 md:px-[60px]">
         <div className="grid gap-20" style={{ gridTemplateColumns: '1fr 1.4fr' }}>
           {/* Contact Info */}
           <Reveal>
@@ -227,8 +227,8 @@ export default function ContactPage() {
       </section>
 
       {/* MAP + HOURS */}
-      <section className="bg-[#141820] py-20 px-[60px]">
-        <div className="grid grid-cols-2 gap-[60px] items-center">
+      <section className="bg-[#141820] py-20 px-6 md:px-[60px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-[60px] items-center">
           <Reveal>
             <div className="h-[360px] bg-[#1C2130] border border-[rgba(201,168,76,0.2)] flex flex-col items-center justify-center gap-4">
               <div className="text-[40px]">📍</div>

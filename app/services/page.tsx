@@ -157,14 +157,14 @@ export default function ServicesPage() {
       />
 
       {/* SERVICES OVERVIEW */}
-      <section className="bg-[#141820] py-[100px] px-[60px]">
+      <section className="bg-[#141820] py-16 md:py-[100px] px-6 md:px-[60px]">
         <Reveal><span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-4 block">What We Do</span></Reveal>
         <Reveal delay={1}>
           <h2 className="leading-none text-[#F0EDE6] mb-[60px]" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(44px, 6vw, 72px)' }}>
             Complete Roofing<br />Solutions
           </h2>
         </Reveal>
-        <div className="grid grid-cols-4 gap-[2px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[2px]">
           {overviewCards.map((card, i) => (
             <Reveal key={i} delay={i as 0 | 1 | 2 | 3}>
               <Link
@@ -191,7 +191,7 @@ export default function ServicesPage() {
       {serviceDetails.map((svc, i) => (
         <section
           key={i}
-          className={`py-[100px] px-[60px] ${i % 2 === 0 ? 'bg-[#0D0F12]' : 'bg-[#141820]'}`}
+          className={`py-16 md:py-[100px] px-6 md:px-[60px] ${i % 2 === 0 ? 'bg-[#0D0F12]' : 'bg-[#141820]'}`}
         >
           <div className={`grid grid-cols-2 gap-20 items-center ${i % 2 !== 0 ? 'direction-rtl' : ''}`}
             style={i % 2 !== 0 ? { direction: 'rtl' } : {}}>
@@ -242,7 +242,7 @@ export default function ServicesPage() {
       ))}
 
       {/* FAQ */}
-      <section className="bg-[#0D0F12] py-[100px] px-[60px]">
+      <section className="bg-[#0D0F12] py-16 md:py-[100px] px-6 md:px-[60px]">
         <div className="mb-[60px]">
           <Reveal><span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-4 block">FAQ</span></Reveal>
           <Reveal delay={1}>

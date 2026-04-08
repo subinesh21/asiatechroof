@@ -15,7 +15,7 @@ export default function PageHero({
 }: PageHeroProps) {
   return (
     <section
-      className="flex items-end px-[60px] py-[80px] pt-[100px] relative overflow-hidden"
+      className="flex items-end px-6 md:px-[60px] py-16 md:py-12 md:py-[80px] pt-32 md:pt-[100px] relative overflow-hidden"
       style={{ minHeight }}
     >
       {/* Background */}
@@ -36,7 +36,7 @@ export default function PageHero({
           Home <span className="text-[#8A8F9E]">/ {breadcrumb}</span>
         </div>
         <h1
-          className="text-[clamp(60px,9vw,120px)] mb-5 leading-none text-[#F0EDE6]"
+          className="text-[clamp(48px,9vw,120px)] mb-5 leading-none text-[#F0EDE6]"
           style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}
         >
           {title}

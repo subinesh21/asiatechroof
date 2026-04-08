@@ -46,7 +46,7 @@ export default function RoofRepairPage() {
 
       {/* Service Nav */}
       <div className="bg-[#141820] border-b border-[rgba(201,168,76,0.2)]">
-        <div className="flex px-[60px]">
+        <div className="flex px-6 md:px-[60px]">
           {services.map((s) => (
             <Link
               key={s.href}
@@ -65,7 +65,7 @@ export default function RoofRepairPage() {
       </div>
 
       {/* MAIN DETAIL */}
-      <section className="bg-[#0D0F12] py-[100px] px-[60px]">
+      <section className="bg-[#0D0F12] py-16 md:py-[100px] px-6 md:px-[60px]">
         <div className="grid grid-cols-2 gap-20 items-center">
           <Reveal>
             <div
@@ -106,13 +106,13 @@ export default function RoofRepairPage() {
       </section>
 
       {/* WHY CHOOSE */}
-      <section className="bg-[#141820] py-[100px] px-[60px]">
+      <section className="bg-[#141820] py-16 md:py-[100px] px-6 md:px-[60px]">
         <Reveal>
           <h2 className="leading-none text-[#F0EDE6] mb-[60px]" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(44px, 6vw, 72px)' }}>
             Why Choose Us<br />For Roof Repair
           </h2>
         </Reveal>
-        <div className="grid grid-cols-3 gap-[2px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[2px]">
           {[
             { icon: '🔍', title: 'Thorough Assessment', desc: 'Every job starts with a comprehensive roof inspection to identify all issues — visible and hidden.' },
             { icon: '⚡', title: '24-Hour Emergency', desc: 'Urgent roof damage? We mobilise fast to contain the situation and prevent further damage.' },
