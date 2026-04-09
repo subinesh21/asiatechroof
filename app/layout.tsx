@@ -190,7 +190,7 @@ export const metadata: Metadata = {
   },
 
   verification: {
-    google: 'LeNmjgR8DORtLV-snHK8DwSWSPgWfRht6bhXQbSaePE'
+    google: 'yEReuorzubCdyP6M4S-vGUtYglTcMg2rMr7u1HGlJdM'
   }
 };
 
