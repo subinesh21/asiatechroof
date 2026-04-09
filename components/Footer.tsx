@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -7,21 +8,13 @@ export default function Footer() {
         {/* Brand */}
         <div>
           <Link href="/" className="flex items-center gap-3 no-underline mb-5 inline-flex">
-            <div
-              className="logo-mark w-10 h-10 bg-[#C9A84C] flex items-center justify-center text-[#0D0F12] text-lg"
-              style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}
-            >
-              AT
-            </div>
-            <div className="flex flex-col">
-              <span
-                className="text-[20px] md:text-[22px] text-[#F0EDE6] tracking-[2px]"
-                style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}
-              >
-                ASIA TECH
-              </span>
-              <span className="text-[8px] md:text-[9px] text-[#C9A84C] tracking-[3px] uppercase">ROOFING SPECIALIST</span>
-            </div>
+            <Image 
+              src="/asialogo.png" 
+              alt="Asia Tech Roofing Logo" 
+              width={180} 
+              height={48} 
+              className="h-[48px] w-auto object-contain brightness-0 invert"
+            />
           </Link>
           <p className="text-[13px] text-[#8A8F9E] leading-[1.7] max-w-[260px] mb-7 mt-4">
             Trusted roofing, waterproofing &amp; leak repair specialists serving residential, commercial, and industrial properties across Singapore since 2004.

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import Image from 'next/image';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -20,23 +21,14 @@ export default function Navbar() {
     <>
       <nav className="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-5 md:px-6 md:px-[60px] h-[76px] bg-[rgba(13,15,18,0.92)] backdrop-blur-[14px] border-b border-[rgba(201,168,76,0.2)]">
         <Link href="/" className="flex items-center gap-3 no-underline relative z-[110]" onClick={() => setIsOpen(false)}>
-          <div
-            className="logo-mark w-10 h-10 bg-[#C9A84C] flex items-center justify-center font-bold text-[#0D0F12] text-lg"
-            style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}
-          >
-            AT
-          </div>
-          <div className="flex flex-col">
-            <span
-              className="text-[20px] md:text-[22px] text-[#F0EDE6] tracking-[2px]"
-              style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}
-            >
-              ASIA TECH
-            </span>
-            <span className="text-[8px] md:text-[9px] text-[#C9A84C] tracking-[3px] uppercase">
-              ROOFING SPECIALIST
-            </span>
-          </div>
+          <Image 
+            src="/asialogo.png" 
+            alt="Asia Tech Roofing Logo" 
+            width={180} 
+            height={48} 
+            className="h-[40px] md:h-[48px] w-auto object-contain"
+            priority
+          />
         </Link>
 
         {/* Desktop Navigation */}

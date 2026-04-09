@@ -3,17 +3,18 @@ import Footer from '@/components/Footer';
 import CTABanner from '@/components/CTABanner';
 import Reveal from '@/components/Reveal';
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Asia Tech Roofing — Premium Roofing Specialist Singapore',
+  title: 'Roof Repair & Waterproofing Singapore | Asia Tech Roofing',
   description:
     'Expert roofing, waterproofing & leak repair for residential, commercial, and industrial properties across Singapore. 20+ years of experience.',
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Asia Tech Roofing — Premium Roofing Specialist Singapore',
+    title: 'Roof Repair & Waterproofing Singapore | Asia Tech Roofing',
     description: 'Expert roofing, waterproofing & leak repair for residential, commercial, and industrial properties.',
     url: '/',
   },
@@ -158,19 +159,66 @@ const projects = [
 ];
 
 export default function HomePage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much does roof repair cost in Singapore?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Roof repair costs in Singapore vary depending on the size and type of damage. Asia Tech Roofing offers free on-site inspections to provide an accurate quote with no obligation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does a roof waterproofing job take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most waterproofing jobs take 1–3 days depending on the area size. Our certified team works efficiently to minimize disruption to your property."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you serve all areas in Singapore?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Asia Tech Roofing serves all areas across Singapore including HDB estates, landed properties, commercial buildings, and industrial facilities."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How quickly can you respond to an emergency roof leak?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We offer 24-hour emergency response for roof leaks across Singapore to minimize water damage to your property."
+        }
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Navbar />
 
       {/* HERO */}
-      <section className="min-h-screen relative flex items-center overflow-hidden">
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(135deg, rgba(13,15,18,0.88) 0%, rgba(13,15,18,0.65) 50%, rgba(13,15,18,0.82) 100%), url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80') center/cover no-repeat",
-          }}
-        />
+      <section className="min-h-screen relative flex items-center overflow-hidden bg-[#0D0F12]">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0D0F12]/90 via-[#0D0F12]/60 to-[#0D0F12]/80 z-10" />
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80"
+            alt="Asia Tech Roofing"
+            width={1600}
+            height={900}
+            priority={true}
+            className="w-full h-full object-cover opacity-80"
+          />
+        </div>
         <div
           className="absolute inset-0"
           style={{ background: 'linear-gradient(to bottom, transparent 60%, #0D0F12 100%)' }}
@@ -238,6 +286,23 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+
+          <Reveal delay={3}>
+            <Link href="/ratings" className="inline-flex items-center gap-4 mt-12 bg-[rgba(201,168,76,0.1)] border border-[#C9A84C]/20 px-6 py-3 hover:bg-[rgba(201,168,76,0.15)] transition-all no-underline group">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="text-[#C9A84C]">
+                <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.92 3.36-2.08 4.48-1.28 1.28-3.12 2.24-5.76 2.24-4.48 0-8.08-3.6-8.08-8.08s3.6-8.08 8.08-8.08c2.44 0 4.24.96 5.56 2.24l2.32-2.32C18.4 2.64 15.84 1.2 12.48 1.2 6.48 1.2 1.6 6.08 1.6 12.08s4.88 10.88 10.88 10.88c3.28 0 5.76-1.08 7.84-3.28 2.08-2.08 2.8-4.96 2.8-7.28 0-.72-.08-1.44-.16-2.08h-10.48z"/>
+              </svg>
+              <div className="flex flex-col">
+                <div className="flex gap-1 text-[#C9A84C] text-[14px]">
+                  {'★'.repeat(5)}
+                </div>
+                <div className="text-[#F0EDE6] text-[12px] font-bold tracking-[1px] uppercase mt-0.5">
+                  4.8/5 from 47+ Google Reviews
+                </div>
+              </div>
+              <span className="text-[#C9A84C] group-hover:translate-x-1 transition-transform ml-2">→</span>
+            </Link>
+          </Reveal>
         </div>
       </section>
 
@@ -337,9 +402,13 @@ export default function HomePage() {
           {servePanels.map((panel, i) => (
             <Reveal key={i} delay={i as 0 | 1 | 2}>
               <div className="relative h-[480px] overflow-hidden cursor-pointer group">
-                <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-[600ms] group-hover:scale-[1.06]"
-                  style={{ backgroundImage: `url('${panel.bg}')` }}
+                <Image
+                  src={panel.bg}
+                  alt={panel.title.replace('\n', ' ')}
+                  width={800}
+                  height={480}
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] group-hover:scale-[1.06]"
                 />
                 <div
                   className="absolute inset-0 transition-all duration-300"
@@ -439,9 +508,13 @@ export default function HomePage() {
           {projects.map((proj, i) => (
             <Reveal key={i} delay={(i % 3) as 0 | 1 | 2} className={`h-full ${proj.spanClasses}`}>
               <div className={`relative overflow-hidden cursor-pointer bg-[#1C2130] group h-full`}>
-                <div
-                  className={`w-full h-full bg-cover bg-center transition-transform duration-[600ms] group-hover:scale-[1.05]`}
-                  style={{ backgroundImage: `url('${proj.img}')` }}
+                <Image
+                  src={proj.img}
+                  alt={proj.name}
+                  width={600}
+                  height={400}
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] group-hover:scale-[1.05]"
                 />
                 <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-7"
@@ -481,6 +554,36 @@ export default function HomePage() {
         title={<>READY TO PROTECT<br /><span className="text-[#C9A84C]">YOUR PROPERTY?</span></>}
         description="Get a free on-site inspection from Singapore's most trusted roofing specialists. No obligation, just expert advice."
       />
+
+      {/* SEO CONTENT SECTION */}
+      <section className="bg-[#0D0F12] py-16 px-6 md:px-[60px] border-t border-[rgba(201,168,76,0.1)]">
+        <div className="max-w-[1000px] mx-auto text-center md:text-left grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div>
+            <h2 className="text-[20px] font-bold text-[#F0EDE6] mb-4" style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}>
+              Singapore&apos;s Most Trusted Roofing Contractor Since 2004
+            </h2>
+            <p className="text-[14px] text-[#8A8F9E] leading-[1.8]">
+              With over 20 years of dedicated service, Asia Tech Roofing has established itself as the leading expert in the industry. Our fully certified team has successfully completed 500+ projects, delivering unparalleled craftsmanship and long-lasting protection for properties of all sizes.
+            </p>
+          </div>
+          <div>
+            <h2 className="text-[20px] font-bold text-[#F0EDE6] mb-4" style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}>
+              Roofing Services Across All of Singapore
+            </h2>
+            <p className="text-[14px] text-[#8A8F9E] leading-[1.8]">
+              We proudly offer comprehensive coverage spanning Jurong, Tampines, Bukit Timah, Orchard, Tuas, Woodlands, Sentosa, and the CBD. Whether you reside in an HDB estate, a sprawling landed property, or manage a commercial space, our rapid response team is always nearby.
+            </p>
+          </div>
+          <div>
+            <h2 className="text-[20px] font-bold text-[#F0EDE6] mb-4" style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}>
+              Why Choose Asia Tech Roofing?
+            </h2>
+            <p className="text-[14px] text-[#8A8F9E] leading-[1.8]">
+              We provide free, no-obligation on-site inspections combined with a 24-hour emergency response. Through the use of certified workers and proven, high-grade materials, we ensure every repair is durable and meticulously executed.
+            </p>
+          </div>
+        </div>
+      </section>
 
       <Footer />
     </>

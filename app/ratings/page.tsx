@@ -1,187 +1,139 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import CTABanner from '@/components/CTABanner';
-import PageHero from '@/components/PageHero';
 import Reveal from '@/components/Reveal';
+import ReviewsGrid from '@/components/ReviewsGrid';
+import ReviewsSkeleton from '@/components/ReviewsSkeleton';
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: 'Client Ratings & Reviews — Asia Tech Roofing',
-  description: "Don't just take our word for it. Read what hundreds of satisfied clients across Singapore say about our work.",
+  description: "Read what hundreds of satisfied clients across Singapore say about our work. 100% genuine Google reviews.",
   alternates: { canonical: '/ratings' },
-  openGraph: {
-    title: 'Client Ratings & Reviews — Asia Tech Roofing',
-    description: "Read what hundreds of satisfied clients across Singapore say about our work.",
-    url: '/ratings',
-  },
 };
 
-const ratingBars = [
-  { star: '5 ★', width: '92%', count: 138 },
-  { star: '4 ★', width: '6%', count: 9 },
-  { star: '3 ★', width: '2%', count: 3 },
-  { star: '2 ★', width: '0%', count: 0 },
-  { star: '1 ★', width: '0%', count: 0 },
-];
+async function GoogleReviewsContent() {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+  const placeId = process.env.GOOGLE_PLACE_ID || 'PLACE_ID_HERE';
+  
+  let reviews: any[] = [];
+  let rating = 0;
+  let totalReviews = 0;
 
-const platforms = [
-  { name: 'Google', rating: '4.9', stars: '★★★★★', count: '80+ Reviews', color: '#EA4335' },
-  { name: 'Facebook', rating: '5.0', stars: '★★★★★', count: '40+ Reviews', color: '#1877F2' },
-  { name: 'Carousell', rating: '4.8', stars: '★★★★★', count: '30+ Reviews', color: '#C9A84C' },
-];
+  try {
+    const res = await fetch(`${baseUrl}/api/reviews`, { next: { revalidate: 86400 } });
+    if (res.ok) {
+      const data = await res.json();
+      if (data && !data.error) {
+        reviews = data.reviews || [];
+        rating = data.rating || 0;
+        totalReviews = data.user_ratings_total || 0;
+      }
+    }
+  } catch (error) {
+    console.error('Error fetching reviews:', error);
+  }
 
-const reviews = [
-  { stars: '★★★★★', text: 'Very professional team. They arrived on time, explained everything clearly, and completed the waterproofing works on schedule. No mess left behind. Will definitely use them again.', avatar: 'S', name: 'Sarah Lim', meta: 'Landed homeowner', platform: 'Google' },
-  { stars: '★★★★★', text: 'Called them for an emergency roof leak during a storm. They responded within 2 hours and fixed the issue the same day. Incredible responsiveness — saved our warehouse from serious damage.', avatar: 'R', name: 'Rajan Kumar', meta: 'Warehouse Manager', platform: 'Google' },
-  { stars: '★★★★★', text: "Had a tricky leak around my skylight that others couldn't fix. Asia Tech's team traced it properly and applied the right sealant system. Dry ceiling for 8 months and counting!", avatar: 'J', name: 'Jennifer Wong', meta: 'Bungalow owner', platform: 'Facebook' },
-  { stars: '★★★★★', text: 'Engaged Asia Tech for a full roof replacement on our commercial unit. Competitive quote, quality materials, and the team was professional from start to finish. No disruption to our tenants.', avatar: 'D', name: 'David Chia', meta: 'Property owner', platform: 'Google' },
-  { stars: '★★★★★', text: 'Thenu was very knowledgeable and gave honest advice on what needed to be done vs. what was unnecessary. I appreciated the transparency — no upselling. Great work and fair pricing.', avatar: 'A', name: 'Amanda Sng', meta: 'Homeowner', platform: 'Google' },
-  { stars: '★★★★★', text: "The waterproofing on our factory rooftop has now been holding for over 2 years with zero issues. We've had heavy rainstorms and not a single drip inside. Money well spent.", avatar: 'K', name: 'Kevin Loh', meta: 'Factory owner, Tuas', platform: 'Facebook' },
-];
+  if (reviews.length === 0) {
+    return (
+      <div className="max-w-[1200px] mx-auto px-6 text-center py-20 border border-[#C9A84C]/10 bg-[#16181D]">
+        <h3 className="text-[#F0EDE6] text-[24px] mb-4" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>No Reviews Found</h3>
+        <p className="text-[#8A8F9E] mb-8">We couldn&apos;t load any reviews at this time. Please check back later or visit us directly on Google.</p>
+        <a 
+          href={`https://search.google.com/local/writereview?placeid=${placeId}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#C9A84C] font-bold uppercase tracking-[2px] hover:underline"
+        >
+          Write a review on Google →
+        </a>
+      </div>
+    );
+  }
+
+
+  return (
+    <div className="max-w-[1200px] mx-auto px-6">
+      {/* TOP SUMMARY SECTION */}
+      <div className="bg-[#16181D] border border-[#C9A84C]/20 p-10 md:p-16 mb-20 text-center relative overflow-hidden">
+        <div className="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+          <svg width="200" height="200" viewBox="0 0 24 24" fill="currentColor"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.92 3.36-2.08 4.48-1.28 1.28-3.12 2.24-5.76 2.24-4.48 0-8.08-3.6-8.08-8.08s3.6-8.08 8.08-8.08c2.44 0 4.24.96 5.56 2.24l2.32-2.32C18.4 2.64 15.84 1.2 12.48 1.2 6.48 1.2 1.6 6.08 1.6 12.08s4.88 10.88 10.88 10.88c3.28 0 5.76-1.08 7.84-3.28 2.08-2.08 2.8-4.96 2.8-7.28 0-.72-.08-1.44-.16-2.08h-10.48z"/></svg>
+        </div>
+        
+        <Reveal>
+          <div className="flex flex-col items-center">
+            <div className="text-[#4285F4] mb-6">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.92 3.36-2.08 4.48-1.28 1.28-3.12 2.24-5.76 2.24-4.48 0-8.08-3.6-8.08-8.08s3.6-8.08 8.08-8.08c2.44 0 4.24.96 5.56 2.24l2.32-2.32C18.4 2.64 15.84 1.2 12.48 1.2 6.48 1.2 1.6 6.08 1.6 12.08s4.88 10.88 10.88 10.88c3.28 0 5.76-1.08 7.84-3.28 2.08-2.08 2.8-4.96 2.8-7.28 0-.72-.08-1.44-.16-2.08h-10.48z"/>
+              </svg>
+            </div>
+            <h2 className="text-[#F0EDE6] text-[48px] md:text-[64px] mb-4 leading-none" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>
+              OVERALL RATING: <span className="text-[#C9A84C]">{rating}</span>
+            </h2>
+            <div className="flex gap-2 text-[24px] text-[#C9A84C] mb-4">
+              {'★'.repeat(5)}
+            </div>
+            <p className="text-[#8A8F9E] text-[16px] mb-10 font-bold uppercase tracking-[2px]">
+              Based on {totalReviews} Genuine Google Reviews
+            </p>
+            <a 
+              href={`https://search.google.com/local/writereview?placeid=${placeId}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#C9A84C] text-[#0D0F12] px-12 py-5 text-[14px] font-bold tracking-[2px] uppercase hover:bg-white transition-all transform hover:scale-105"
+              style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
+            >
+              Leave Us a Review on Google
+            </a>
+          </div>
+        </Reveal>
+      </div>
+
+      {/* REVIEWS GRID */}
+      <Reveal delay={1}>
+        <ReviewsGrid reviews={reviews} />
+      </Reveal>
+    </div>
+  );
+}
 
 export default function RatingsPage() {
   return (
-    <>
+    <div className="bg-[#0D0F12] min-h-screen">
       <Navbar />
-      <PageHero
-        breadcrumb="Ratings"
-        title={<>CLIENT<br />REVIEWS</>}
-        subtitle="Don't just take our word for it. Read what hundreds of satisfied clients across Singapore say about our work."
-        bgImage="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=80"
-      />
-
-      {/* RATING SUMMARY */}
-      <section className="bg-[#141820] py-16 md:py-20 px-6 md:px-[60px]">
-        <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-12 md:gap-20 items-center">
+      
+      <section className="pt-[180px] pb-[80px]">
+        <div className="max-w-[1200px] mx-auto px-6 text-center">
           <Reveal>
-            <div className="text-center px-6 md:px-[60px] py-12 border border-[rgba(201,168,76,0.2)]">
-              <div className="leading-none text-[#C9A84C]" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: '96px' }}>4.9</div>
-              <div className="text-[#C9A84C] text-[24px] tracking-[4px] my-2">★★★★★</div>
-              <div className="text-[12px] text-[#8A8F9E] tracking-[1px]">Based on 150+ reviews</div>
-            </div>
-          </Reveal>
-
-          <Reveal delay={1}>
-            <span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-4 block">Overall Rating</span>
-            <h2 className="leading-none text-[#F0EDE6] mb-8" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(44px, 6vw, 72px)' }}>
-              Trusted by<br />Hundreds
-            </h2>
-            <div>
-              {ratingBars.map((bar, i) => (
-                <div key={i} className="flex items-center gap-4 mb-4">
-                  <span className="text-[12px] text-[#8A8F9E] min-w-[40px]">{bar.star}</span>
-                  <div className="flex-1 h-1.5 bg-[rgba(201,168,76,0.15)] overflow-hidden">
-                    <div className="h-full bg-[#C9A84C]" style={{ width: bar.width }} />
-                  </div>
-                  <span className="text-[12px] text-[#8A8F9E] min-w-[32px] text-right">{bar.count}</span>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* PLATFORMS */}
-      <section className="bg-[#0D0F12] py-20 px-6 md:px-[60px]">
-        <Reveal><span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-4 block">Platforms</span></Reveal>
-        <Reveal delay={1}>
-          <h2 className="leading-none text-[#F0EDE6] mb-12" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(44px, 6vw, 72px)' }}>
-            Find Us On
-          </h2>
-        </Reveal>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[2px]">
-          {platforms.map((p, i) => (
-            <Reveal key={i} delay={i as 0 | 1 | 2}>
-              <a
-                href="#"
-                className="bg-[#1C2130] p-[44px_36px] text-center block border-t-[3px] border-transparent transition-all duration-300 hover:border-[#C9A84C] no-underline cursor-pointer"
-              >
-                <div
-                  className="text-[36px] mb-3"
-                  style={{ fontFamily: 'var(--font-bebas, sans-serif)', color: p.color }}
-                >
-                  {p.name}
-                </div>
-                <div className="text-[56px] text-[#C9A84C] leading-none" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>{p.rating}</div>
-                <div className="text-[#C9A84C] text-[18px] tracking-[3px] my-1.5">{p.stars}</div>
-                <div className="text-[12px] text-[#8A8F9E] mb-4">{p.count}</div>
-                <div className="text-[11px] tracking-[2px] uppercase text-[#C9A84C] font-semibold">Read Reviews →</div>
-              </a>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      {/* FEATURED REVIEW */}
-      <section className="bg-[#0D0F12] py-20 px-6 md:px-[60px]">
-        <Reveal>
-          <div className="max-w-[800px] mx-auto text-center">
-            <div className="text-[#C9A84C] text-[48px] mb-6" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>❝</div>
-            <div
-              className="text-[#F0EDE6] leading-[1.1] mb-8"
-              style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(32px, 4vw, 52px)' }}
+            <span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-6 block font-bold">Client Success Stories</span>
+            <h1 
+              className="text-[#F0EDE6] leading-none mb-8"
+              style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(56px, 10vw, 110px)' }}
             >
-              Asia Tech Roofing resolved a <em className="text-[#C9A84C] not-italic">persistent leak</em> that three other contractors couldn&apos;t fix. They diagnosed the root cause accurately and the repair has held through multiple heavy rainstorms. <em className="text-[#C9A84C] not-italic">Exceptional service.</em>
-            </div>
-            <div className="text-[#C9A84C] text-[18px] tracking-[3px] mb-8">★★★★★</div>
-            <div className="inline-flex items-center gap-4">
-              <div
-                className="w-[52px] h-[52px] rounded-full bg-[#C9A84C] flex items-center justify-center text-[#0D0F12] text-[22px]"
-                style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}
-              >
-                M
-              </div>
-              <div className="text-left">
-                <strong className="text-[15px] text-[#F0EDE6] block">Michael Tan</strong>
-                <span className="text-[12px] text-[#8A8F9E]">Factory Owner, Jurong West · Google Review</span>
-              </div>
-            </div>
-          </div>
-        </Reveal>
-      </section>
-
-      {/* REVIEWS GRID */}
-      <section className="bg-[#141820] py-16 md:py-[100px] px-6 md:px-[60px]">
-        <Reveal><span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-4 block">What Clients Say</span></Reveal>
-        <Reveal delay={1}>
-          <h2 className="leading-none text-[#F0EDE6] mb-[60px]" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(44px, 6vw, 72px)' }}>
-            Recent Reviews
-          </h2>
-        </Reveal>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[2px]">
-          {reviews.map((review, i) => (
-            <Reveal key={i} delay={(i % 3) as 0 | 1 | 2}>
-              <div className="bg-[#1C2130] p-[36px_32px]">
-                <div className="text-[#C9A84C] text-[14px] tracking-[2px] mb-4">{review.stars}</div>
-                <div className="text-[32px] leading-[0.5] text-[#C9A84C] block mb-2" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>&quot;</div>
-                <p className="text-[14px] text-[#8A8F9E] leading-[1.8] mb-6 italic">{review.text}</p>
-                <div className="flex items-center gap-3.5 border-t border-[rgba(201,168,76,0.2)] pt-5">
-                  <div
-                    className="w-10 h-10 rounded-full bg-[#C9A84C] flex items-center justify-center text-[#0D0F12] text-[18px]"
-                    style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}
-                  >
-                    {review.avatar}
-                  </div>
-                  <div>
-                    <div className="font-bold text-[14px] text-[#F0EDE6]">{review.name}</div>
-                    <div className="text-[11px] text-[#8A8F9E] mt-0.5">
-                      {review.meta} · <span className="text-[10px] text-[#C9A84C] tracking-[1px] uppercase">{review.platform}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-          ))}
+              WHAT OUR <span className="text-[#C9A84C]">CLIENTS SAY</span>
+            </h1>
+            <p className="text-[#8A8F9E] max-w-[700px] mx-auto text-[18px] leading-relaxed mb-16">
+              With over 20 years of experience, we have built a reputation for excellence, reliability, and superior craftsmanship in Singapore.
+            </p>
+          </Reveal>
         </div>
       </section>
 
-      <CTABanner
-        label="Join Our Clients"
-        title={<>EXPERIENCE THE<br /><span className="text-[#C9A84C]">DIFFERENCE</span></>}
-        description="Join 500+ satisfied clients. Get a free inspection and see why Singapore trusts Asia Tech Roofing."
-      />
+      <section className="pb-20">
+        <Suspense fallback={<div className="max-w-[1200px] mx-auto px-6"><ReviewsSkeleton /></div>}>
+          <GoogleReviewsContent />
+        </Suspense>
+      </section>
 
+      <CTABanner 
+        label="Trusted Expertise"
+        title={<>EXPERIENCE THE <span className="text-[#C9A84C]">ASIA TECH</span> QUALITY</>}
+        description="Join our long list of satisfied residential and industrial clients. Schedule your free roof health check-up today."
+      />
+      
       <Footer />
-    </>
+    </div>
   );
 }
+
