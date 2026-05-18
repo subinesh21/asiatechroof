@@ -59,7 +59,7 @@ export default function RoofRepairSingaporePage() {
       <Navbar />
 
       {/* HERO SECTION */}
-      <section className="relative pt-[180px] pb-[100px] px-6 md:px-[60px] bg-[#0D0F12] overflow-hidden">
+      <section className="relative pt-[180px] pb-[100px] px-6 md:px-[60px] bg-[#FFFFFF] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1632759162403-0558a41366f6?w=1600&q=80"
@@ -73,27 +73,27 @@ export default function RoofRepairSingaporePage() {
           <Reveal>
             <span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-6 block">Singapore's Trusted Specialists</span>
             <h1 
-              className="text-[#F0EDE6] leading-[0.95] mb-8"
+              className="text-[#111827] leading-[0.95] mb-8"
               style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(56px, 10vw, 110px)' }}
             >
               PROFESSIONAL <br />
               <span className="text-[#C9A84C]">ROOF REPAIR</span> <br />
               SINGAPORE
             </h1>
-            <p className="text-[18px] text-[#8A8F9E] leading-[1.7] max-w-[600px] mb-12">
+            <p className="text-[18px] text-[#111827] leading-[1.7] max-w-[600px] mb-12">
               Don't let a minor leak become a major structural disaster. Asia Tech Roofing provides rapid, certified, and long-lasting roof repair solutions for HDB, landed, and industrial properties across Singapore.
             </p>
             <div className="flex flex-col sm:flex-row gap-5">
               <a 
                 href="tel:+6590545431" 
-                className="bg-[#C9A84C] text-[#0D0F12] px-10 py-5 text-[14px] font-bold tracking-[2px] uppercase hover:bg-[#F0EDE6] transition-all text-center no-underline"
+                className="bg-[#C9A84C] text-[#111827] px-10 py-5 text-[14px] font-bold tracking-[2px] uppercase hover:bg-[#111827] transition-all text-center no-underline"
                 style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
               >
                 Call Today: +65 9054 5431
               </a>
               <a 
                 href="#enquire" 
-                className="bg-transparent border-2 border-[rgba(201,168,76,0.3)] text-[#F0EDE6] px-10 py-5 text-[14px] font-bold tracking-[2px] uppercase hover:border-[#C9A84C] transition-all text-center no-underline"
+                className="bg-transparent border-2 border-[rgba(201,168,76,0.3)] text-[#111827] px-10 py-5 text-[14px] font-bold tracking-[2px] uppercase hover:border-[#C9A84C] transition-all text-center no-underline"
                 style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
               >
                 Get a Free Quote
@@ -104,24 +104,24 @@ export default function RoofRepairSingaporePage() {
       </section>
 
       {/* COMPREHENSIVE CONTENT SECTION 1 */}
-      <section className="py-20 px-6 md:px-[60px] bg-[#141820]">
+      <section className="py-20 px-6 md:px-[60px] bg-[#F9FAFB]">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
           <Reveal>
             <h2 
-              className="text-[#F0EDE6] leading-none mb-10"
+              className="text-[#111827] leading-none mb-10"
               style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: '56px' }}
             >
               Why Your Singapore Property <br />
               <span className="text-[#C9A84C]">Needs Professional Care</span>
             </h2>
-            <div className="prose prose-invert max-w-none text-[#8A8F9E] leading-[1.8] text-[16px]">
+            <div className="prose prose-invert max-w-none text-[#111827] leading-[1.8] text-[16px]">
               <p className="mb-6">
                 Singapore's tropical climate is notoriously harsh on roofing systems. With intense UV radiation during the day and sudden, heavy torrential rainstorms in the afternoon, roof materials undergo constant thermal expansion and contraction. Over time, this results in cracks, sealant failure, and eventual water ingress.
               </p>
               <p className="mb-6">
                 At Asia Tech Roofing, we understand that "roof repair Singapore" isn't just about patching a hole—it's about structural integrity. Whether you are dealing with a <strong>leaking concrete roof</strong>, <strong>rusted metal sheets</strong>, or <strong>failed waterproofing membranes</strong>, our team utilizes forensic thermal imaging and moisture meters to find the root cause, not just the symptom.
               </p>
-              <h3 className="text-[#F0EDE6] text-[24px] font-bold mb-4" style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}>Common Issues We Fix:</h3>
+              <h3 className="text-[#111827] text-[24px] font-bold mb-4" style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}>Common Issues We Fix:</h3>
               <ul className="list-disc pl-6 mb-8 space-y-2">
                 <li>Loose or damaged roof tiles (Concrete & Clay)</li>
                 <li>Corroded metal roof sheets and flashing</li>
@@ -146,16 +146,16 @@ export default function RoofRepairSingaporePage() {
       </section>
 
       {/* SERVICE PILLARS (Internal Linking / Content) */}
-      <section className="py-20 px-6 md:px-[60px] bg-[#0D0F12]">
+      <section className="py-20 px-6 md:px-[60px] bg-[#FFFFFF]">
         <Reveal>
           <div className="text-center mb-16">
             <h2 
-              className="text-[#F0EDE6] leading-none mb-6"
+              className="text-[#111827] leading-none mb-6"
               style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: '64px' }}
             >
               Specialized <span className="text-[#C9A84C]">Roofing Services</span>
             </h2>
-            <p className="text-[#8A8F9E] max-w-[700px] mx-auto">
+            <p className="text-[#111827] max-w-[700px] mx-auto">
               We cover every residential, commercial, and industrial roofing need across the island.
             </p>
           </div>
@@ -180,9 +180,9 @@ export default function RoofRepairSingaporePage() {
             }
           ].map((item, i) => (
             <Reveal key={i} delay={i as 0 | 1 | 2}>
-              <div className="bg-[#1C2130] p-10 border-b-2 border-transparent hover:border-[#C9A84C] transition-all">
-                <h3 className="text-[#F0EDE6] text-[28px] mb-4" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>{item.title}</h3>
-                <p className="text-[#8A8F9E] text-[14px] leading-relaxed mb-8">{item.desc}</p>
+              <div className="bg-[#F3F4F6] p-10 border-b-2 border-transparent hover:border-[#C9A84C] transition-all">
+                <h3 className="text-[#111827] text-[28px] mb-4" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>{item.title}</h3>
+                <p className="text-[#111827] text-[14px] leading-relaxed mb-8">{item.desc}</p>
                 <Link href={item.link} className="text-[#C9A84C] uppercase text-[12px] tracking-[2px] font-bold no-underline">
                   Learn More →
                 </Link>
@@ -193,21 +193,21 @@ export default function RoofRepairSingaporePage() {
       </section>
 
       {/* DEEP SEO CONTENT SECTION 2 (Keyword Density / Area Coverage) */}
-      <section className="py-20 px-6 md:px-[60px] bg-[#141820]">
+      <section className="py-20 px-6 md:px-[60px] bg-[#F9FAFB]">
         <div className="max-w-[1000px] mx-auto text-center">
           <Reveal>
             <h2 
-              className="text-[#F0EDE6] mb-8"
+              className="text-[#111827] mb-8"
               style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: '56px' }}
             >
               Serving Every District in <span className="text-[#C9A84C]">Singapore</span>
             </h2>
-            <p className="text-[#8A8F9E] leading-[1.8] mb-12">
+            <p className="text-[#111827] leading-[1.8] mb-12">
               Our rapid-response teams are strategically positioned across the island. Whether you need a <strong>roof repair in Jurong</strong>, <strong>waterproofing in Tampines</strong>, or <strong>leak detection in Woodlands</strong>, Asia Tech Roofing is never more than 30 minutes away. We serve major hubs including Ang Mo Kio, Bedok, Bukit Timah, Clementi, Hougang, Punggol, Sengkang, Tow Payoh, and Yishun.
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {['Fast Response', 'Certified Workers', 'Quality Materials', '20+ Yrs Experience'].map((feat, i) => (
-                <div key={i} className="bg-[#1C2130] py-6 rounded border border-[rgba(201,168,76,0.1)]">
+                <div key={i} className="bg-[#F3F4F6] py-6 rounded border border-[rgba(201,168,76,0.1)]">
                   <div className="text-[#C9A84C] text-[11px] tracking-[2px] uppercase font-bold">{feat}</div>
                 </div>
               ))}
@@ -217,11 +217,11 @@ export default function RoofRepairSingaporePage() {
       </section>
 
       {/* FAQ SECTION */}
-      <section className="py-20 px-6 md:px-[60px] bg-[#0D0F12]">
+      <section className="py-20 px-6 md:px-[60px] bg-[#FFFFFF]">
         <div className="max-w-[800px] mx-auto">
           <Reveal>
             <h2 
-              className="text-[#F0EDE6] text-center mb-16"
+              className="text-[#111827] text-center mb-16"
               style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: '56px' }}
             >
               Frequently Asked <span className="text-[#C9A84C]">Questions</span>
@@ -229,8 +229,8 @@ export default function RoofRepairSingaporePage() {
             <div className="space-y-8">
               {faqSchema.mainEntity.map((faq, i) => (
                 <div key={i} className="border-b border-[rgba(201,168,76,0.2)] pb-8">
-                  <h4 className="text-[#F0EDE6] text-[18px] font-bold mb-4" style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}>{faq.name}</h4>
-                  <p className="text-[#8A8F9E] leading-relaxed text-[15px]">{faq.acceptedAnswer.text}</p>
+                  <h4 className="text-[#111827] text-[18px] font-bold mb-4" style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}>{faq.name}</h4>
+                  <p className="text-[#111827] leading-relaxed text-[15px]">{faq.acceptedAnswer.text}</p>
                 </div>
               ))}
             </div>

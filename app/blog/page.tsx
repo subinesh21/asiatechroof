@@ -24,11 +24,11 @@ export default function BlogListingPage() {
         bgImage="https://images.unsplash.com/photo-1541888941295-1e3ff2ca51cb?w=1400&q=80"
       />
 
-      <section className="bg-[#141820] py-20 px-6 md:px-[60px]">
+      <section className="bg-[#F9FAFB] py-20 px-6 md:px-[60px]">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-[1200px] mx-auto">
           {blogPosts.map((post, i) => (
             <Reveal key={post.slug} delay={(i % 3) as 0 | 1 | 2}>
-              <Link href={`/blog/${post.slug}`} className="group no-underline block h-full flex flex-col bg-[#1C2130]">
+              <Link href={`/blog/${post.slug}`} className="group no-underline block h-full flex flex-col bg-[#F3F4F6]">
                 <div className="relative aspect-video overflow-hidden">
                   <Image 
                     src={post.image} 
@@ -36,16 +36,16 @@ export default function BlogListingPage() {
                     fill 
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute top-4 left-4 bg-[#C9A84C] text-[#0D0F12] px-3 py-1 text-[10px] uppercase font-bold tracking-[1px]">
+                  <div className="absolute top-4 left-4 bg-[#C9A84C] text-[#111827] px-3 py-1 text-[10px] uppercase font-bold tracking-[1px]">
                     {post.category}
                   </div>
                 </div>
                 <div className="p-8 flex flex-col flex-grow">
-                  <div className="text-[12px] text-[#8A8F9E] mb-3">{post.date}</div>
-                  <h3 className="text-[#F0EDE6] text-[24px] mb-4 leading-tight group-hover:text-[#C9A84C] transition-colors" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>
+                  <div className="text-[12px] text-[#111827] mb-3">{post.date}</div>
+                  <h3 className="text-[#111827] text-[24px] mb-4 leading-tight group-hover:text-[#C9A84C] transition-colors" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>
                     {post.title}
                   </h3>
-                  <p className="text-[#8A8F9E] text-[14px] leading-relaxed mb-6 line-clamp-3">
+                  <p className="text-[#111827] text-[14px] leading-relaxed mb-6 line-clamp-3">
                     {post.excerpt}
                   </p>
                   <div className="mt-auto text-[#C9A84C] uppercase text-[11px] font-bold tracking-[2px]">

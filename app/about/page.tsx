@@ -64,11 +64,11 @@ export default function AboutPage() {
       />
 
       {/* MVV */}
-      <section className="bg-[#141820] py-16 md:py-[100px] px-6 md:px-[60px]">
+      <section className="bg-[#F9FAFB] py-16 md:py-[100px] px-6 md:px-[60px]">
         <Reveal><span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-4 block">Our Foundation</span></Reveal>
         <Reveal delay={1}>
           <h2
-            className="leading-none text-[#F0EDE6] mb-[60px]"
+            className="leading-none text-[#111827] mb-[60px]"
             style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(44px, 6vw, 72px)' }}
           >
             What Drives Us
@@ -78,7 +78,7 @@ export default function AboutPage() {
           {mvvCards.map((card, i) => (
             <Reveal key={i} delay={i as 0 | 1 | 2}>
               <div
-                className="bg-[#1C2130] p-[48px_36px] border-t-[3px] border-[#C9A84C] relative overflow-hidden"
+                className="bg-[#F3F4F6] p-[48px_36px] border-t-[3px] border-[#C9A84C] relative overflow-hidden"
                 data-label={card.letter}
               >
                 <div
@@ -93,12 +93,12 @@ export default function AboutPage() {
                 </div>
                 <span className="text-[9px] tracking-[4px] uppercase text-[#C9A84C] mb-4 block">{card.label}</span>
                 <div
-                  className="text-[36px] text-[#F0EDE6] mb-4"
+                  className="text-[36px] text-[#111827] mb-4"
                   style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}
                 >
                   {card.title}
                 </div>
-                <p className="text-[14px] text-[#8A8F9E] leading-[1.8]">{card.text}</p>
+                <p className="text-[14px] text-[#111827] leading-[1.8]">{card.text}</p>
               </div>
             </Reveal>
           ))}
@@ -106,7 +106,7 @@ export default function AboutPage() {
       </section>
 
       {/* STORY */}
-      <section className="bg-[#0D0F12] py-16 md:py-[100px] px-6 md:px-[60px]">
+      <section className="bg-[#FFFFFF] py-16 md:py-[100px] px-6 md:px-[60px]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-[100px] items-center">
           <Reveal>
             <div className="relative h-[560px]">
@@ -114,7 +114,7 @@ export default function AboutPage() {
                 className="w-full h-full bg-cover bg-center"
                 style={{ backgroundImage: "url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80')" }}
               />
-              <div className="absolute bottom-[-24px] right-[-24px] bg-[#C9A84C] text-[#0D0F12] w-40 h-40 flex flex-col items-center justify-center text-center">
+              <div className="absolute bottom-[-24px] right-[-24px] bg-[#C9A84C] text-[#111827] w-40 h-40 flex flex-col items-center justify-center text-center">
                 <div className="leading-none" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: '56px' }}>20+</div>
                 <div className="text-[9px] font-bold tracking-[2px] uppercase mt-1">Years of<br />Excellence</div>
               </div>
@@ -124,25 +124,25 @@ export default function AboutPage() {
           <Reveal delay={1}>
             <span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-4 block">Our Story</span>
             <h2
-              className="leading-none text-[#F0EDE6] mb-8"
+              className="leading-none text-[#111827] mb-8"
               style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(44px, 6vw, 72px)' }}
             >
               Built on<br />Trust &<br />Expertise
             </h2>
-            <p className="text-[17px] text-[#F0EDE6] leading-[1.9] mb-5">
+            <p className="text-[17px] text-[#111827] leading-[1.9] mb-5">
               Asia Tech Roofing was founded with a single purpose: to provide Singapore's properties with roofing solutions they can trust.
             </p>
-            <p className="text-[15px] text-[#8A8F9E] leading-[1.9] mb-5">
+            <p className="text-[15px] text-[#111827] leading-[1.9] mb-5">
               Over two decades, we've completed more than 500 projects across Singapore's residential, commercial, and industrial sectors.
             </p>
-            <p className="text-[15px] text-[#8A8F9E] leading-[1.9]">
+            <p className="text-[15px] text-[#111827] leading-[1.9]">
               Our team of certified workers brings not just technical skill, but genuine care for every client's property. We treat each roof as if it were our own.
             </p>
             <div className="flex flex-wrap gap-8 md:gap-10 mt-10 pt-10 border-t border-[rgba(201,168,76,0.2)]">
               {[{ num: '500+', label: 'Projects Done' }, { num: '100%', label: 'Certified Team' }, { num: '24hr', label: 'Response' }].map((s, i) => (
                 <div key={i}>
                   <div className="text-[44px] text-[#C9A84C] leading-none" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>{s.num}</div>
-                  <div className="text-[11px] text-[#8A8F9E] tracking-[1.5px] uppercase mt-1">{s.label}</div>
+                  <div className="text-[11px] text-[#111827] tracking-[1.5px] uppercase mt-1">{s.label}</div>
                 </div>
               ))}
             </div>
@@ -151,11 +151,11 @@ export default function AboutPage() {
       </section>
 
       {/* TIMELINE */}
-      <section className="bg-[#141820] py-16 md:py-[100px] px-6 md:px-[60px]">
+      <section className="bg-[#F9FAFB] py-16 md:py-[100px] px-6 md:px-[60px]">
         <div className="mb-[72px]">
           <Reveal><span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-4 block">Our Journey</span></Reveal>
           <Reveal delay={1}>
-            <h2 className="leading-none text-[#F0EDE6]" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(44px, 6vw, 72px)' }}>
+            <h2 className="leading-none text-[#111827]" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(44px, 6vw, 72px)' }}>
               Milestones That<br />Define Us
             </h2>
           </Reveal>
@@ -168,27 +168,27 @@ export default function AboutPage() {
                 {item.side === 'left' ? (
                   <>
                     <div className="text-right pr-10">
-                      <div className="font-bold text-[17px] text-[#F0EDE6] mb-2">{item.title}</div>
-                      <p className="text-[13px] text-[#8A8F9E] leading-[1.7]">{item.desc}</p>
+                      <div className="font-bold text-[17px] text-[#111827] mb-2">{item.title}</div>
+                      <p className="text-[13px] text-[#111827] leading-[1.7]">{item.desc}</p>
                     </div>
                     <div className="pl-10">
                       <div className="text-[48px] text-[#C9A84C] leading-none" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>{item.year}</div>
-                      <div className="text-[10px] tracking-[2px] uppercase text-[#8A8F9E]">{item.sublabel}</div>
+                      <div className="text-[10px] tracking-[2px] uppercase text-[#111827]">{item.sublabel}</div>
                     </div>
                   </>
                 ) : (
                   <>
                     <div className="text-right pr-10">
                       <div className="text-[48px] text-[#C9A84C] leading-none" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>{item.year}</div>
-                      <div className="text-[10px] tracking-[2px] uppercase text-[#8A8F9E]">{item.sublabel}</div>
+                      <div className="text-[10px] tracking-[2px] uppercase text-[#111827]">{item.sublabel}</div>
                     </div>
                     <div className="pl-10">
-                      <div className="font-bold text-[17px] text-[#F0EDE6] mb-2">{item.title}</div>
-                      <p className="text-[13px] text-[#8A8F9E] leading-[1.7]">{item.desc}</p>
+                      <div className="font-bold text-[17px] text-[#111827] mb-2">{item.title}</div>
+                      <p className="text-[13px] text-[#111827] leading-[1.7]">{item.desc}</p>
                     </div>
                   </>
                 )}
-                <div className="absolute left-1/2 top-2 w-3.5 h-3.5 bg-[#C9A84C] border-[3px] border-[#141820] rounded-full transform -translate-x-1/2" />
+                <div className="absolute left-1/2 top-2 w-3.5 h-3.5 bg-[#C9A84C] border-[3px] border-[#F9FAFB] rounded-full transform -translate-x-1/2" />
               </div>
             </Reveal>
           ))}
@@ -196,23 +196,23 @@ export default function AboutPage() {
       </section>
 
       {/* CERTIFICATIONS */}
-      <section className="bg-[#0D0F12] py-12 md:py-[80px] px-6 md:px-[60px]">
+      <section className="bg-[#FFFFFF] py-12 md:py-[80px] px-6 md:px-[60px]">
         <Reveal><span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-4 block">Accreditations</span></Reveal>
         <Reveal delay={1}>
-          <h2 className="leading-none text-[#F0EDE6] mb-12" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(44px, 6vw, 72px)' }}>
+          <h2 className="leading-none text-[#111827] mb-12" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(44px, 6vw, 72px)' }}>
             Certified &<br />Recognised
           </h2>
         </Reveal>
         <div className="grid grid-cols-2 md:grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[2px]">
           {certs.map((cert, i) => (
             <Reveal key={i} delay={i as 0 | 1 | 2 | 3} className="h-full">
-              <div className="h-full bg-[#1C2130] p-[36px_28px] flex flex-col xl:flex-row xl:items-center gap-5 border border-[rgba(201,168,76,0.2)] transition-all duration-200 hover:border-[#C9A84C]">
+              <div className="h-full bg-[#F3F4F6] p-[36px_28px] flex flex-col xl:flex-row xl:items-center gap-5 border border-[rgba(201,168,76,0.2)] transition-all duration-200 hover:border-[#C9A84C]">
                 <div className="w-11 h-11 min-w-[44px] border border-[#C9A84C] flex items-center justify-center text-[#C9A84C] text-lg">
                   {cert.icon}
                 </div>
                 <div>
-                  <div className="font-bold text-[13px] text-[#F0EDE6]">{cert.name}</div>
-                  <div className="text-[11px] text-[#8A8F9E] mt-0.5">{cert.body}</div>
+                  <div className="font-bold text-[13px] text-[#111827]">{cert.name}</div>
+                  <div className="text-[11px] text-[#111827] mt-0.5">{cert.body}</div>
                 </div>
               </div>
             </Reveal>

@@ -50,7 +50,7 @@ export default function RoofLeakRepairPage() {
       <Navbar />
 
       {/* HERO SECTION */}
-      <section className="relative pt-[180px] pb-[100px] px-6 md:px-[60px] bg-[#0D0F12] overflow-hidden">
+      <section className="relative pt-[180px] pb-[100px] px-6 md:px-[60px] bg-[#FFFFFF] overflow-hidden">
         <div className="absolute inset-0 z-0 text-center">
           <Image
             src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1600&q=80"
@@ -64,26 +64,26 @@ export default function RoofLeakRepairPage() {
           <Reveal>
             <span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-6 block">24/7 Emergency Service</span>
             <h1 
-              className="text-[#F0EDE6] leading-[0.95] mb-8"
+              className="text-[#111827] leading-[0.95] mb-8"
               style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(56px, 10vw, 110px)' }}
             >
               FAST <span className="text-[#C9A84C]">ROOF LEAK</span> <br />
               REPAIR SINGAPORE
             </h1>
-            <p className="text-[18px] text-[#8A8F9E] leading-[1.7] max-w-[700px] mx-auto mb-12">
+            <p className="text-[18px] text-[#111827] leading-[1.7] max-w-[700px] mx-auto mb-12">
               Water leaking into your living room? Ceiling paint peeling? Don't wait for structural damage. Call Singapore's most responsive leak repair specialists now for an instant fix.
             </p>
             <div className="flex flex-col sm:flex-row gap-5 justify-center">
               <a 
                 href="tel:+6590545431" 
-                className="bg-[#C9A84C] text-[#0D0F12] px-10 py-5 text-[14px] font-bold tracking-[2px] uppercase hover:bg-white transition-all text-center no-underline"
+                className="bg-[#C9A84C] text-[#111827] px-10 py-5 text-[14px] font-bold tracking-[2px] uppercase hover:bg-white transition-all text-center no-underline"
                 style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
               >
                 Call: +65 9054 5431
               </a>
               <a 
                 href="https://wa.me/6590545431" 
-                className="bg-[#25D366] text-white px-10 py-5 text-[14px] font-bold tracking-[2px] uppercase hover:bg-white hover:text-[#0D0F12] transition-all text-center no-underline flex items-center justify-center gap-2"
+                className="bg-[#25D366] text-[#111827] px-10 py-5 text-[14px] font-bold tracking-[2px] uppercase hover:bg-white hover:text-[#111827] transition-all text-center no-underline flex items-center justify-center gap-2"
                 style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
               >
                 WhatsApp Emergency
@@ -94,7 +94,7 @@ export default function RoofLeakRepairPage() {
       </section>
 
       {/* PAIN POINT CENTERED CONTENT */}
-      <section className="py-20 px-6 md:px-[60px] bg-[#141820]">
+      <section className="py-20 px-6 md:px-[60px] bg-[#F9FAFB]">
          <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
               { t: "Ceiling Water Stains", d: "Yellowish brown patches on your ceiling are the first sign of an ongoing leak. We stop the source before your ceiling collapses." },
@@ -102,22 +102,22 @@ export default function RoofLeakRepairPage() {
               { t: "Failed Joint Sealants", d: "Old silicon and joint fillers dry out in Singapore's heat. We re-seal all vulnerable joints with commercial-grade polymer." }
             ].map((card, i) => (
               <Reveal key={i} delay={i as 0 | 1 | 2}>
-                 <div className="bg-[#1C2130] p-10 h-full border-b-2 border-[#C9A84C]">
-                   <h3 className="text-[#F0EDE6] text-[24px] mb-4" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>{card.t}</h3>
-                   <p className="text-[#8A8F9E] text-[14px] leading-relaxed">{card.d}</p>
+                 <div className="bg-[#F3F4F6] p-10 h-full border-b-2 border-[#C9A84C]">
+                   <h3 className="text-[#111827] text-[24px] mb-4" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>{card.t}</h3>
+                   <p className="text-[#111827] text-[14px] leading-relaxed">{card.d}</p>
                  </div>
               </Reveal>
             ))}
          </div>
       </section>
 
-      <section className="py-20 px-6 md:px-[60px] bg-[#0D0F12]">
+      <section className="py-20 px-6 md:px-[60px] bg-[#FFFFFF]">
          <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <Reveal>
-               <h2 className="text-[#F0EDE6] leading-tight mb-8" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: '56px' }}>
+               <h2 className="text-[#111827] leading-tight mb-8" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: '56px' }}>
                  Stop the Drip, <br /><span className="text-[#C9A84C]">Protect Your Value</span>
                </h2>
-               <div className="prose prose-invert text-[#8A8F9E] text-[16px] leading-[1.8]">
+               <div className="prose prose-invert text-[#111827] text-[16px] leading-[1.8]">
                  <p className="mb-6">
                    Every hour a leak is ignored, the humidity inside your concrete slabs and roof tiles increases. This leads to <strong>concrete spalling</strong>, <strong>mold growth</strong>, and <strong>electrical hazards</strong>.
                  </p>

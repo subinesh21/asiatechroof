@@ -15,7 +15,7 @@ const StarRating = ({ rating }: { rating: number }) => {
   return (
     <div className="flex gap-1">
       {[...Array(5)].map((_, i) => (
-        <span key={i} className={i < Math.round(rating) ? "text-[#C9A84C]" : "text-[#8A8F9E]"}>
+        <span key={i} className={i < Math.round(rating) ? "text-[#C9A84C]" : "text-[#111827]"}>
           {i < Math.round(rating) ? '★' : '☆'}
         </span>
       ))}
@@ -32,7 +32,7 @@ const ReviewCard = ({ review }: { review: Review }) => {
   return (
     <div className="bg-[#16181D] border border-[#C9A84C]/20 p-8 flex flex-col h-full hover:border-[#C9A84C]/50 transition-colors">
       <div className="flex items-center gap-4 mb-6">
-        <div className="relative w-12 h-12 rounded-full overflow-hidden bg-[#242933] flex items-center justify-center text-[#F0EDE6] font-bold">
+        <div className="relative w-12 h-12 rounded-full overflow-hidden bg-[#242933] flex items-center justify-center text-[#111827] font-bold">
           {review.profile_photo_url ? (
             <Image 
               src={review.profile_photo_url} 
@@ -45,10 +45,10 @@ const ReviewCard = ({ review }: { review: Review }) => {
           )}
         </div>
         <div>
-          <div className="text-[#F0EDE6] font-bold text-[16px]" style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}>
+          <div className="text-[#111827] font-bold text-[16px]" style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}>
             {review.author_name}
           </div>
-          <div className="text-[#8A8F9E] text-[12px]">{review.relative_time_description}</div>
+          <div className="text-[#111827] text-[12px]">{review.relative_time_description}</div>
         </div>
       </div>
       
@@ -56,7 +56,7 @@ const ReviewCard = ({ review }: { review: Review }) => {
         <StarRating rating={review.rating} />
       </div>
 
-      <div className="text-[#8A8F9E] text-[14px] leading-relaxed mb-6 flex-grow">
+      <div className="text-[#111827] text-[14px] leading-relaxed mb-6 flex-grow">
         {displayedText}
         {isLong && (
           <button 
@@ -68,7 +68,7 @@ const ReviewCard = ({ review }: { review: Review }) => {
         )}
       </div>
 
-      <div className="text-right text-[10px] uppercase tracking-[1px] text-[#8A8F9E]/50 font-bold">
+      <div className="text-right text-[10px] uppercase tracking-[1px] text-[#111827]/50 font-bold">
         Google
       </div>
     </div>

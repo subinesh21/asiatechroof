@@ -45,7 +45,7 @@ export default function RoofRepairPage() {
       />
 
       {/* Service Nav */}
-      <div className="bg-[#141820] border-b border-[rgba(201,168,76,0.2)]">
+      <div className="bg-[#F9FAFB] border-b border-[rgba(201,168,76,0.2)]">
         <div className="flex px-6 md:px-[60px]">
           {services.map((s) => (
             <Link
@@ -54,7 +54,7 @@ export default function RoofRepairPage() {
               className={`px-6 py-4 text-[11px] tracking-[2px] uppercase font-semibold no-underline transition-all duration-200 border-b-[2px] ${
                 s.active
                   ? 'border-[#C9A84C] text-[#C9A84C]'
-                  : 'border-transparent text-[#8A8F9E] hover:text-[#C9A84C] hover:border-[#C9A84C]'
+                  : 'border-transparent text-[#111827] hover:text-[#C9A84C] hover:border-[#C9A84C]'
               }`}
               style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
             >
@@ -65,30 +65,30 @@ export default function RoofRepairPage() {
       </div>
 
       {/* MAIN DETAIL */}
-      <section className="bg-[#0D0F12] py-16 md:py-[100px] px-6 md:px-[60px]">
+      <section className="bg-[#FFFFFF] py-16 md:py-[100px] px-6 md:px-[60px]">
         <div className="grid grid-cols-2 gap-20 items-center">
           <Reveal>
             <div
               className="h-[560px] bg-cover bg-center relative"
               style={{ backgroundImage: "url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80')" }}
             >
-              <div className="absolute bottom-0 left-0 bg-[#C9A84C] text-[#0D0F12] px-5 py-2.5 text-[10px] font-bold tracking-[2px] uppercase">
+              <div className="absolute bottom-0 left-0 bg-[#C9A84C] text-[#111827] px-5 py-2.5 text-[10px] font-bold tracking-[2px] uppercase">
                 Roof Repair Specialists
               </div>
             </div>
           </Reveal>
           <Reveal delay={1}>
             <div className="leading-none mb-[-12px]" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: '96px', color: 'rgba(201,168,76,0.12)' }}>01</div>
-            <div className="text-[#F0EDE6] mb-5" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: '56px' }}>ROOF REPAIR</div>
-            <p className="text-[15px] text-[#8A8F9E] leading-[1.9] mb-8">
+            <div className="text-[#111827] mb-5" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: '56px' }}>ROOF REPAIR</div>
+            <p className="text-[15px] text-[#111827] leading-[1.9] mb-8">
               From minor patch repairs to complete roof replacements, our certified team handles all roof types with precision and care. We assess every job thoroughly before recommending the most cost-effective, long-lasting solution.
             </p>
-            <p className="text-[15px] text-[#8A8F9E] leading-[1.9] mb-8">
+            <p className="text-[15px] text-[#111827] leading-[1.9] mb-8">
               Whether you're dealing with storm damage, aging materials, or routine wear, we have the expertise and equipment to restore your roof to full performance — quickly and affordably.
             </p>
             <ul className="list-none mb-9">
               {bullets.map((b, i) => (
-                <li key={i} className="text-[13px] text-[#8A8F9E] py-2.5 border-b border-[rgba(201,168,76,0.2)] flex gap-3 items-start">
+                <li key={i} className="text-[13px] text-[#111827] py-2.5 border-b border-[rgba(201,168,76,0.2)] flex gap-3 items-start">
                   <span className="text-[#C9A84C] flex-shrink-0">→</span>
                   {b}
                 </li>
@@ -96,7 +96,7 @@ export default function RoofRepairPage() {
             </ul>
             <Link
               href="/contact"
-              className="bg-[#C9A84C] text-[#0D0F12] border-2 border-[#C9A84C] px-8 py-[15px] font-bold text-[12px] tracking-[2px] uppercase transition-all duration-200 hover:bg-transparent hover:text-[#C9A84C] no-underline inline-block"
+              className="bg-[#C9A84C] text-[#111827] border-2 border-[#C9A84C] px-8 py-[15px] font-bold text-[12px] tracking-[2px] uppercase transition-all duration-200 hover:bg-transparent hover:text-[#C9A84C] no-underline inline-block"
               style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
             >
               Get Free Inspection
@@ -106,9 +106,9 @@ export default function RoofRepairPage() {
       </section>
 
       {/* WHY CHOOSE */}
-      <section className="bg-[#141820] py-16 md:py-[100px] px-6 md:px-[60px]">
+      <section className="bg-[#F9FAFB] py-16 md:py-[100px] px-6 md:px-[60px]">
         <Reveal>
-          <h2 className="leading-none text-[#F0EDE6] mb-[60px]" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(44px, 6vw, 72px)' }}>
+          <h2 className="leading-none text-[#111827] mb-[60px]" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(44px, 6vw, 72px)' }}>
             Why Choose Us<br />For Roof Repair
           </h2>
         </Reveal>
@@ -122,10 +122,10 @@ export default function RoofRepairPage() {
             { icon: '🛡️', title: 'Fully Certified', desc: 'BCA licensed and fully insured. You are protected at every stage of the job.' },
           ].map((card, i) => (
             <Reveal key={i} delay={(i % 3) as 0 | 1 | 2}>
-              <div className="bg-[#1C2130] p-[36px_32px]">
+              <div className="bg-[#F3F4F6] p-[36px_32px]">
                 <div className="text-[32px] mb-4">{card.icon}</div>
-                <div className="font-bold text-[16px] text-[#F0EDE6] mb-3" style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}>{card.title}</div>
-                <p className="text-[13px] text-[#8A8F9E] leading-[1.7]">{card.desc}</p>
+                <div className="font-bold text-[16px] text-[#111827] mb-3" style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}>{card.title}</div>
+                <p className="text-[13px] text-[#111827] leading-[1.7]">{card.desc}</p>
               </div>
             </Reveal>
           ))}

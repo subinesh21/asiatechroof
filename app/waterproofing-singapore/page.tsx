@@ -50,7 +50,7 @@ export default function WaterproofingSingaporePage() {
       <Navbar />
 
       {/* HERO SECTION */}
-      <section className="relative pt-[180px] pb-[100px] px-6 md:px-[60px] bg-[#0D0F12] overflow-hidden">
+      <section className="relative pt-[180px] pb-[100px] px-6 md:px-[60px] bg-[#FFFFFF] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1600&q=80"
@@ -64,27 +64,27 @@ export default function WaterproofingSingaporePage() {
           <Reveal>
             <span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-6 block">Premium Leak Protection</span>
             <h1 
-              className="text-[#F0EDE6] leading-[0.95] mb-8"
+              className="text-[#111827] leading-[0.95] mb-8"
               style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(56px, 10vw, 110px)' }}
             >
               ADVANCED <br />
               <span className="text-[#C9A84C]">WATERPROOFING</span> <br />
               SINGAPORE
             </h1>
-            <p className="text-[18px] text-[#8A8F9E] leading-[1.7] max-w-[600px] mb-12">
+            <p className="text-[18px] text-[#111827] leading-[1.7] max-w-[600px] mb-12">
               Advanced membrane technology and professional PU injection for permanent leak protection. Singapore's climate requires waterproofing built to withstand extreme heat and tropical rain.
             </p>
             <div className="flex flex-col sm:flex-row gap-5">
               <a 
                 href="https://wa.me/6590545431" 
-                className="bg-[#25D366] text-white px-10 py-5 text-[14px] font-bold tracking-[2px] uppercase hover:bg-white hover:text-[#0D0F12] transition-all text-center no-underline flex items-center justify-center gap-2"
+                className="bg-[#25D366] text-[#111827] px-10 py-5 text-[14px] font-bold tracking-[2px] uppercase hover:bg-white hover:text-[#111827] transition-all text-center no-underline flex items-center justify-center gap-2"
                 style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
               >
                 WhatsApp Quote
               </a>
               <Link 
                 href="/contact" 
-                className="bg-transparent border-2 border-[rgba(201,168,76,0.3)] text-[#F0EDE6] px-10 py-5 text-[14px] font-bold tracking-[2px] uppercase hover:border-[#C9A84C] transition-all text-center no-underline inline-block"
+                className="bg-transparent border-2 border-[rgba(201,168,76,0.3)] text-[#111827] px-10 py-5 text-[14px] font-bold tracking-[2px] uppercase hover:border-[#C9A84C] transition-all text-center no-underline inline-block"
                 style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
               >
                 View Case Studies
@@ -95,11 +95,11 @@ export default function WaterproofingSingaporePage() {
       </section>
 
       {/* DETAILED WATERPROOFING CONTENT */}
-      <section className="py-20 px-6 md:px-[60px] bg-[#141820]">
+      <section className="py-20 px-6 md:px-[60px] bg-[#F9FAFB]">
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
             <h2 
-              className="text-[#F0EDE6] leading-none mb-10 text-center"
+              className="text-[#111827] leading-none mb-10 text-center"
               style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: '64px' }}
             >
               The Science of <span className="text-[#C9A84C]">Dry Buildings</span>
@@ -108,25 +108,25 @@ export default function WaterproofingSingaporePage() {
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             <Reveal delay={1}>
-              <div className="bg-[#1C2130] p-10 h-full border-t-2 border-[#C9A84C]">
-                <h3 className="text-[#F0EDE6] text-[24px] mb-6" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>Torch-On Membranes</h3>
-                <p className="text-[#8A8F9E] text-[15px] leading-relaxed">
+              <div className="bg-[#F3F4F6] p-10 h-full border-t-2 border-[#C9A84C]">
+                <h3 className="text-[#111827] text-[24px] mb-6" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>Torch-On Membranes</h3>
+                <p className="text-[#111827] text-[15px] leading-relaxed">
                   Ideal for flat RC roofs and industrial slabs. We use high-quality APP or SBS modified bitumen membranes heat-welded for a 100% seamless watertight seal. This is the industry gold standard for long-term protection.
                 </p>
               </div>
             </Reveal>
             <Reveal delay={2}>
-              <div className="bg-[#1C2130] p-10 h-full border-t-2 border-[#C9A84C]">
-                <h3 className="text-[#F0EDE6] text-[24px] mb-6" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>Liquid PU Coatings</h3>
-                <p className="text-[#8A8F9E] text-[15px] leading-relaxed">
+              <div className="bg-[#F3F4F6] p-10 h-full border-t-2 border-[#C9A84C]">
+                <h3 className="text-[#111827] text-[24px] mb-6" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>Liquid PU Coatings</h3>
+                <p className="text-[#111827] text-[15px] leading-relaxed">
                   A multi-layered liquid waterproofing system that cures into a flexible, rubber-like skin. Perfect for balconies, terraces, and roofing with complex geometries where membranes might fail.
                 </p>
               </div>
             </Reveal>
             <Reveal delay={3}>
-              <div className="bg-[#1C2130] p-10 h-full border-t-2 border-[#C9A84C]">
-                <h3 className="text-[#F0EDE6] text-[24px] mb-6" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>PU Injection Grouting</h3>
-                <p className="text-[#8A8F9E] text-[15px] leading-relaxed">
+              <div className="bg-[#F3F4F6] p-10 h-full border-t-2 border-[#C9A84C]">
+                <h3 className="text-[#111827] text-[24px] mb-6" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>PU Injection Grouting</h3>
+                <p className="text-[#111827] text-[15px] leading-relaxed">
                   An advanced "no hacking" solution for concrete cracks. We inject high-pressure Polyurethane grout that expands upon contact with moisture to seal leaks from the inside out instantly.
                 </p>
               </div>
@@ -136,17 +136,17 @@ export default function WaterproofingSingaporePage() {
       </section>
 
       {/* AREA TARGETING */}
-      <section className="py-20 px-6 md:px-[60px] bg-[#0D0F12]">
+      <section className="py-20 px-6 md:px-[60px] bg-[#FFFFFF]">
         <div className="max-w-[1000px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
           <Reveal>
             <h2 
-              className="text-[#F0EDE6] mb-8"
+              className="text-[#111827] mb-8"
               style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: '48px' }}
             >
               Waterproofing <br />
               <span className="text-[#C9A84C]">Anywhere in Singapore</span>
             </h2>
-            <div className="space-y-6 text-[#8A8F9E] text-[16px] leading-relaxed">
+            <div className="space-y-6 text-[#111827] text-[16px] leading-relaxed">
               <p>
                 From <strong>West Coast Jurong</strong> to <strong>East Coast Pasir Ris</strong>, we serve residential, commercial, and industrial clients island-wide.
               </p>

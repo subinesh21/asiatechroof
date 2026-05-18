@@ -50,7 +50,7 @@ export default function HDBRoofRepairPage() {
       <Navbar />
 
       {/* HERO SECTION */}
-      <section className="relative pt-[180px] pb-[100px] px-6 md:px-[60px] bg-[#0D0F12] overflow-hidden">
+      <section className="relative pt-[180px] pb-[100px] px-6 md:px-[60px] bg-[#FFFFFF] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1513584684374-8bdb74838a0f?w=1600&q=80"
@@ -64,19 +64,19 @@ export default function HDBRoofRepairPage() {
           <Reveal>
             <span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-6 block">Residiential Excellence</span>
             <h1 
-              className="text-[#F0EDE6] leading-[0.95] mb-8"
+              className="text-[#111827] leading-[0.95] mb-8"
               style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(56px, 10vw, 110px)' }}
             >
               HDB <span className="text-[#C9A84C]">ROOF & CEILING</span> <br />
               LEAK REPAIR
             </h1>
-            <p className="text-[18px] text-[#8A8F9E] leading-[1.7] max-w-[600px] mb-12">
+            <p className="text-[18px] text-[#111827] leading-[1.7] max-w-[600px] mb-12">
               The leading choice for HDB residents across Singapore. We resolve top-floor roofing issues and inter-floor ceiling leaks with minimal disruption and certified waterproofing standards.
             </p>
             <div className="flex flex-col sm:flex-row gap-5">
               <a 
                 href="https://wa.me/6590545431" 
-                className="bg-[#25D366] text-white px-10 py-5 text-[14px] font-bold tracking-[2px] uppercase hover:bg-white hover:text-[#0D0F12] transition-all text-center no-underline flex items-center justify-center gap-2"
+                className="bg-[#25D366] text-[#111827] px-10 py-5 text-[14px] font-bold tracking-[2px] uppercase hover:bg-white hover:text-[#111827] transition-all text-center no-underline flex items-center justify-center gap-2"
                 style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
               >
                 Get HDB Assessment
@@ -87,21 +87,21 @@ export default function HDBRoofRepairPage() {
       </section>
 
       {/* COMPREHENSIVE HDB CONTENT */}
-      <section className="py-20 px-6 md:px-[60px] bg-[#141820]">
+      <section className="py-20 px-6 md:px-[60px] bg-[#F9FAFB]">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <Reveal>
             <h2 
-              className="text-[#F0EDE6] leading-none mb-10"
+              className="text-[#111827] leading-none mb-10"
               style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: '56px' }}
             >
               Expert Fixes for <br />
               <span className="text-[#C9A84C]">HDB Ceiling Leaks</span>
             </h2>
-            <div className="pr-4 space-y-6 text-[#8A8F9E] text-[16px] leading-relaxed">
+            <div className="pr-4 space-y-6 text-[#111827] text-[16px] leading-relaxed">
               <p>
                 Dealing with an HDB roof leak or ceiling leakage requires a specific understanding of HDB's building regulations and slab structures. At Asia Tech Roofing, we provide <strong>HDB-approved waterproofing solutions</strong> that are fast, effective, and clean.
               </p>
-              <h3 className="text-[#F0EDE6] text-[22px] font-bold mt-8" style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}>Our HDB Leak Repair Process:</h3>
+              <h3 className="text-[#111827] text-[22px] font-bold mt-8" style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}>Our HDB Leak Repair Process:</h3>
               <ol className="list-decimal pl-6 space-y-3">
                 <li><strong>Thermal Imaging Diagnosis:</strong> We locate the water source behind the concrete slab without destructive testing.</li>
                 <li><strong>PU Injection Grouting:</strong> We address the leak from the underside of the slab, sealing cracks deep within the concrete.</li>
@@ -110,7 +110,7 @@ export default function HDBRoofRepairPage() {
             </div>
           </Reveal>
           <Reveal delay={2}>
-            <div className="bg-[#1C2130] p-12 border border-[rgba(201,168,76,0.1)]">
+            <div className="bg-[#F3F4F6] p-12 border border-[rgba(201,168,76,0.1)]">
                <h4 className="text-[#C9A84C] text-[11px] tracking-[4px] uppercase mb-6 font-bold">Client Benefits</h4>
                <ul className="space-y-6 list-none p-0">
                  {[
@@ -119,8 +119,8 @@ export default function HDBRoofRepairPage() {
                    { t: "100% Certified Workmanship", d: "We use only industrial-grade, PUB-compliant waterproofing chemicals." }
                  ].map((item, i) => (
                    <li key={i}>
-                     <div className="text-[#F0EDE6] font-bold mb-1">{item.t}</div>
-                     <div className="text-[#8A8F9E] text-[13px]">{item.d}</div>
+                     <div className="text-[#111827] font-bold mb-1">{item.t}</div>
+                     <div className="text-[#111827] text-[13px]">{item.d}</div>
                    </li>
                  ))}
                </ul>

@@ -157,10 +157,10 @@ export default function ServicesPage() {
       />
 
       {/* SERVICES OVERVIEW */}
-      <section className="bg-[#141820] py-16 md:py-[100px] px-6 md:px-[60px]">
+      <section className="bg-[#F9FAFB] py-16 md:py-[100px] px-6 md:px-[60px]">
         <Reveal><span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-4 block">What We Do</span></Reveal>
         <Reveal delay={1}>
-          <h2 className="leading-none text-[#F0EDE6] mb-[60px]" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(44px, 6vw, 72px)' }}>
+          <h2 className="leading-none text-[#111827] mb-[60px]" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(44px, 6vw, 72px)' }}>
             Complete Roofing<br />Solutions
           </h2>
         </Reveal>
@@ -169,7 +169,7 @@ export default function ServicesPage() {
             <Reveal key={i} delay={i as 0 | 1 | 2 | 3}>
               <Link
                 href={card.href}
-                className="relative bg-[#1C2130] p-[44px_32px] block border-t-[3px] border-transparent transition-all duration-300 hover:border-[#C9A84C] hover:-translate-y-1 no-underline"
+                className="relative bg-[#F3F4F6] p-[44px_32px] block border-t-[3px] border-transparent transition-all duration-300 hover:border-[#C9A84C] hover:-translate-y-1 no-underline"
               >
                 <span
                   className="absolute top-3 right-5 leading-none"
@@ -178,8 +178,8 @@ export default function ServicesPage() {
                   {card.num}
                 </span>
                 <div className="mb-6">{card.icon}</div>
-                <div className="font-bold text-[18px] text-[#F0EDE6] mb-3" style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}>{card.name}</div>
-                <p className="text-[13px] text-[#8A8F9E] leading-[1.7] mb-5">{card.desc}</p>
+                <div className="font-bold text-[18px] text-[#111827] mb-3" style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}>{card.name}</div>
+                <p className="text-[13px] text-[#6B7280] leading-[1.7] mb-5">{card.desc}</p>
                 <span className="text-[11px] tracking-[2px] uppercase text-[#C9A84C] font-semibold">Explore →</span>
               </Link>
             </Reveal>
@@ -191,16 +191,16 @@ export default function ServicesPage() {
       {serviceDetails.map((svc, i) => (
         <section
           key={i}
-          className={`py-16 md:py-[100px] px-6 md:px-[60px] ${i % 2 === 0 ? 'bg-[#0D0F12]' : 'bg-[#141820]'}`}
+          className={`py-16 md:py-[100px] px-6 md:px-[60px] ${i % 2 === 0 ? 'bg-[#FFFFFF]' : 'bg-[#F9FAFB]'}`}
         >
-          <div className={`grid grid-cols-2 gap-20 items-center ${i % 2 !== 0 ? 'direction-rtl' : ''}`}
+          <div className={`grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center ${i % 2 !== 0 ? 'direction-rtl' : ''}`}
             style={i % 2 !== 0 ? { direction: 'rtl' } : {}}>
             <Reveal>
               <div
-                className="h-[520px] bg-cover bg-center relative"
+                className="h-[400px] md:h-[520px] bg-cover bg-center relative"
                 style={{ backgroundImage: `url('${svc.img}')`, direction: 'ltr' }}
               >
-                <div className="absolute bottom-0 left-0 bg-[#C9A84C] text-[#0D0F12] px-5 py-2.5 text-[10px] font-bold tracking-[2px] uppercase">
+                <div className="absolute bottom-0 left-0 bg-[#C9A84C] text-[#111827] px-5 py-2.5 text-[10px] font-bold tracking-[2px] uppercase">
                   {svc.tag}
                 </div>
               </div>
@@ -214,15 +214,15 @@ export default function ServicesPage() {
                   {svc.num}
                 </div>
                 <div
-                  className="text-[#F0EDE6] mb-5"
+                  className="text-[#111827] mb-5"
                   style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: '56px' }}
                 >
                   {svc.title}
                 </div>
-                <p className="text-[15px] text-[#8A8F9E] leading-[1.9] mb-8">{svc.text}</p>
+                <p className="text-[15px] text-[#6B7280] leading-[1.9] mb-8">{svc.text}</p>
                 <ul className="list-none mb-9">
                   {svc.bullets.map((b, j) => (
-                    <li key={j} className="text-[13px] text-[#8A8F9E] py-2.5 border-b border-[rgba(201,168,76,0.2)] flex gap-3 items-start">
+                    <li key={j} className="text-[13px] text-[#6B7280] py-2.5 border-b border-[rgba(201,168,76,0.2)] flex gap-3 items-start">
                       <span className="text-[#C9A84C] flex-shrink-0">→</span>
                       {b}
                     </li>
@@ -230,7 +230,7 @@ export default function ServicesPage() {
                 </ul>
                 <Link
                   href={svc.href}
-                  className="bg-[#C9A84C] text-[#0D0F12] border-2 border-[#C9A84C] px-8 py-[15px] font-bold text-[12px] tracking-[2px] uppercase transition-all duration-200 hover:bg-transparent hover:text-[#C9A84C] no-underline inline-block"
+                  className="bg-[#C9A84C] text-[#FFFFFF] border-2 border-[#C9A84C] px-8 py-[15px] font-bold text-[12px] tracking-[2px] uppercase transition-all duration-200 hover:bg-transparent hover:text-[#C9A84C] no-underline inline-block"
                   style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
                 >
                   Full Service Details
@@ -242,11 +242,11 @@ export default function ServicesPage() {
       ))}
 
       {/* FAQ */}
-      <section className="bg-[#0D0F12] py-16 md:py-[100px] px-6 md:px-[60px]">
+      <section className="bg-[#FFFFFF] py-16 md:py-[100px] px-6 md:px-[60px]">
         <div className="mb-[60px]">
           <Reveal><span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-4 block">FAQ</span></Reveal>
           <Reveal delay={1}>
-            <h2 className="leading-none text-[#F0EDE6]" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(44px, 6vw, 72px)' }}>
+            <h2 className="leading-none text-[#111827]" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(44px, 6vw, 72px)' }}>
               Common Questions
             </h2>
           </Reveal>
@@ -256,7 +256,7 @@ export default function ServicesPage() {
             {faqs.map((faq, i) => (
               <div key={i} className="border-b border-[rgba(201,168,76,0.2)]">
                 <button
-                  className="w-full text-left bg-none border-none py-6 flex justify-between items-center cursor-pointer text-[#F0EDE6] font-semibold text-[15px]"
+                  className="w-full text-left bg-none border-none py-6 flex justify-between items-center cursor-pointer text-[#111827] font-semibold text-[15px]"
                   style={{ fontFamily: 'var(--font-montserrat, sans-serif)', background: 'none' }}
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                 >
@@ -269,7 +269,7 @@ export default function ServicesPage() {
                   </span>
                 </button>
                 <div className={`faq-answer ${openFaq === i ? 'open' : ''}`}>
-                  <p className="pb-6 text-[14px] text-[#8A8F9E] leading-[1.8] max-w-[680px]">{faq.a}</p>
+                  <p className="pb-6 text-[14px] text-[#6B7280] leading-[1.8] max-w-[680px]">{faq.a}</p>
                 </div>
               </div>
             ))}

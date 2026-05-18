@@ -27,7 +27,7 @@ export default function FloatingCTA() {
       {/* Scroll to Top */}
       <button
         onClick={scrollToTop}
-        className={`w-12 h-12 bg-[#1C2130] text-[#C9A84C] border border-[rgba(201,168,76,0.2)] flex items-center justify-center transition-all duration-300 hover:bg-[#C9A84C] hover:text-[#0D0F12] ${
+        className={`w-12 h-12 bg-[#F3F4F6] text-[#C9A84C] border border-[rgba(201,168,76,0.2)] flex items-center justify-center transition-all duration-300 hover:bg-[#C9A84C] hover:text-[#111827] ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
         }`}
       >
@@ -37,7 +37,7 @@ export default function FloatingCTA() {
       {/* Phone Call */}
       <a
         href="tel:+6590545431"
-        className="w-14 h-14 bg-[#C9A84C] text-[#0D0F12] flex items-center justify-center shadow-2xl transition-transform hover:scale-110 active:scale-95"
+        className="w-14 h-14 bg-[#C9A84C] text-[#111827] flex items-center justify-center shadow-2xl transition-transform hover:scale-110 active:scale-95"
         title="Call Now"
       >
         <Phone size={28} />
@@ -48,7 +48,7 @@ export default function FloatingCTA() {
         href="https://wa.me/6590545431?text=Hi%20Asia%20Tech%20Roofing,%20I'd%20like%20to%20enquire%20about..."
         target="_blank"
         rel="noopener noreferrer"
-        className="w-14 h-14 bg-[#25D366] text-white flex items-center justify-center shadow-2xl transition-transform hover:scale-110 active:scale-95"
+        className="w-14 h-14 bg-[#25D366] text-[#111827] flex items-center justify-center shadow-2xl transition-transform hover:scale-110 active:scale-95"
         title="WhatsApp Us"
       >
         <MessageCircle size={32} fill="currentColor" />

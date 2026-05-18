@@ -77,12 +77,12 @@ export default function ContactPage() {
       {/* EMERGENCY BANNER */}
       <div className="bg-[#C9A84C] py-5 px-6 md:px-[60px]">
         <div className="flex items-center justify-between flex-wrap gap-4">
-          <div className="font-bold text-[13px] text-[#0D0F12] tracking-[1px]" style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}>
+          <div className="font-bold text-[13px] text-[#111827] tracking-[1px]" style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}>
             🚨 Emergency Roof Leak? <span className="opacity-70 font-normal ml-2">We offer 24-hour emergency response across Singapore.</span>
           </div>
           <a
             href="tel:+6590545431"
-            className="bg-[#0D0F12] text-[#C9A84C] px-6 py-2.5 font-bold text-[11px] tracking-[2px] uppercase no-underline inline-block transition-colors hover:bg-[#1C2130]"
+            className="bg-[#FFFFFF] text-[#C9A84C] px-6 py-2.5 font-bold text-[11px] tracking-[2px] uppercase no-underline inline-block transition-colors hover:bg-[#F3F4F6]"
             style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
           >
             Call Now: +65 9054 5431
@@ -91,17 +91,17 @@ export default function ContactPage() {
       </div>
 
       {/* MAIN CONTACT */}
-      <section className="bg-[#0D0F12] py-16 md:py-[100px] px-6 md:px-[60px]">
+      <section className="bg-[#FFFFFF] py-16 md:py-[100px] px-6 md:px-[60px]">
         <div className="grid grid-cols-1 md:grid-cols-[1fr_1.4fr] gap-12 md:gap-20">
           {/* Contact Info */}
           <Reveal>
             <div
-              className="text-[48px] text-[#F0EDE6] mb-6 leading-none"
+              className="text-[48px] text-[#111827] mb-6 leading-none"
               style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}
             >
               HOW TO<br />REACH US
             </div>
-            <p className="text-[15px] text-[#8A8F9E] leading-[1.8] mb-10">
+            <p className="text-[15px] text-[#111827] leading-[1.8] mb-10">
               Our team is ready to help with any roofing, waterproofing, or structural query. Reach us by phone, WhatsApp, or email — or fill in the form and we&apos;ll get back to you within one business day.
             </p>
             <div className="flex flex-col gap-[2px]">
@@ -109,15 +109,15 @@ export default function ContactPage() {
                 <a
                   key={i}
                   href={card.href}
-                  className="bg-[#1C2130] p-[24px_28px] flex items-start gap-5 border-l-[3px] border-transparent transition-all duration-200 hover:border-[#C9A84C] no-underline"
+                  className="bg-[#F3F4F6] p-[24px_28px] flex items-start gap-5 border-l-[3px] border-transparent transition-all duration-200 hover:border-[#C9A84C] no-underline"
                 >
                   <div className="w-10 h-10 min-w-[40px] border border-[#C9A84C] flex items-center justify-center text-[#C9A84C] text-[16px] mt-0.5">
                     {card.icon}
                   </div>
                   <div>
                     <div className="text-[9px] tracking-[2px] uppercase text-[#C9A84C] mb-1">{card.label}</div>
-                    <div className="font-bold text-[15px] text-[#F0EDE6] mb-0.5">{card.value}</div>
-                    <div className="text-[12px] text-[#8A8F9E]">{card.sub}</div>
+                    <div className="font-bold text-[15px] text-[#111827] mb-0.5">{card.value}</div>
+                    <div className="text-[12px] text-[#111827]">{card.sub}</div>
                   </div>
                 </a>
               ))}
@@ -128,12 +128,12 @@ export default function ContactPage() {
               <div className="flex items-center gap-4">
                 <div className="w-11 h-11 bg-[#25D366] rounded-full flex items-center justify-center text-xl">💬</div>
                 <div>
-                  <strong className="text-[14px] text-[#F0EDE6] block mb-0.5">WhatsApp Us</strong>
-                  <span className="text-[12px] text-[#8A8F9E]">Quick responses via WhatsApp</span>
+                  <strong className="text-[14px] text-[#111827] block mb-0.5">WhatsApp Us</strong>
+                  <span className="text-[12px] text-[#111827]">Quick responses via WhatsApp</span>
                 </div>
                 <a
                   href="https://wa.link/zekbfi"
-                  className="ml-auto bg-[#25D366] text-white px-5 py-2.5 font-bold text-[11px] tracking-[1.5px] uppercase no-underline inline-block transition-colors hover:bg-[#1da851]"
+                  className="ml-auto bg-[#25D366] text-[#111827] px-5 py-2.5 font-bold text-[11px] tracking-[1.5px] uppercase no-underline inline-block transition-colors hover:bg-[#1da851]"
                   style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
                 >
                   Open WhatsApp
@@ -146,12 +146,12 @@ export default function ContactPage() {
           <Reveal delay={1}>
             <div className="mb-9">
               <h3
-                className="text-[36px] text-[#F0EDE6] mb-2"
+                className="text-[36px] text-[#111827] mb-2"
                 style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}
               >
                 SEND US A MESSAGE
               </h3>
-              <p className="text-[14px] text-[#8A8F9E]">Fill in the form below and our team will contact you within one business day with a free quote.</p>
+              <p className="text-[14px] text-[#111827]">Fill in the form below and our team will contact you within one business day with a free quote.</p>
             </div>
             <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
@@ -168,7 +168,7 @@ export default function ContactPage() {
                     placeholder={field.placeholder}
                     value={formData[field.name as keyof typeof formData]}
                     onChange={handleChange}
-                    className="bg-[#1C2130] border border-[rgba(201,168,76,0.2)] text-[#F0EDE6] px-[18px] py-3.5 text-[14px] outline-none transition-colors focus:border-[#C9A84C] placeholder-[#8A8F9E] w-full"
+                    className="bg-[#F3F4F6] border border-[rgba(201,168,76,0.2)] text-[#111827] px-[18px] py-3.5 text-[14px] outline-none transition-colors focus:border-[#C9A84C] placeholder-[#111827] w-full"
                     style={{ fontFamily: 'var(--font-inter, sans-serif)' }}
                   />
                 </div>
@@ -184,7 +184,7 @@ export default function ContactPage() {
                     name={select.name}
                     value={formData[select.name as keyof typeof formData]}
                     onChange={handleChange}
-                    className="select-custom bg-[#1C2130] border border-[rgba(201,168,76,0.2)] text-[#F0EDE6] px-[18px] py-3.5 text-[14px] outline-none transition-colors focus:border-[#C9A84C] w-full cursor-pointer"
+                    className="select-custom bg-[#F3F4F6] border border-[rgba(201,168,76,0.2)] text-[#111827] px-[18px] py-3.5 text-[14px] outline-none transition-colors focus:border-[#C9A84C] w-full cursor-pointer"
                     style={{ fontFamily: 'var(--font-inter, sans-serif)' }}
                   >
                     {select.options.map((opt, i) => (
@@ -204,7 +204,7 @@ export default function ContactPage() {
                   value={formData.message}
                   onChange={handleChange}
                   rows={5}
-                  className="bg-[#1C2130] border border-[rgba(201,168,76,0.2)] text-[#F0EDE6] px-[18px] py-3.5 text-[14px] outline-none transition-colors focus:border-[#C9A84C] placeholder-[#8A8F9E] w-full resize-vertical"
+                  className="bg-[#F3F4F6] border border-[rgba(201,168,76,0.2)] text-[#111827] px-[18px] py-3.5 text-[14px] outline-none transition-colors focus:border-[#C9A84C] placeholder-[#111827] w-full resize-vertical"
                   style={{ fontFamily: 'var(--font-inter, sans-serif)' }}
                 />
               </div>
@@ -212,12 +212,12 @@ export default function ContactPage() {
               <div className="sm:col-span-2 mt-2">
                 <button
                   type="submit"
-                  className="w-full bg-[#C9A84C] text-[#0D0F12] border-2 border-[#C9A84C] py-[18px] font-bold text-[13px] tracking-[2px] uppercase transition-all duration-200 hover:bg-transparent hover:text-[#C9A84C] cursor-pointer"
+                  className="w-full bg-[#C9A84C] text-[#111827] border-2 border-[#C9A84C] py-[18px] font-bold text-[13px] tracking-[2px] uppercase transition-all duration-200 hover:bg-transparent hover:text-[#C9A84C] cursor-pointer"
                   style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
                 >
                   Send Message &amp; Request Inspection
                 </button>
-                <p className="text-[11px] text-[#8A8F9E] mt-3 leading-[1.6]">
+                <p className="text-[11px] text-[#111827] mt-3 leading-[1.6]">
                   By submitting this form, you agree to be contacted by Asia Tech Roofing regarding your enquiry. We do not share your information with third parties.
                 </p>
               </div>
@@ -227,17 +227,17 @@ export default function ContactPage() {
       </section>
 
       {/* MAP + HOURS */}
-      <section className="bg-[#141820] py-20 px-6 md:px-[60px]">
+      <section className="bg-[#F9FAFB] py-20 px-6 md:px-[60px]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-[60px] items-center">
           <Reveal>
-            <div className="h-[360px] bg-[#1C2130] border border-[rgba(201,168,76,0.2)] flex flex-col items-center justify-center gap-4">
+            <div className="h-[360px] bg-[#F3F4F6] border border-[rgba(201,168,76,0.2)] flex flex-col items-center justify-center gap-4">
               <div className="text-[40px]">📍</div>
-              <div className="text-[13px] text-[#8A8F9E]">Singapore — Island-wide Service Coverage</div>
+              <div className="text-[13px] text-[#111827]">Singapore — Island-wide Service Coverage</div>
               <a
                 href="https://maps.google.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-transparent text-[#F0EDE6] border-2 border-[rgba(240,237,230,0.3)] px-5 py-2.5 font-bold text-[11px] tracking-[2px] uppercase transition-all duration-200 hover:border-[#C9A84C] hover:text-[#C9A84C] no-underline inline-block"
+                className="bg-transparent text-[#111827] border-2 border-[rgba(240,237,230,0.3)] px-5 py-2.5 font-bold text-[11px] tracking-[2px] uppercase transition-all duration-200 hover:border-[#C9A84C] hover:text-[#C9A84C] no-underline inline-block"
                 style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
               >
                 Open in Maps
@@ -248,19 +248,19 @@ export default function ContactPage() {
           <Reveal delay={1}>
             <span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-4 block">Operating Hours</span>
             <h3
-              className="text-[40px] text-[#F0EDE6] mb-4 leading-none"
+              className="text-[40px] text-[#111827] mb-4 leading-none"
               style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}
             >
               We Cover<br />All of Singapore
             </h3>
-            <p className="text-[14px] text-[#8A8F9E] leading-[1.8] mb-7">
+            <p className="text-[14px] text-[#111827] leading-[1.8] mb-7">
               From Jurong to Changi, we provide island-wide roofing services for residential, commercial, and industrial properties.
             </p>
             <div className="grid grid-cols-2 gap-[1px] bg-[rgba(201,168,76,0.2)]">
               {hours.map((h, i) => (
-                <div key={i} className="bg-[#1C2130] p-3.5 px-5">
-                  <div className="text-[12px] font-semibold text-[#F0EDE6] mb-0.5">{h.day}</div>
-                  <div className={`text-[12px] ${h.closed ? 'text-[#8A8F9E] opacity-50' : 'text-[#8A8F9E]'}`}>{h.time}</div>
+                <div key={i} className="bg-[#F3F4F6] p-3.5 px-5">
+                  <div className="text-[12px] font-semibold text-[#111827] mb-0.5">{h.day}</div>
+                  <div className={`text-[12px] ${h.closed ? 'text-[#111827] opacity-50' : 'text-[#111827]'}`}>{h.time}</div>
                 </div>
               ))}
             </div>

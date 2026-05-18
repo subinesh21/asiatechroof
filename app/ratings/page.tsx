@@ -38,8 +38,8 @@ async function GoogleReviewsContent() {
   if (reviews.length === 0) {
     return (
       <div className="max-w-[1200px] mx-auto px-6 text-center py-20 border border-[#C9A84C]/10 bg-[#16181D]">
-        <h3 className="text-[#F0EDE6] text-[24px] mb-4" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>No Reviews Found</h3>
-        <p className="text-[#8A8F9E] mb-8">We couldn&apos;t load any reviews at this time. Please check back later or visit us directly on Google.</p>
+        <h3 className="text-[#111827] text-[24px] mb-4" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>No Reviews Found</h3>
+        <p className="text-[#111827] mb-8">We couldn&apos;t load any reviews at this time. Please check back later or visit us directly on Google.</p>
         <a 
           href={`https://search.google.com/local/writereview?placeid=${placeId}`}
           target="_blank"
@@ -68,20 +68,20 @@ async function GoogleReviewsContent() {
                 <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.92 3.36-2.08 4.48-1.28 1.28-3.12 2.24-5.76 2.24-4.48 0-8.08-3.6-8.08-8.08s3.6-8.08 8.08-8.08c2.44 0 4.24.96 5.56 2.24l2.32-2.32C18.4 2.64 15.84 1.2 12.48 1.2 6.48 1.2 1.6 6.08 1.6 12.08s4.88 10.88 10.88 10.88c3.28 0 5.76-1.08 7.84-3.28 2.08-2.08 2.8-4.96 2.8-7.28 0-.72-.08-1.44-.16-2.08h-10.48z"/>
               </svg>
             </div>
-            <h2 className="text-[#F0EDE6] text-[48px] md:text-[64px] mb-4 leading-none" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>
+            <h2 className="text-[#111827] text-[48px] md:text-[64px] mb-4 leading-none" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>
               OVERALL RATING: <span className="text-[#C9A84C]">{rating}</span>
             </h2>
             <div className="flex gap-2 text-[24px] text-[#C9A84C] mb-4">
               {'★'.repeat(5)}
             </div>
-            <p className="text-[#8A8F9E] text-[16px] mb-10 font-bold uppercase tracking-[2px]">
+            <p className="text-[#111827] text-[16px] mb-10 font-bold uppercase tracking-[2px]">
               Based on {totalReviews} Genuine Google Reviews
             </p>
             <a 
               href={`https://search.google.com/local/writereview?placeid=${placeId}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#C9A84C] text-[#0D0F12] px-12 py-5 text-[14px] font-bold tracking-[2px] uppercase hover:bg-white transition-all transform hover:scale-105"
+              className="bg-[#C9A84C] text-[#111827] px-12 py-5 text-[14px] font-bold tracking-[2px] uppercase hover:bg-white transition-all transform hover:scale-105"
               style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
             >
               Leave Us a Review on Google
@@ -100,7 +100,7 @@ async function GoogleReviewsContent() {
 
 export default function RatingsPage() {
   return (
-    <div className="bg-[#0D0F12] min-h-screen">
+    <div className="bg-[#FFFFFF] min-h-screen">
       <Navbar />
       
       <section className="pt-[180px] pb-[80px]">
@@ -108,12 +108,12 @@ export default function RatingsPage() {
           <Reveal>
             <span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-6 block font-bold">Client Success Stories</span>
             <h1 
-              className="text-[#F0EDE6] leading-none mb-8"
+              className="text-[#111827] leading-none mb-8"
               style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(56px, 10vw, 110px)' }}
             >
               WHAT OUR <span className="text-[#C9A84C]">CLIENTS SAY</span>
             </h1>
-            <p className="text-[#8A8F9E] max-w-[700px] mx-auto text-[18px] leading-relaxed mb-16">
+            <p className="text-[#111827] max-w-[700px] mx-auto text-[18px] leading-relaxed mb-16">
               With over 20 years of experience, we have built a reputation for excellence, reliability, and superior craftsmanship in Singapore.
             </p>
           </Reveal>

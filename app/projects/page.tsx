@@ -16,93 +16,233 @@ const stats = [
   { num: '4', label: 'Service Types' },
 ];
 
-const filterTabs = ['All Projects', 'Membrane Repair', 'Metal Roof', 'Waterproofing', 'Structural Works', 'Industrial', 'Commercial', 'Residential'];
+const filterTabs = ['All Projects', 'Membrane Repair', 'Metal Roof', 'Waterproofing'];
 
-const portfolioItems = [
+interface ProjectItem {
+  category: string;
+  img: string;
+  label?: string;
+  type: string;
+  name: string;
+  location: string;
+  featured?: boolean;
+  tall?: boolean;
+  minH?: string;
+}
+
+const portfolioItems: ProjectItem[] = [
+  // Membrane Repair
   {
+    category: 'Membrane Repair',
+    img: '/Projects/Membrane Repair/IMG-20221215-WA0063.webp',
+    label: 'Featured',
+    type: 'Membrane Repair',
+    name: 'Membrane Repair Works',
+    location: 'Singapore',
     featured: true,
     tall: false,
-    img: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1000&q=80',
-    label: 'Featured',
-    type: 'Industrial · Metal Roof',
-    name: 'Jurong Industrial Complex — Full Roof Overhaul',
-    location: 'Jurong West, Singapore',
     minH: 'min-h-[500px]',
   },
   {
+    category: 'Membrane Repair',
+    img: '/Projects/Membrane Repair/IMG-20221215-WA0064.webp',
+    label: undefined,
+    type: 'Membrane Repair',
+    name: 'Membrane Repair Project',
+    location: 'Singapore',
     featured: false,
     tall: false,
-    img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
-    label: undefined,
-    type: 'Commercial · Waterproofing',
-    name: 'Orchard Office Tower',
-    location: 'Orchard, Singapore',
     minH: 'min-h-[280px]',
   },
   {
-    featured: false,
-    tall: true,
-    img: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80',
+    category: 'Membrane Repair',
+    img: '/Projects/Membrane Repair/IMG-20221215-WA0065.webp',
     label: undefined,
-    type: 'Residential · Leak Repair',
-    name: 'Bukit Timah Bungalow',
-    location: 'Bukit Timah, Singapore',
-    minH: 'min-h-[564px]',
-  },
-  {
+    type: 'Membrane Repair',
+    name: 'Membrane Repair Works',
+    location: 'Singapore',
     featured: false,
     tall: false,
-    img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80',
-    label: undefined,
-    type: 'Residential · Membrane',
-    name: 'Sentosa Cove Terrace',
-    location: 'Sentosa, Singapore',
     minH: 'min-h-[280px]',
   },
   {
+    category: 'Membrane Repair',
+    img: '/Projects/Membrane Repair/IMG-20221215-WA0067.webp',
+    label: undefined,
+    type: 'Membrane Repair',
+    name: 'Membrane Repair Project',
+    location: 'Singapore',
     featured: false,
     tall: false,
-    img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80',
-    label: undefined,
-    type: 'Residential · Roof Repair',
-    name: 'Holland Road Landed Home',
-    location: 'Holland Village, Singapore',
     minH: 'min-h-[280px]',
   },
   {
+    category: 'Membrane Repair',
+    img: '/Projects/Membrane Repair/IMG-20221215-WA0068.webp',
+    label: undefined,
+    type: 'Membrane Repair',
+    name: 'Membrane Repair Works',
+    location: 'Singapore',
     featured: false,
     tall: false,
-    img: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80',
+    minH: 'min-h-[280px]',
+  },
+  // Metal Roof
+  {
+    category: 'Metal Roof',
+    img: '/Projects/Metal roof/image-1.webp',
+    label: 'Featured',
+    type: 'Metal Roof',
+    name: 'Metal Roof Installation',
+    location: 'Singapore',
+    featured: true,
+    tall: false,
+    minH: 'min-h-[500px]',
+  },
+  {
+    category: 'Metal Roof',
+    img: '/Projects/Metal roof/IMG-20221215-WA0127.webp',
     label: undefined,
-    type: 'Industrial · Structural Works',
-    name: 'Tuas Warehouse Complex',
-    location: 'Tuas, Singapore',
+    type: 'Metal Roof',
+    name: 'Metal Roof Works',
+    location: 'Singapore',
+    featured: false,
+    tall: false,
     minH: 'min-h-[280px]',
   },
   {
+    category: 'Metal Roof',
+    img: '/Projects/Metal roof/IMG-20221215-WA0129.webp',
+    label: undefined,
+    type: 'Metal Roof',
+    name: 'Metal Roof Repair',
+    location: 'Singapore',
     featured: false,
     tall: false,
-    img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80',
-    label: undefined,
-    type: 'Commercial · Waterproofing',
-    name: 'Raffles Place Office Block',
-    location: 'CBD, Singapore',
     minH: 'min-h-[280px]',
   },
   {
+    category: 'Metal Roof',
+    img: '/Projects/Metal roof/IMG-20221215-WA0130.webp',
+    label: undefined,
+    type: 'Metal Roof',
+    name: 'Metal Roof Project',
+    location: 'Singapore',
     featured: false,
     tall: false,
-    img: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80',
+    minH: 'min-h-[280px]',
+  },
+  // Waterproofing
+  {
+    category: 'Waterproofing',
+    img: '/Projects/Waterproofing/image-2.webp',
+    label: 'Featured',
+    type: 'Waterproofing',
+    name: 'Waterproofing Works',
+    location: 'Singapore',
+    featured: true,
+    tall: false,
+    minH: 'min-h-[500px]',
+  },
+  {
+    category: 'Waterproofing',
+    img: '/Projects/Waterproofing/image-3.webp',
     label: undefined,
-    type: 'Residential · Full Re-Roof',
-    name: 'Nassim Road Bungalow',
-    location: 'Nassim Road, Singapore',
+    type: 'Waterproofing',
+    name: 'Waterproofing Project',
+    location: 'Singapore',
+    featured: false,
+    tall: false,
+    minH: 'min-h-[280px]',
+  },
+  {
+    category: 'Waterproofing',
+    img: '/Projects/Waterproofing/image-4.webp',
+    label: undefined,
+    type: 'Waterproofing',
+    name: 'Waterproofing Works',
+    location: 'Singapore',
+    featured: false,
+    tall: false,
+    minH: 'min-h-[280px]',
+  },
+  {
+    category: 'Waterproofing',
+    img: '/Projects/Waterproofing/image-5.webp',
+    label: undefined,
+    type: 'Waterproofing',
+    name: 'Waterproofing Project',
+    location: 'Singapore',
+    featured: false,
+    tall: false,
+    minH: 'min-h-[280px]',
+  },
+  {
+    category: 'Waterproofing',
+    img: '/Projects/Waterproofing/image-6.webp',
+    label: undefined,
+    type: 'Waterproofing',
+    name: 'Waterproofing Works',
+    location: 'Singapore',
+    featured: false,
+    tall: false,
     minH: 'min-h-[280px]',
   },
 ];
 
+const allProjectImages: ProjectItem[] = [
+  { img: '/Projects/image-1.webp', category: 'All Projects', type: 'Roofing Project', name: 'Premium Roofing Project', location: 'Singapore', featured: true },
+  { img: '/Projects/image-2.webp', category: 'All Projects', type: 'Roofing Project', name: 'Roof Waterproofing', location: 'Singapore' },
+  { img: '/Projects/image-3.webp', category: 'All Projects', type: 'Roofing Project', name: 'Leak Prevention', location: 'Singapore' },
+  { img: '/Projects/image-4.webp', category: 'All Projects', type: 'Roofing Project', name: 'Commercial Roofing', location: 'Singapore' },
+  { img: '/Projects/image-5.webp', category: 'All Projects', type: 'Roofing Project', name: 'Industrial Waterproofing', location: 'Singapore' },
+  { img: '/Projects/image-6.webp', category: 'All Projects', type: 'Roofing Project', name: 'Residential Re-Roofing', location: 'Singapore' },
+  { img: '/Projects/IMG-20221215-WA0041.webp', category: 'All Projects', type: 'Roofing Project', name: 'Roofing Repair Works', location: 'Singapore' },
+  { img: '/Projects/IMG-20221215-WA0047.webp', category: 'All Projects', type: 'Roofing Project', name: 'Asia Tech Roofing Service', location: 'Singapore' },
+  { img: '/Projects/IMG-20221215-WA0062.webp', category: 'All Projects', type: 'Roofing Project', name: 'Metal Roof Installation', location: 'Singapore' },
+  { img: '/Projects/IMG-20221215-WA0063.webp', category: 'All Projects', type: 'Roofing Project', name: 'Membrane Repair Works', location: 'Singapore' },
+  { img: '/Projects/IMG-20221215-WA0064.webp', category: 'All Projects', type: 'Roofing Project', name: 'Premium Membrane Repair', location: 'Singapore' },
+  { img: '/Projects/IMG-20221215-WA0065.webp', category: 'All Projects', type: 'Roofing Project', name: 'Membrane Waterproofing', location: 'Singapore' },
+  { img: '/Projects/IMG-20221215-WA0067.webp', category: 'All Projects', type: 'Roofing Project', name: 'Roof Restoration', location: 'Singapore' },
+  { img: '/Projects/IMG-20221215-WA0068.webp', category: 'All Projects', type: 'Roofing Project', name: 'Flat Roof Repair', location: 'Singapore' },
+  { img: '/Projects/IMG-20221215-WA0070.webp', category: 'All Projects', type: 'Roofing Project', name: 'Roof Leak Repair', location: 'Singapore' },
+  { img: '/Projects/IMG-20221215-WA0075.webp', category: 'All Projects', type: 'Roofing Project', name: 'Structural Reinforcement', location: 'Singapore' },
+  { img: '/Projects/IMG-20221215-WA0127.webp', category: 'All Projects', type: 'Roofing Project', name: 'Metal Roof Works', location: 'Singapore' },
+  { img: '/Projects/IMG-20221215-WA0129.webp', category: 'All Projects', type: 'Roofing Project', name: 'Cladding & Flashing', location: 'Singapore' },
+  { img: '/Projects/IMG-20221215-WA0130.webp', category: 'All Projects', type: 'Roofing Project', name: 'Metal Roof Refurbishment', location: 'Singapore' },
+  { img: '/Projects/IMG-20221215-WA0267.webp', category: 'All Projects', type: 'Roofing Project', name: 'Roof Re-Coating', location: 'Singapore' },
+  { img: '/Projects/IMG-20231115-WA0009.webp', category: 'All Projects', type: 'Roofing Project', name: 'Waterproofing Application', location: 'Singapore' },
+  { img: '/Projects/IMG-20231115-WA0012.webp', category: 'All Projects', type: 'Roofing Project', name: 'Roof Sealant Works', location: 'Singapore' },
+  { img: '/Projects/IMG-20231115-WA0013.webp', category: 'All Projects', type: 'Roofing Project', name: 'Leak Assessment Project', location: 'Singapore' },
+  { img: '/Projects/IMG-20231115-WA0014.webp', category: 'All Projects', type: 'Roofing Project', name: 'Roof Gutter Repair', location: 'Singapore' },
+  { img: '/Projects/IMG-20231115-WA0017.webp', category: 'All Projects', type: 'Roofing Project', name: 'Roofing Inspection', location: 'Singapore' },
+  { img: '/Projects/IMG-20231115-WA0019.webp', category: 'All Projects', type: 'Roofing Project', name: 'Commercial Waterproofing', location: 'Singapore' },
+  { img: '/Projects/IMG-20250413-WA0001.webp', category: 'All Projects', type: 'Roofing Project', name: 'Roof Repair Singapore', location: 'Singapore' },
+  { img: '/Projects/IMG-20250413-WA0006.webp', category: 'All Projects', type: 'Roofing Project', name: 'Asia Tech Roofing Project', location: 'Singapore' },
+  { img: '/Projects/IMG-20250413-WA0009.webp', category: 'All Projects', type: 'Roofing Project', name: 'High-rise Waterproofing', location: 'Singapore' },
+  { img: '/Projects/IMG-20250413-WA0010.webp', category: 'All Projects', type: 'Roofing Project', name: 'Professional Leak Repair', location: 'Singapore' },
+  { img: '/Projects/IMG-20250413-WA0014.webp', category: 'All Projects', type: 'Roofing Project', name: 'Roof Overlay Installation', location: 'Singapore' },
+  { img: '/Projects/IMG-20250413-WA0016.webp', category: 'All Projects', type: 'Roofing Project', name: 'Structural Roofing Works', location: 'Singapore' },
+  { img: '/Projects/IMG-20250413-WA0020.webp', category: 'All Projects', type: 'Roofing Project', name: 'Roof Maintenance Services', location: 'Singapore' },
+  { img: '/Projects/IMG-20250413-WA0021.webp', category: 'All Projects', type: 'Roofing Project', name: 'Singapore Roof Contractor', location: 'Singapore' },
+  { img: '/Projects/IMG-20250413-WA0023.webp', category: 'All Projects', type: 'Roofing Project', name: 'Quality Roofing Solutions', location: 'Singapore' },
+  { img: '/Projects/IMG-20250413-WA0029.webp', category: 'All Projects', type: 'Roofing Project', name: 'Expert Roof Waterproofing', location: 'Singapore' },
+  { img: '/Projects/IMG-20250413-WA0031.webp', category: 'All Projects', type: 'Roofing Project', name: 'Flat Roof Membrane Work', location: 'Singapore' },
+  { img: '/Projects/IMG-20250413-WA0037.webp', category: 'All Projects', type: 'Roofing Project', name: 'Residential Waterproofing', location: 'Singapore' },
+  { img: '/Projects/IMG-20250413-WA0043.webp', category: 'All Projects', type: 'Roofing Project', name: 'Industrial Re-roofing', location: 'Singapore' },
+  { img: '/Projects/IMG-20250413-WA0049.webp', category: 'All Projects', type: 'Roofing Project', name: 'Fast Roof Leak Repair', location: 'Singapore' },
+  { img: '/Projects/IMG-20250413-WA0058.webp', category: 'All Projects', type: 'Roofing Project', name: 'Roof Cladding Replacement', location: 'Singapore' },
+  { img: '/Projects/WhatsAppImage2023-11-15at02.41.58_545f064e.webp', category: 'All Projects', type: 'Roofing Project', name: 'Asia Tech Complete Service', location: 'Singapore' },
+  { img: '/Projects/WhatsAppImage2023-11-15at02.41.58_9b0ed2e8.webp', category: 'All Projects', type: 'Roofing Project', name: 'Singapore Premium Roofing', location: 'Singapore' }
+];
+
 export default function ProjectsPage() {
   const [activeTab, setActiveTab] = useState(0);
+  const activeCategory = filterTabs[activeTab];
+  const visibleItems = activeCategory === 'All Projects'
+    ? allProjectImages
+    : portfolioItems.filter(item => item.category === activeCategory);
+
 
   return (
     <>
@@ -114,13 +254,13 @@ export default function ProjectsPage() {
       />
 
       {/* STATS BAR */}
-      <div className="bg-[#141820] py-12 px-6 md:px-[60px] border-b border-[rgba(201,168,76,0.2)]">
+      <div className="bg-[#F9FAFB] py-12 px-6 md:px-[60px] border-b border-[rgba(201,168,76,0.2)]">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-y-10 md:gap-y-0 justify-around">
           {stats.map((stat, i) => (
             <Reveal key={i} delay={i as 0 | 1 | 2 | 3}>
               <div className={`text-center md:px-10 ${i % 2 === 0 ? 'border-r border-[rgba(201,168,76,0.2)]' : 'border-r-0'} ${i < stats.length - 1 ? 'md:border-r md:border-[rgba(201,168,76,0.2)]' : 'md:border-r-0'}`}>
                 <div className="text-[52px] text-[#C9A84C] leading-none" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>{stat.num}</div>
-                <div className="text-[11px] text-[#8A8F9E] tracking-[2px] uppercase mt-1">{stat.label}</div>
+                <div className="text-[11px] text-[#111827] tracking-[2px] uppercase mt-1">{stat.label}</div>
               </div>
             </Reveal>
           ))}
@@ -128,7 +268,7 @@ export default function ProjectsPage() {
       </div>
 
       {/* PORTFOLIO */}
-      <section className="bg-[#0D0F12] py-20 px-6 md:px-[60px] pb-[100px]">
+      <section className="bg-[#FFFFFF] py-20 px-6 md:px-[60px] pb-[100px]">
         <div className="flex gap-1 mb-12 flex-wrap">
           {filterTabs.map((tab, i) => (
             <button
@@ -136,8 +276,8 @@ export default function ProjectsPage() {
               onClick={() => setActiveTab(i)}
               className={`px-5 py-2.5 text-[11px] tracking-[2px] uppercase font-semibold border transition-all duration-200 ${
                 activeTab === i
-                  ? 'bg-[#C9A84C] text-[#0D0F12] border-[#C9A84C]'
-                  : 'bg-transparent border-[rgba(201,168,76,0.2)] text-[#8A8F9E] hover:bg-[#C9A84C] hover:text-[#0D0F12] hover:border-[#C9A84C]'
+                  ? 'bg-[#C9A84C] text-[#111827] border-[#C9A84C]'
+                  : 'bg-transparent border-[rgba(201,168,76,0.2)] text-[#111827] hover:bg-[#C9A84C] hover:text-[#111827] hover:border-[#C9A84C]'
               }`}
             >
               {tab}
@@ -147,13 +287,13 @@ export default function ProjectsPage() {
 
         <Reveal>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-1 auto-rows-[280px] grid-flow-row-dense">
-            {portfolioItems.map((item, i) => (
+            {visibleItems.map((item, i) => (
               <div
                 key={i}
-                className={`relative overflow-hidden cursor-pointer bg-[#1C2130] group ${item.featured ? 'md:col-span-2' : ''} ${item.tall ? 'md:row-span-2' : ''}`}
+                className={`relative overflow-hidden cursor-pointer bg-[#F3F4F6] group ${item.featured ? 'md:col-span-2' : ''} ${item.tall ? 'md:row-span-2' : ''}`}
               >
                 {item.label && (
-                  <div className="absolute top-5 left-5 z-10 bg-[#C9A84C] text-[#0D0F12] text-[9px] font-bold tracking-[2px] uppercase px-3 py-1.5">
+                  <div className="absolute top-5 left-5 z-10 bg-[#C9A84C] text-[#111827] text-[9px] font-bold tracking-[2px] uppercase px-3 py-1.5">
                     {item.label}
                   </div>
                 )}
@@ -163,12 +303,12 @@ export default function ProjectsPage() {
                 />
                 <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-7"
-                  style={{ background: 'linear-gradient(to top, rgba(13,15,18,0.95) 0%, transparent 60%)' }}
+                  style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%)' }}
                 >
                   <div>
                     <div className="text-[9px] tracking-[3px] uppercase text-[#C9A84C] mb-1.5">{item.type}</div>
-                    <div className="font-bold text-[16px] text-[#F0EDE6] mb-1" style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}>{item.name}</div>
-                    <div className="text-[12px] text-[#8A8F9E]">{item.location}</div>
+                    <div className="font-bold text-[16px] text-white mb-1" style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}>{item.name}</div>
+                    <div className="text-[12px] text-gray-300">{item.location}</div>
                   </div>
                 </div>
               </div>
@@ -178,17 +318,17 @@ export default function ProjectsPage() {
       </section>
 
       {/* FEATURED CASE STUDY */}
-      <section className="bg-[#141820] py-16 md:py-20 px-6 md:px-[60px]">
+      <section className="bg-[#F9FAFB] py-16 md:py-20 px-6 md:px-[60px]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
           <Reveal>
             <div
               className="h-[520px] relative"
-              style={{ backgroundImage: "url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80')", backgroundSize: 'cover', backgroundPosition: 'center' }}
+              style={{ backgroundImage: "url('/Projects/IMG-20250413-WA0049.webp')", backgroundSize: 'cover', backgroundPosition: 'center' }}
             >
-              <div className="absolute inset-0 bg-[rgba(13,15,18,0.5)]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-7">
                 <span className="text-[9px] tracking-[3px] uppercase text-[#C9A84C] mb-2 block">Case Study · Industrial</span>
-                <div className="text-[32px] text-[#F0EDE6]" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>
+                <div className="text-[32px] text-white" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>
                   JURONG INDUSTRIAL<br />COMPLEX
                 </div>
               </div>
@@ -197,13 +337,13 @@ export default function ProjectsPage() {
 
           <Reveal delay={1}>
             <span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-4 block">Featured Project</span>
-            <h2 className="leading-none text-[#F0EDE6] mb-5" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(44px, 6vw, 72px)' }}>
+            <h2 className="leading-none text-[#111827] mb-5" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(44px, 6vw, 72px)' }}>
               Complete Industrial<br />Roof Overhaul
             </h2>
-            <p className="text-[15px] text-[#8A8F9E] leading-[1.9] mb-6">
+            <p className="text-[15px] text-[#111827] leading-[1.9] mb-6">
               A major full roof replacement and waterproofing project for a 12,000 sqm industrial facility in Jurong West. The existing IBR metal roof had deteriorated severely after 18 years, with multiple active leaks disrupting factory operations.
             </p>
-            <p className="text-[15px] text-[#8A8F9E] leading-[1.9] mb-8">
+            <p className="text-[15px] text-[#111827] leading-[1.9] mb-8">
               Our team completed the full re-roofing with minimal disruption to the client&apos;s production schedule — working in phases over 3 weeks with zero safety incidents.
             </p>
             <div className="grid grid-cols-2 gap-4 mb-8">
@@ -213,15 +353,15 @@ export default function ProjectsPage() {
                 { label: 'Duration', value: '3 Weeks' },
                 { label: 'Location', value: 'Jurong West' },
               ].map((d, i) => (
-                <div key={i} className="bg-[#1C2130] p-4 px-5">
+                <div key={i} className="bg-[#F3F4F6] p-4 px-5">
                   <div className="text-[9px] tracking-[2px] uppercase text-[#C9A84C] mb-1.5">{d.label}</div>
-                  <div className="text-[14px] text-[#F0EDE6] font-semibold">{d.value}</div>
+                  <div className="text-[14px] text-[#111827] font-semibold">{d.value}</div>
                 </div>
               ))}
             </div>
             <Link
               href="/contact"
-              className="bg-[#C9A84C] text-[#0D0F12] border-2 border-[#C9A84C] px-8 py-[15px] font-bold text-[12px] tracking-[2px] uppercase transition-all duration-200 hover:bg-transparent hover:text-[#C9A84C] no-underline inline-block"
+              className="bg-[#C9A84C] text-[#111827] border-2 border-[#C9A84C] px-8 py-[15px] font-bold text-[12px] tracking-[2px] uppercase transition-all duration-200 hover:bg-transparent hover:text-[#C9A84C] no-underline inline-block"
               style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
             >
               Start Your Project

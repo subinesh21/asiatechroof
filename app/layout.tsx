@@ -261,7 +261,7 @@ export default function RootLayout({
       </head>
       <body
         style={{ fontFamily: 'var(--font-inter, Inter, sans-serif)' }}
-        className="bg-[#0D0F12] text-[#F0EDE6] overflow-x-hidden"
+        className="bg-[#FFFFFF] text-[#111827] overflow-x-hidden"
       >
         {children}
         <FloatingCTA />
