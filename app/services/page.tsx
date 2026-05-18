@@ -62,7 +62,7 @@ const serviceDetails = [
   {
     num: '01',
     title: 'ROOF REPAIR',
-    img: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80',
+    img: '/service/roof-service.webp',
     tag: 'Roof Repair',
     text: "From minor patch repairs to complete roof replacements, our certified team handles all roof types with precision and care. We assess every job thoroughly before recommending the most cost-effective, long-lasting solution.",
     bullets: [
@@ -77,7 +77,7 @@ const serviceDetails = [
   {
     num: '02',
     title: 'LEAK REPAIR',
-    img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
+    img: '/service/leak-service.webp',
     tag: 'Leak Repair',
     text: 'Water leaks can escalate quickly if left unaddressed. Our team provides rapid response, accurate diagnosis using moisture detection tools, and durable repairs that stop leaks from returning.',
     bullets: [
@@ -92,7 +92,7 @@ const serviceDetails = [
   {
     num: '03',
     title: 'WATERPROOFING',
-    img: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80',
+    img: '/service/waterproof-service.webp',
     tag: 'Waterproofing',
     text: "Singapore's tropical rainfall demands robust waterproofing. We apply proven membrane systems and liquid coatings that create an impenetrable barrier against moisture ingress — for flat roofs, terraces, RC slabs, and more.",
     bullets: [
@@ -107,7 +107,7 @@ const serviceDetails = [
   {
     num: '04',
     title: 'STRUCTURAL WORKS',
-    img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
+    img: '/service/structural-service.webp',
     tag: 'Structural Works',
     text: "Beyond surface repairs, we address the structural integrity of your roof framework. Our team carries out reinforcement and restoration work that extends the lifespan of your building's roofing system.",
     bullets: [

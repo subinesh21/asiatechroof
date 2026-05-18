@@ -3,6 +3,7 @@ import Footer from '@/components/Footer';
 import CTABanner from '@/components/CTABanner';
 import PageHero from '@/components/PageHero';
 import Reveal from '@/components/Reveal';
+import Image from 'next/image';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -109,12 +110,17 @@ export default function AboutPage() {
       <section className="bg-[#FFFFFF] py-16 md:py-[100px] px-6 md:px-[60px]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-[100px] items-center">
           <Reveal>
-            <div className="relative h-[560px]">
-              <div
-                className="w-full h-full bg-cover bg-center"
-                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80')" }}
-              />
-              <div className="absolute bottom-[-24px] right-[-24px] bg-[#C9A84C] text-[#111827] w-40 h-40 flex flex-col items-center justify-center text-center">
+            <div className="relative h-[560px] bg-gray-50 border border-gray-100 flex items-center justify-center p-12">
+              <div className="relative w-full h-full">
+                <Image
+                  src="/asialogo.png"
+                  alt="Asia Tech Roofing Logo"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+              <div className="absolute bottom-[-24px] right-[-24px] bg-[#C9A84C] text-[#111827] w-40 h-40 flex flex-col items-center justify-center text-center shadow-lg z-10">
                 <div className="leading-none" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: '56px' }}>20+</div>
                 <div className="text-[9px] font-bold tracking-[2px] uppercase mt-1">Years of<br />Excellence</div>
               </div>
