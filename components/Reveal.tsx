@@ -7,9 +7,10 @@ interface RevealProps {
   className?: string;
   delay?: 0 | 1 | 2 | 3 | 4;
   style?: React.CSSProperties;
+  direction?: 'up' | 'from-right';
 }
 
-export default function Reveal({ children, className = '', delay = 0, style }: RevealProps) {
+export default function Reveal({ children, className = '', delay = 0, style, direction = 'up' }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -32,9 +33,10 @@ export default function Reveal({ children, className = '', delay = 0, style }: R
   }, []);
 
   const delayClass = delay > 0 ? `reveal-delay-${delay}` : '';
+  const baseClass = direction === 'from-right' ? 'reveal-from-right' : 'reveal';
 
   return (
-    <div ref={ref} className={`reveal ${delayClass} ${className}`} style={style}>
+    <div ref={ref} className={`${baseClass} ${delayClass} ${className}`} style={style}>
       {children}
     </div>
   );

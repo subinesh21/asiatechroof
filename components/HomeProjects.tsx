@@ -14,48 +14,20 @@ interface Project {
 }
 
 const projects: Project[] = [
-  {
-    img: '/Works/Fast and Reliable Roof Leak Repair in Singapore/IMG-20250413-WA0049.webp',
-    type: 'Leak Repair',
-    name: 'Fast & Reliable Roof Leak Repair',
-    spanClasses: 'lg:col-span-2 lg:row-span-2',
-    category: 'Waterproofing',
-  },
-  {
-    img: '/Works/The Best Roofing Service in Singapore_ Why Choose Asia Tech_/IMG-20221215-WA0047.webp',
-    type: 'Roofing Service',
-    name: 'Best Roofing Service in Singapore',
-    spanClasses: 'lg:col-span-1 lg:row-span-1',
-    category: 'Metal Roof',
-  },
-  {
-    img: '/Projects/IMG-20250413-WA0006.webp',
-    type: 'Roofing Works',
-    name: 'Roofing Project 2025',
-    spanClasses: 'lg:col-span-1 lg:row-span-1',
-    category: 'Metal Roof',
-  },
-  {
-    img: '/Projects/IMG-20221215-WA0041.webp',
-    type: 'Membrane Repair',
-    name: 'Membrane Repair Project',
-    spanClasses: 'lg:col-span-1 lg:row-span-1',
-    category: 'Membrane Repair',
-  },
-  {
-    img: '/Projects/IMG-20231115-WA0012.webp',
-    type: 'Waterproofing',
-    name: 'Waterproofing Works 2023',
-    spanClasses: 'lg:col-span-1 lg:row-span-1',
-    category: 'Waterproofing',
-  },
-  {
-    img: '/Projects/IMG-20250413-WA0016.webp',
-    type: 'Structural Works',
-    name: 'Structural Roofing Works',
-    spanClasses: 'lg:col-span-1 lg:row-span-1',
-    category: 'Metal Roof',
-  },
+  // Membrane Repair
+  { img: '/Projects/Membrane Repair/IMG-20221215-WA0063.webp', type: 'Membrane Repair', name: 'Membrane Repair Project 1', spanClasses: 'lg:col-span-2 lg:row-span-2', category: 'Membrane Repair' },
+  { img: '/Projects/Membrane Repair/IMG-20221215-WA0064.webp', type: 'Membrane Repair', name: 'Membrane Repair Project 2', spanClasses: 'lg:col-span-1 lg:row-span-1', category: 'Membrane Repair' },
+  { img: '/Projects/Membrane Repair/IMG-20221215-WA0065.webp', type: 'Membrane Repair', name: 'Membrane Repair Project 3', spanClasses: 'lg:col-span-1 lg:row-span-1', category: 'Membrane Repair' },
+
+  // Metal Roof
+  { img: '/Projects/Metal roof/image-1.webp', type: 'Metal Roof', name: 'Metal Roof Project 1', spanClasses: 'lg:col-span-2 lg:row-span-2', category: 'Metal Roof' },
+  { img: '/Projects/Metal roof/IMG-20221215-WA0127.webp', type: 'Metal Roof', name: 'Metal Roof Project 2', spanClasses: 'lg:col-span-1 lg:row-span-1', category: 'Metal Roof' },
+  { img: '/Projects/Metal roof/IMG-20221215-WA0129.webp', type: 'Metal Roof', name: 'Metal Roof Project 3', spanClasses: 'lg:col-span-1 lg:row-span-1', category: 'Metal Roof' },
+
+  // Waterproofing
+  { img: '/Projects/Waterproofing/image-2.webp', type: 'Waterproofing', name: 'Waterproofing Project 1', spanClasses: 'lg:col-span-2 lg:row-span-2', category: 'Waterproofing' },
+  { img: '/Projects/Waterproofing/image-3.webp', type: 'Waterproofing', name: 'Waterproofing Project 2', spanClasses: 'lg:col-span-1 lg:row-span-1', category: 'Waterproofing' },
+  { img: '/Projects/Waterproofing/image-4.webp', type: 'Waterproofing', name: 'Waterproofing Project 3', spanClasses: 'lg:col-span-1 lg:row-span-1', category: 'Waterproofing' },
 ];
 
 const filterTabs = ['All', 'Membrane Repair', 'Metal Roof', 'Waterproofing'];
@@ -64,7 +36,7 @@ export default function HomeProjects() {
   const [activeTab, setActiveTab] = useState(0);
 
   const filteredProjects = activeTab === 0
-    ? projects
+    ? [projects[0], projects[4], projects[8]]
     : projects.filter(proj => proj.category === filterTabs[activeTab]);
 
   return (
@@ -91,11 +63,10 @@ export default function HomeProjects() {
               <button
                 key={i}
                 onClick={() => setActiveTab(i)}
-                className={`px-5 py-2.5 text-[11px] tracking-[2px] uppercase font-semibold border transition-all duration-200 cursor-pointer ${
-                  activeTab === i
-                    ? 'bg-[#C9A84C] text-[#FFFFFF] border-[#C9A84C]'
-                    : 'bg-transparent border-[rgba(201,168,76,0.2)] text-[#6B7280] hover:bg-[#C9A84C] hover:text-[#FFFFFF] hover:border-[#C9A84C]'
-                }`}
+                className={`px-5 py-2.5 text-[11px] tracking-[2px] uppercase font-semibold border transition-all duration-200 cursor-pointer ${activeTab === i
+                  ? 'bg-[#C9A84C] text-[#FFFFFF] border-[#C9A84C]'
+                  : 'bg-transparent border-[rgba(201,168,76,0.2)] text-[#6B7280] hover:bg-[#C9A84C] hover:text-[#FFFFFF] hover:border-[#C9A84C]'
+                  }`}
               >
                 {tab}
               </button>
@@ -104,7 +75,7 @@ export default function HomeProjects() {
         </Reveal>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[3px] auto-rows-[240px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[3px] auto-rows-[240px] md:grid-flow-dense">
         {filteredProjects.map((proj, i) => (
           <Reveal key={proj.name} delay={(i % 3) as 0 | 1 | 2} className={`h-full ${proj.spanClasses}`}>
             <div className={`relative overflow-hidden cursor-pointer bg-[#F3F4F6] group h-full`}>

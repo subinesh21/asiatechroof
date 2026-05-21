@@ -196,68 +196,87 @@ export default function HomePage() {
 
       {/* SERVICES */}
       <section className="bg-[#F9FAFB] py-16 md:py-[100px] px-6 md:px-[60px]">
-        <div className="flex justify-between items-end mb-[60px] flex-wrap gap-6">
-          <div>
-            <Reveal><span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-4 block">Our Expertise</span></Reveal>
-            <Reveal delay={1}>
-              <h2
-                className="leading-none text-[#111827] mb-4"
-                style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(44px, 6vw, 72px)' }}
-              >
-                Complete Roofing<br />Solutions
-              </h2>
-            </Reveal>
-            <Reveal delay={2}>
-              <p className="text-[16px] text-[#6B7280] max-w-[520px] leading-[1.7]">
-                Comprehensive protection for every structure — delivered with precision, quality materials, and decades of proven expertise.
-              </p>
-            </Reveal>
+        <div className="max-w-[1400px] mx-auto flex flex-col xl:flex-row gap-12 lg:gap-16">
+          
+          {/* TEXT COLUMN */}
+          <div className="xl:w-[400px] 2xl:w-[480px] shrink-0 xl:pt-16">
+            <div className="sticky top-32 xl:top-48">
+              <Reveal><span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-4 block">Our Expertise</span></Reveal>
+              <Reveal delay={1}>
+                <h2
+                  className="leading-none text-[#111827] mb-6"
+                  style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(44px, 6vw, 72px)' }}
+                >
+                  Complete Roofing<br />Solutions
+                </h2>
+              </Reveal>
+              <Reveal delay={2}>
+                <p className="text-[16px] text-[#6B7280] leading-[1.7] mb-10 max-w-[520px]">
+                  Comprehensive protection for every structure — delivered with precision, quality materials, and decades of proven expertise.
+                </p>
+              </Reveal>
+              <Reveal delay={3}>
+                <Link
+                  href="/services"
+                  className="bg-transparent text-[#111827] border-2 border-[#E5E7EB] px-8 py-[15px] font-bold text-[12px] tracking-[2px] uppercase transition-all duration-200 hover:border-[#C9A84C] hover:text-[#C9A84C] no-underline inline-block"
+                  style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
+                >
+                  View All Services
+                </Link>
+              </Reveal>
+            </div>
           </div>
-          <Reveal>
-            <Link
-              href="/services"
-              className="bg-transparent text-[#111827] border-2 border-[rgba(240,237,230,0.3)] px-8 py-[15px] font-bold text-[12px] tracking-[2px] uppercase transition-all duration-200 hover:border-[#C9A84C] hover:text-[#C9A84C] no-underline inline-block"
-              style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
-            >
-              View All Services
-            </Link>
-          </Reveal>
-        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((svc, i) => (
-            <Reveal key={i} delay={i as 0 | 1 | 2 | 3} className="h-full">
-              <div className="flex flex-col h-full bg-[#FFFFFF] border border-[#F3F4F6] rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
-                <div className="relative h-[200px] overflow-hidden">
-                  <Image
-                    src={svc.img}
-                    alt={svc.name}
-                    fill
-                    className="object-cover transition-transform duration-[600ms] group-hover:scale-105"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                  <div
-                    className="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1 font-bold text-xs uppercase text-[#C9A84C] tracking-[2px] rounded"
-                    style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
-                  >
-                    {svc.num}
+          {/* CARDS COLUMN */}
+          <div className="flex-1">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 xl:gap-8">
+              {services.map((svc, i) => (
+                <Reveal key={i} delay={i as 0 | 1 | 2 | 3} className="h-full w-full">
+              <div className="relative w-full h-[420px] bg-white rounded-xl flex items-center justify-center overflow-hidden [perspective:1000px] shadow-sm transition-all duration-[600ms] ease-[cubic-bezier(0.175,0.885,0.32,1.275)] hover:scale-[1.05] hover:shadow-[0_8px_16px_rgba(0,0,0,0.1)] group cursor-pointer border border-[#F3F4F6]">
+                
+                {/* FRONT */}
+                <div className="absolute inset-0 flex flex-col transition-all duration-[600ms] ease-[cubic-bezier(0.175,0.885,0.32,1.275)] group-hover:scale-0 group-hover:opacity-0 origin-center">
+                  <div className="relative h-[220px] w-full shrink-0">
+                    <Image
+                      src={svc.img}
+                      alt={svc.name}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                    <div
+                      className="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1 font-bold text-xs uppercase text-[#C9A84C] tracking-[2px] rounded"
+                      style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
+                    >
+                      {svc.num}
+                    </div>
+                  </div>
+                  <div className="flex-1 flex flex-col justify-center items-center p-6 text-center bg-white">
+                    <span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-2 font-semibold">
+                      0{svc.num} · Service
+                    </span>
+                    <div
+                      className="font-bold text-[22px] text-[#111827]"
+                      style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
+                    >
+                      {svc.name}
+                    </div>
                   </div>
                 </div>
-                <div className="p-6 md:p-8 flex flex-col flex-grow">
-                  <span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-2 font-semibold">
-                    0{svc.num} · Service
-                  </span>
+
+                {/* BACK (Content) */}
+                <div className="absolute top-0 left-0 w-full h-full p-6 md:p-8 box-border bg-[#F9FAFB] origin-bottom [transform:rotateX(-90deg)] transition-all duration-[600ms] ease-[cubic-bezier(0.175,0.885,0.32,1.275)] group-hover:[transform:rotateX(0deg)] flex flex-col z-10">
                   <div
-                    className="font-bold text-[20px] text-[#111827] mb-4"
+                    className="font-bold text-[20px] text-[#111827] mb-2"
                     style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
                   >
                     {svc.name}
                   </div>
-                  <p className="text-[13px] text-[#6B7280] leading-[1.7] mb-6 flex-grow-0">
+                  <p className="text-[14px] text-[#6B7280] leading-[1.6] mb-3 flex-grow-0">
                     {svc.desc}
                   </p>
-                  <div className="border-t border-[rgba(201,168,76,0.15)] pt-6 space-y-2.5 mb-8 flex-grow">
+                  <div className="border-t border-[rgba(201,168,76,0.15)] pt-3 space-y-2 mb-4 flex-grow">
                     {svc.bullets.map((bullet, idx) => (
                       <div key={idx} className="flex items-start gap-2.5 text-[13px] text-[#374151] leading-tight">
                         <span className="text-[#C9A84C] font-bold">→</span>
@@ -267,7 +286,7 @@ export default function HomePage() {
                   </div>
                   <Link
                     href={svc.href}
-                    className="inline-flex items-center gap-2 mt-auto text-[11px] tracking-[2px] uppercase text-[#C9A84C] font-bold no-underline hover:text-[#111827] transition-colors"
+                    className="inline-flex items-center gap-2 mt-auto text-[12px] tracking-[2px] uppercase text-[#C9A84C] font-bold no-underline hover:text-[#111827] transition-colors"
                   >
                     Full Service Details <span className="transition-transform group-hover:translate-x-1 duration-200">→</span>
                   </Link>
@@ -275,6 +294,8 @@ export default function HomePage() {
               </div>
             </Reveal>
           ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -294,7 +315,7 @@ export default function HomePage() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-[3px]">
           {servePanels.map((panel, i) => (
-            <Reveal key={i} delay={i as 0 | 1 | 2}>
+            <Reveal key={i} delay={i as 0 | 1 | 2} direction="from-right">
               <div className="relative h-[480px] overflow-hidden cursor-pointer group">
                 <Image
                   src={panel.bg}
@@ -345,11 +366,10 @@ export default function HomePage() {
             </p>
           </Reveal>
 
-          <Reveal delay={2}>
-            <div className="flex flex-col">
-              {features.map((feature, i) => (
+          <div className="flex flex-col">
+            {features.map((feature, i) => (
+              <Reveal key={i} delay={(i + 1) as 0 | 1 | 2 | 3 | 4}>
                 <div
-                  key={i}
                   className={`flex items-start gap-5 py-7 border-b border-[rgba(201,168,76,0.2)] ${i === 0 ? 'border-t' : ''}`}
                 >
                   <div className="w-7 h-7 min-w-[28px] border border-[#C9A84C] flex items-center justify-center text-[#C9A84C] text-sm mt-0.5">
@@ -360,9 +380,9 @@ export default function HomePage() {
                     <p className="text-[13px] text-[#6B7280] leading-[1.6]">{feature.desc}</p>
                   </div>
                 </div>
-              ))}
-            </div>
-          </Reveal>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
