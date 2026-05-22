@@ -13,7 +13,8 @@ export default function Footer() {
               alt="Asia Tech Roofing Logo" 
               width={180} 
               height={48} 
-              className="h-[48px] w-auto object-contain"
+              className="h-[48px] object-contain"
+              style={{ width: 'auto' }}
             />
           </Link>
           <p className="text-[13px] text-[#111827] leading-[1.7] max-w-[260px] mb-7 mt-4">

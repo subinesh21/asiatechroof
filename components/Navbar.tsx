@@ -26,7 +26,8 @@ export default function Navbar() {
             alt="Asia Tech Roofing Logo" 
             width={180} 
             height={48} 
-            className="h-[40px] md:h-[48px] w-auto object-contain"
+            className="h-[40px] md:h-[48px] object-contain"
+            style={{ width: 'auto' }}
             priority
           />
         </Link>
@@ -72,35 +73,45 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile Menu Overlay */}
-      {isOpen && (
-        <div className="fixed inset-0 z-[90] bg-[#FFFFFF] flex flex-col justify-center items-center pt-16 px-6 md:hidden">
-          <ul className="flex flex-col items-center gap-8 list-none p-0 w-full mb-10">
-            {navLinks.map((link) => (
-              <li key={link.href} className="w-full text-center">
-                <Link
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className={`block w-full py-2 no-underline text-[16px] tracking-[2px] uppercase font-bold transition-colors duration-200 ${
-                    pathname === link.href ? 'text-[#C9A84C]' : 'text-[#111827] hover:text-[#C9A84C]'
-                  }`}
-                  style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <Link
-            href="/contact"
-            onClick={() => setIsOpen(false)}
-            className="w-full max-w-[280px] text-center bg-[#C9A84C] text-[#111827] border-none px-6 py-[15px] font-bold text-[13px] tracking-[1.5px] uppercase cursor-pointer transition-colors duration-200 hover:bg-[#E2C06A] no-underline block"
-            style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
-          >
-            Free Inspection
-          </Link>
-        </div>
-      )}
+      {/* Mobile Menu Backdrop */}
+      <div 
+        className={`fixed inset-0 z-[80] bg-black/40 backdrop-blur-[2px] md:hidden transition-opacity duration-300 ${
+          isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+        onClick={() => setIsOpen(false)}
+      />
+
+      {/* Mobile Menu Dropdown (Half Screen, Top to Bottom) */}
+      <div 
+        className={`fixed top-0 left-0 right-0 h-[36vh] min-h-[310px] z-[90] bg-[#FFFFFF] border-b border-[rgba(201,168,76,0.2)] shadow-[0_20px_50px_rgba(0,0,0,0.15)] flex flex-col justify-center items-center pt-[76px] px-6 md:hidden transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+          isOpen ? 'translate-y-0' : '-translate-y-full'
+        }`}
+      >
+        <ul className="flex flex-col items-center gap-3 list-none p-0 w-full mb-4">
+          {navLinks.map((link) => (
+            <li key={link.href} className="w-full text-center">
+              <Link
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className={`block w-full py-0.5 no-underline text-[12px] tracking-[2px] uppercase font-bold transition-colors duration-200 ${
+                  pathname === link.href ? 'text-[#C9A84C]' : 'text-[#111827] hover:text-[#C9A84C]'
+                }`}
+                style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <Link
+          href="/contact"
+          onClick={() => setIsOpen(false)}
+          className="w-full max-w-[200px] text-center bg-[#C9A84C] text-[#111827] border-none px-4 py-2 font-bold text-[10px] tracking-[1.5px] uppercase cursor-pointer transition-colors duration-200 hover:bg-[#E2C06A] no-underline block"
+          style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
+        >
+          Free Inspection
+        </Link>
+      </div>
     </>
   );
 }

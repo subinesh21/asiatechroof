@@ -36,7 +36,7 @@ export default function Hero() {
 
       {/* Background Sliding Grid */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <div ref={gridRef} className="flex w-full gap-4 md:gap-8 px-4">
+        <div ref={gridRef} className="flex w-full gap-0 md:gap-8 px-0 md:px-4">
           <ImageGallery className="w-full flex-shrink-0" />
           <ImageGallery className="w-full flex-shrink-0 mt-32" />
         </div>
@@ -48,10 +48,10 @@ export default function Hero() {
       <div className="container relative z-20 mx-auto flex h-full flex-col justify-center items-center px-4 lg:px-8">
         <div className="max-w-4xl text-center">
           <h1 className="font-display text-6xl font-semibold leading-[1] text-white md:text-8xl lg:text-[110px]">
-            <span className="hero-word inline-block drop-shadow-2xl">ROOFING BUILT TO LAST.</span>
+            <span className="hero-word inline-block [text-shadow:0_4px_16px_rgba(0,0,0,0.95),_0_2px_4px_rgba(0,0,0,0.9)] md:[text-shadow:none]">ROOFING BUILT TO LAST.</span>
           </h1>
 
-          <p className="hero-cta mt-8 max-w-2xl mx-auto text-lg leading-relaxed text-white drop-shadow-md md:text-xl font-medium">
+          <p className="hero-cta mt-8 max-w-2xl mx-auto text-lg leading-relaxed text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.95)] md:[text-shadow:none] md:text-xl font-medium">
             Singapore&apos;s premier roofing specialist.<br />
             From complex structural works to precision leak repairs, we protect what matters most with decades of expertise.
           </p>

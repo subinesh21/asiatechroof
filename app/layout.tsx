@@ -252,7 +252,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${bebasNeue.variable} ${montserrat.variable} ${inter.variable}`}>
+    <html lang="en" className={`${bebasNeue.variable} ${montserrat.variable} ${inter.variable} overflow-x-hidden w-full max-w-full`}>
       <head>
         <script
           type="application/ld+json"
@@ -261,7 +261,7 @@ export default function RootLayout({
       </head>
       <body
         style={{ fontFamily: 'var(--font-inter, Inter, sans-serif)' }}
-        className="bg-[#FFFFFF] text-[#111827] overflow-x-hidden"
+        className="bg-[#FFFFFF] text-[#111827] overflow-x-hidden w-full max-w-full relative"
       >
         {children}
         <FloatingCTA />

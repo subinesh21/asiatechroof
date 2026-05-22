@@ -7,6 +7,8 @@ import CTABanner from '@/components/CTABanner';
 import PageHero from '@/components/PageHero';
 import Reveal from '@/components/Reveal';
 import Link from 'next/link';
+import Image from 'next/image';
+
 
 
 const overviewCards = [
@@ -154,36 +156,108 @@ export default function ServicesPage() {
         breadcrumb="Services"
         title={<>OUR<br />SERVICES</>}
         subtitle="Comprehensive roofing solutions for every type of property — delivered with precision, quality, and two decades of expertise."
+        minHeight="100vh"
       />
 
       {/* SERVICES OVERVIEW */}
-      <section className="bg-[#F9FAFB] py-16 md:py-[100px] px-6 md:px-[60px]">
-        <Reveal><span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-4 block">What We Do</span></Reveal>
+      <section className="bg-[#F9FAFB] py-12 md:py-[100px] px-4 md:px-[60px]">
+        <Reveal><span className="text-[9px] md:text-[10px] tracking-[3px] md:tracking-[4px] uppercase text-[#C9A84C] mb-3 md:mb-4 block">What We Do</span></Reveal>
         <Reveal delay={1}>
-          <h2 className="leading-none text-[#111827] mb-[60px]" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(44px, 6vw, 72px)' }}>
+          <h2 className="leading-none text-[#111827] mb-8 md:mb-[60px]" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(32px, 5vw, 64px)' }}>
             Complete Roofing<br />Solutions
           </h2>
         </Reveal>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[2px]">
+        {/* MOBILE VIEW (Standard Static Cards) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:hidden">
           {overviewCards.map((card, i) => (
             <Reveal key={i} delay={i as 0 | 1 | 2 | 3}>
               <Link
                 href={card.href}
-                className="relative bg-[#F3F4F6] p-[44px_32px] block border-t-[3px] border-transparent transition-all duration-300 hover:border-[#C9A84C] hover:-translate-y-1 no-underline"
+                className="relative bg-white p-6 sm:p-8 block border border-[#F3F4F6] rounded-xl shadow-sm hover:shadow-md transition-all duration-300 no-underline group"
               >
                 <span
                   className="absolute top-3 right-5 leading-none"
-                  style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: '56px', color: 'rgba(201,168,76,0.07)' }}
+                  style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(36px, 8vw, 56px)', color: 'rgba(201,168,76,0.07)' }}
                 >
                   {card.num}
                 </span>
-                <div className="mb-6">{card.icon}</div>
-                <div className="font-bold text-[18px] text-[#111827] mb-3" style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}>{card.name}</div>
-                <p className="text-[13px] text-[#6B7280] leading-[1.7] mb-5">{card.desc}</p>
-                <span className="text-[11px] tracking-[2px] uppercase text-[#C9A84C] font-semibold">Explore →</span>
+                <div className="mb-4">{card.icon}</div>
+                <div className="font-bold text-[16px] sm:text-[18px] text-[#111827] mb-2.5 group-hover:text-[#C9A84C] transition-colors" style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}>{card.name}</div>
+                <p className="text-[12px] text-[#6B7280] leading-[1.7] mb-4">{card.desc}</p>
+                <span className="text-[10px] tracking-[2px] uppercase text-[#C9A84C] font-semibold">Explore →</span>
               </Link>
             </Reveal>
           ))}
+        </div>
+
+        {/* DESKTOP VIEW (Uiverse Flip Cards) */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-5 xl:gap-8">
+          {overviewCards.map((card, i) => {
+            const detail = serviceDetails[i] || {};
+            return (
+              <Reveal key={i} delay={i as 0 | 1 | 2 | 3}>
+                <div className="relative w-full h-[380px] bg-white rounded-xl flex items-center justify-center overflow-hidden [perspective:1000px] shadow-sm transition-all duration-[600ms] ease-[cubic-bezier(0.175,0.885,0.32,1.275)] hover:scale-[1.05] hover:shadow-[0_8px_16px_rgba(0,0,0,0.1)] group cursor-pointer border border-[#F3F4F6]">
+                  {/* FRONT */}
+                  <div className="absolute inset-0 flex flex-col transition-all duration-[600ms] ease-[cubic-bezier(0.175,0.885,0.32,1.275)] group-hover:scale-0 group-hover:opacity-0 origin-center">
+                    <div className="relative h-[240px] w-full shrink-0">
+                      <Image
+                        src={detail.img || '/service/roof-service.webp'}
+                        alt={card.name}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                      <div
+                        className="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1 font-bold text-xs uppercase text-[#C9A84C] tracking-[2px] rounded"
+                        style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
+                      >
+                        {card.num}
+                      </div>
+                    </div>
+                    <div className="flex-1 flex flex-col justify-center items-center p-4 text-center bg-white">
+                      <span className="text-[9px] tracking-[3px] uppercase text-[#C9A84C] mb-1 font-semibold">
+                        0{card.num} · Service
+                      </span>
+                      <div
+                        className="font-bold text-[16px] md:text-[18px] text-[#111827] leading-tight"
+                        style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
+                      >
+                        {card.name}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* BACK (Content) */}
+                  <div className="absolute top-0 left-0 w-full h-full p-4 box-border bg-[#F9FAFB] rounded-xl overflow-hidden origin-bottom [transform:rotateX(-90deg)] transition-all duration-[600ms] ease-[cubic-bezier(0.175,0.885,0.32,1.275)] group-hover:[transform:rotateX(0deg)] flex flex-col z-10 text-left">
+                    <div
+                      className="font-bold text-[14px] md:text-[16px] text-[#111827] mb-1"
+                      style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
+                    >
+                      {card.name}
+                    </div>
+                    <p className="text-[11px] md:text-[12px] text-[#6B7280] leading-normal mb-1.5 flex-grow-0">
+                      {detail.text || card.desc}
+                    </p>
+                    <div className="border-t border-[rgba(201,168,76,0.15)] pt-1.5 space-y-0.5 mb-1.5 flex-grow">
+                      {(detail.bullets || []).map((bullet: string, idx: number) => (
+                        <div key={idx} className="flex items-start gap-2 text-[10px] md:text-[11px] text-[#374151] leading-tight">
+                          <span className="text-[#C9A84C] font-bold">→</span>
+                          <span>{bullet}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <Link
+                      href={card.href}
+                      className="inline-flex items-center gap-2 mt-auto text-[10px] md:text-[11px] tracking-[2px] uppercase text-[#C9A84C] font-bold no-underline hover:text-[#111827] transition-colors"
+                    >
+                      Full Service Details <span className="transition-transform group-hover:translate-x-1 duration-200">→</span>
+                    </Link>
+                  </div>
+                </div>
+              </Reveal>
+            );
+          })}
         </div>
       </section>
 
@@ -191,16 +265,16 @@ export default function ServicesPage() {
       {serviceDetails.map((svc, i) => (
         <section
           key={i}
-          className={`py-16 md:py-[100px] px-6 md:px-[60px] ${i % 2 === 0 ? 'bg-[#FFFFFF]' : 'bg-[#F9FAFB]'}`}
+          className={`py-12 md:py-[100px] px-4 md:px-[60px] ${i % 2 === 0 ? 'bg-[#FFFFFF]' : 'bg-[#F9FAFB]'}`}
         >
-          <div className={`grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center ${i % 2 !== 0 ? 'direction-rtl' : ''}`}
+          <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 items-center ${i % 2 !== 0 ? 'direction-rtl' : ''}`}
             style={i % 2 !== 0 ? { direction: 'rtl' } : {}}>
             <Reveal>
               <div
-                className="h-[400px] md:h-[520px] bg-cover bg-center relative"
+                className="h-[200px] sm:h-[320px] md:h-[520px] bg-cover bg-center relative"
                 style={{ backgroundImage: `url('${svc.img}')`, direction: 'ltr' }}
               >
-                <div className="absolute bottom-0 left-0 bg-[#C9A84C] text-[#111827] px-5 py-2.5 text-[10px] font-bold tracking-[2px] uppercase">
+                <div className="absolute bottom-0 left-0 bg-[#C9A84C] text-[#111827] px-4 py-2 md:px-5 md:py-2.5 text-[9px] md:text-[10px] font-bold tracking-[2px] uppercase">
                   {svc.tag}
                 </div>
               </div>
@@ -209,20 +283,20 @@ export default function ServicesPage() {
               <div style={{ direction: 'ltr' }}>
                 <div
                   className="leading-none mb-[-12px]"
-                  style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: '96px', color: 'rgba(201,168,76,0.12)' }}
+                  style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(48px, 12vw, 96px)', color: 'rgba(201,168,76,0.12)' }}
                 >
                   {svc.num}
                 </div>
                 <div
-                  className="text-[#111827] mb-5"
-                  style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: '56px' }}
+                  className="text-[#111827] mb-4 md:mb-5"
+                  style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(28px, 8vw, 56px)' }}
                 >
                   {svc.title}
                 </div>
-                <p className="text-[15px] text-[#6B7280] leading-[1.9] mb-8">{svc.text}</p>
-                <ul className="list-none mb-9">
+                <p className="text-[13px] md:text-[15px] text-[#6B7280] leading-[1.7] md:leading-[1.9] mb-6 md:mb-8">{svc.text}</p>
+                <ul className="list-none mb-7 md:mb-9">
                   {svc.bullets.map((b, j) => (
-                    <li key={j} className="text-[13px] text-[#6B7280] py-2.5 border-b border-[rgba(201,168,76,0.2)] flex gap-3 items-start">
+                    <li key={j} className="text-[12px] sm:text-[13px] text-[#6B7280] py-2 md:py-2.5 border-b border-[rgba(201,168,76,0.2)] flex gap-2.5 sm:gap-3 items-start">
                       <span className="text-[#C9A84C] flex-shrink-0">→</span>
                       {b}
                     </li>
@@ -230,7 +304,7 @@ export default function ServicesPage() {
                 </ul>
                 <Link
                   href={svc.href}
-                  className="bg-[#C9A84C] text-[#FFFFFF] border-2 border-[#C9A84C] px-8 py-[15px] font-bold text-[12px] tracking-[2px] uppercase transition-all duration-200 hover:bg-transparent hover:text-[#C9A84C] no-underline inline-block"
+                  className="bg-[#C9A84C] text-[#FFFFFF] border-2 border-[#C9A84C] px-5 py-3 md:px-8 md:py-[15px] font-bold text-[11px] md:text-[12px] tracking-[2px] uppercase transition-all duration-200 hover:bg-transparent hover:text-[#C9A84C] no-underline inline-block"
                   style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
                 >
                   Full Service Details
@@ -242,11 +316,11 @@ export default function ServicesPage() {
       ))}
 
       {/* FAQ */}
-      <section className="bg-[#FFFFFF] py-16 md:py-[100px] px-6 md:px-[60px]">
-        <div className="mb-[60px]">
-          <Reveal><span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-4 block">FAQ</span></Reveal>
+      <section className="bg-[#FFFFFF] py-12 md:py-[100px] px-4 md:px-[60px]">
+        <div className="mb-8 md:mb-[60px]">
+          <Reveal><span className="text-[9px] md:text-[10px] tracking-[3px] md:tracking-[4px] uppercase text-[#C9A84C] mb-3 md:mb-4 block">FAQ</span></Reveal>
           <Reveal delay={1}>
-            <h2 className="leading-none text-[#111827]" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(44px, 6vw, 72px)' }}>
+            <h2 className="leading-none text-[#111827]" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(32px, 5vw, 64px)' }}>
               Common Questions
             </h2>
           </Reveal>
@@ -256,20 +330,20 @@ export default function ServicesPage() {
             {faqs.map((faq, i) => (
               <div key={i} className="border-b border-[rgba(201,168,76,0.2)]">
                 <button
-                  className="w-full text-left bg-none border-none py-6 flex justify-between items-center cursor-pointer text-[#111827] font-semibold text-[15px]"
+                  className="w-full text-left bg-none border-none py-4 md:py-6 flex justify-between items-center cursor-pointer text-[#111827] font-semibold text-[13px] sm:text-[15px]"
                   style={{ fontFamily: 'var(--font-montserrat, sans-serif)', background: 'none' }}
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                 >
                   {faq.q}
                   <span
-                    className="text-[#C9A84C] text-xl transition-transform duration-300"
+                    className="text-[#C9A84C] text-lg sm:text-xl transition-transform duration-300"
                     style={{ transform: openFaq === i ? 'rotate(45deg)' : 'none' }}
                   >
                     +
                   </span>
                 </button>
                 <div className={`faq-answer ${openFaq === i ? 'open' : ''}`}>
-                  <p className="pb-6 text-[14px] text-[#6B7280] leading-[1.8] max-w-[680px]">{faq.a}</p>
+                  <p className="pb-4 md:pb-6 text-[12px] sm:text-[14px] text-[#6B7280] leading-[1.8] max-w-[680px]">{faq.a}</p>
                 </div>
               </div>
             ))}

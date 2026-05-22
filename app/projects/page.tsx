@@ -238,10 +238,16 @@ const allProjectImages: ProjectItem[] = [
 
 export default function ProjectsPage() {
   const [activeTab, setActiveTab] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(8);
   const activeCategory = filterTabs[activeTab];
   const visibleItems = activeCategory === 'All Projects'
-    ? allProjectImages
+    ? allProjectImages.slice(0, visibleCount)
     : portfolioItems.filter(item => item.category === activeCategory);
+
+  const handleTabChange = (index: number) => {
+    setActiveTab(index);
+    setVisibleCount(8);
+  };
 
 
   return (
@@ -251,16 +257,17 @@ export default function ProjectsPage() {
         breadcrumb="Projects"
         title={<>OUR<br />PORTFOLIO</>}
         subtitle="500+ completed projects across Singapore's residential, commercial, and industrial sectors. Work that stands the test of time."
+        minHeight="100vh"
       />
 
       {/* STATS BAR */}
-      <div className="bg-[#F9FAFB] py-12 px-6 md:px-[60px] border-b border-[rgba(201,168,76,0.2)]">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-y-10 md:gap-y-0 justify-around">
+      <div className="bg-[#F9FAFB] py-10 px-4 md:px-[60px] border-b border-[rgba(201,168,76,0.2)]">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 md:gap-y-0 justify-around">
           {stats.map((stat, i) => (
             <Reveal key={i} delay={i as 0 | 1 | 2 | 3}>
               <div className={`text-center md:px-10 ${i % 2 === 0 ? 'border-r border-[rgba(201,168,76,0.2)]' : 'border-r-0'} ${i < stats.length - 1 ? 'md:border-r md:border-[rgba(201,168,76,0.2)]' : 'md:border-r-0'}`}>
-                <div className="text-[52px] text-[#C9A84C] leading-none" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>{stat.num}</div>
-                <div className="text-[11px] text-[#111827] tracking-[2px] uppercase mt-1">{stat.label}</div>
+                <div className="text-[40px] md:text-[52px] text-[#C9A84C] leading-none" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>{stat.num}</div>
+                <div className="text-[9px] md:text-[11px] text-[#111827] tracking-[1.5px] md:tracking-[2px] uppercase mt-1">{stat.label}</div>
               </div>
             </Reveal>
           ))}
@@ -268,13 +275,13 @@ export default function ProjectsPage() {
       </div>
 
       {/* PORTFOLIO */}
-      <section className="bg-[#FFFFFF] py-20 px-6 md:px-[60px] pb-[100px]">
-        <div className="flex gap-1 mb-12 flex-wrap">
+      <section className="bg-[#FFFFFF] py-12 md:py-20 px-4 md:px-[60px] pb-[60px] md:pb-[100px]">
+        <div className="flex overflow-x-auto whitespace-nowrap gap-1.5 md:gap-1 pb-4 md:pb-0 mb-8 md:mb-12 scrollbar-none w-full [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {filterTabs.map((tab, i) => (
             <button
               key={i}
-              onClick={() => setActiveTab(i)}
-              className={`px-5 py-2.5 text-[11px] tracking-[2px] uppercase font-semibold border transition-all duration-200 ${
+              onClick={() => handleTabChange(i)}
+              className={`px-3.5 py-2 md:px-5 md:py-2.5 text-[9px] md:text-[11px] tracking-[1.5px] md:tracking-[2px] uppercase font-semibold border transition-all duration-200 cursor-pointer shrink-0 ${
                 activeTab === i
                   ? 'bg-[#C9A84C] text-[#111827] border-[#C9A84C]'
                   : 'bg-transparent border-[rgba(201,168,76,0.2)] text-[#111827] hover:bg-[#C9A84C] hover:text-[#111827] hover:border-[#C9A84C]'
@@ -315,20 +322,45 @@ export default function ProjectsPage() {
             ))}
           </div>
         </Reveal>
+
+        {activeCategory === 'All Projects' && (visibleCount > 8 || visibleCount < allProjectImages.length) && (
+          <Reveal>
+            <div className="flex justify-center gap-4 mt-12">
+              {visibleCount > 8 && (
+                <button
+                  onClick={() => setVisibleCount(8)}
+                  className="bg-transparent border-2 border-[rgba(201,168,76,0.2)] text-[#111827] hover:border-[#C9A84C] hover:text-[#C9A84C] px-8 py-[15px] font-bold text-[12px] tracking-[2px] uppercase transition-all duration-200 cursor-pointer"
+                  style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
+                >
+                  Show Less
+                </button>
+              )}
+              {visibleCount < allProjectImages.length && (
+                <button
+                  onClick={() => setVisibleCount(prev => prev + 8)}
+                  className="bg-transparent border-2 border-[#C9A84C] text-[#111827] hover:bg-[#C9A84C] px-8 py-[15px] font-bold text-[12px] tracking-[2px] uppercase transition-all duration-200 cursor-pointer"
+                  style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
+                >
+                  Show More
+                </button>
+              )}
+            </div>
+          </Reveal>
+        )}
       </section>
 
       {/* FEATURED CASE STUDY */}
-      <section className="bg-[#F9FAFB] py-16 md:py-20 px-6 md:px-[60px]">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+      <section className="bg-[#F9FAFB] py-12 md:py-20 px-4 md:px-[60px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 items-center">
           <Reveal>
             <div
-              className="h-[520px] relative"
+              className="h-[300px] sm:h-[450px] md:h-[520px] relative"
               style={{ backgroundImage: "url('/Projects/IMG-20250413-WA0049.webp')", backgroundSize: 'cover', backgroundPosition: 'center' }}
             >
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-7">
-                <span className="text-[9px] tracking-[3px] uppercase text-[#C9A84C] mb-2 block">Case Study · Industrial</span>
-                <div className="text-[32px] text-white" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>
+              <div className="absolute bottom-0 left-0 right-0 p-5 md:p-7">
+                <span className="text-[8px] md:text-[9px] tracking-[2.5px] md:tracking-[3px] uppercase text-[#C9A84C] mb-1.5 block">Case Study · Industrial</span>
+                <div className="text-[26px] md:text-[32px] text-white" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>
                   JURONG INDUSTRIAL<br />COMPLEX
                 </div>
               </div>
@@ -336,32 +368,32 @@ export default function ProjectsPage() {
           </Reveal>
 
           <Reveal delay={1}>
-            <span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-4 block">Featured Project</span>
-            <h2 className="leading-none text-[#111827] mb-5" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(44px, 6vw, 72px)' }}>
+            <span className="text-[9px] md:text-[10px] tracking-[3px] md:tracking-[4px] uppercase text-[#C9A84C] mb-2 md:mb-4 block font-semibold">Featured Project</span>
+            <h2 className="leading-none text-[#111827] mb-4 md:mb-5" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(32px, 5vw, 64px)' }}>
               Complete Industrial<br />Roof Overhaul
             </h2>
-            <p className="text-[15px] text-[#111827] leading-[1.9] mb-6">
+            <p className="text-[13px] md:text-[15px] text-[#111827] leading-[1.8] md:leading-[1.9] mb-4 md:mb-6">
               A major full roof replacement and waterproofing project for a 12,000 sqm industrial facility in Jurong West. The existing IBR metal roof had deteriorated severely after 18 years, with multiple active leaks disrupting factory operations.
             </p>
-            <p className="text-[15px] text-[#111827] leading-[1.9] mb-8">
+            <p className="text-[13px] md:text-[15px] text-[#111827] leading-[1.8] md:leading-[1.9] mb-6 md:mb-8">
               Our team completed the full re-roofing with minimal disruption to the client&apos;s production schedule — working in phases over 3 weeks with zero safety incidents.
             </p>
-            <div className="grid grid-cols-2 gap-4 mb-8">
+            <div className="grid grid-cols-2 gap-3 md:gap-4 mb-6 md:mb-8">
               {[
                 { label: 'Project Type', value: 'Full Re-Roofing' },
                 { label: 'Area', value: '12,000 sqm' },
                 { label: 'Duration', value: '3 Weeks' },
                 { label: 'Location', value: 'Jurong West' },
               ].map((d, i) => (
-                <div key={i} className="bg-[#F3F4F6] p-4 px-5">
-                  <div className="text-[9px] tracking-[2px] uppercase text-[#C9A84C] mb-1.5">{d.label}</div>
-                  <div className="text-[14px] text-[#111827] font-semibold">{d.value}</div>
+                <div key={i} className="bg-[#F3F4F6] p-3 md:p-4 px-4 md:px-5">
+                  <div className="text-[8px] md:text-[9px] tracking-[1.5px] md:tracking-[2px] uppercase text-[#C9A84C] mb-1 md:mb-1.5">{d.label}</div>
+                  <div className="text-[12px] md:text-[14px] text-[#111827] font-semibold">{d.value}</div>
                 </div>
               ))}
             </div>
             <Link
               href="/contact"
-              className="bg-[#C9A84C] text-[#111827] border-2 border-[#C9A84C] px-8 py-[15px] font-bold text-[12px] tracking-[2px] uppercase transition-all duration-200 hover:bg-transparent hover:text-[#C9A84C] no-underline inline-block"
+              className="bg-[#C9A84C] text-[#111827] border-2 border-[#C9A84C] px-5 py-3 md:px-8 md:py-[15px] font-bold text-[10px] md:text-[12px] tracking-[1.5px] md:tracking-[2px] uppercase transition-all duration-200 hover:bg-transparent hover:text-[#C9A84C] no-underline inline-block"
               style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
             >
               Start Your Project

@@ -30,9 +30,9 @@ const LOCAL_IMAGES = [
 export function ImageGallery({ className }: { className?: string }) {
 	return (
 		<div className={cn('relative w-full', className)}>
-			<div className="mx-auto grid w-full gap-4 sm:grid-cols-2 lg:grid-cols-3">
+			<div className="mx-auto grid w-full gap-1 grid-cols-3 sm:gap-4 lg:gap-6 sm:grid-cols-3 lg:grid-cols-3">
 				{Array.from({ length: 3 }).map((_, col) => (
-					<div key={col} className="grid gap-6">
+					<div key={col} className="grid gap-0 sm:gap-6">
 						{Array.from({ length: 6 }).map((_, index) => {
 							const imageSrc = LOCAL_IMAGES[(col * 6 + index) % LOCAL_IMAGES.length];
 							const isPortrait = (col + index) % 2 === 0;
@@ -69,14 +69,14 @@ function AnimatedImage({ alt, src, ratio }: AnimatedImageProps) {
 		<AspectRatio
 			ref={ref}
 			ratio={ratio}
-			className="relative size-full overflow-hidden rounded-xl transition-transform duration-500 hover:scale-[1.02]"
+			className="relative size-full overflow-hidden rounded-none md:rounded-xl transition-transform duration-500 hover:scale-[1.02]"
 		>
 			<Image
 				fill
 				alt={alt}
 				src={src}
 				className={cn(
-					'size-full rounded-xl object-cover opacity-0 transition-all duration-1000 ease-in-out',
+					'size-full rounded-none md:rounded-xl object-cover opacity-0 transition-all duration-1000 ease-in-out',
 					{ 'opacity-100': isInView }
 				)}
 				sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
