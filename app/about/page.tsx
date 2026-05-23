@@ -150,15 +150,16 @@ export default function AboutPage() {
             overflow: 'hidden',
           }}
         >
-          <Image
-            src="/assets/about-roof.png"
-            alt="Asia Tech Roofing — quality craftsmanship"
-            fill
-            className="object-cover object-center"
-            priority
-            sizes="100vw"
-          />
-
+          <div className="absolute inset-0">
+            <Image
+              src="/assets/about-roof.png"
+              alt="Asia Tech Roofing — quality craftsmanship"
+              fill
+              className="object-cover object-center"
+              priority
+              sizes="100vw"
+            />
+          </div>
         </div>
       </div>
 

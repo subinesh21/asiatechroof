@@ -168,14 +168,16 @@ export default function ServicesPage() {
       {/* Reveal Image */}
       <div style={{ position: 'relative', zIndex: 2, height: '100vh' }}>
         <div style={{ position: 'sticky', top: 0, height: '100vh', overflow: 'hidden' }}>
-          <Image
-            src="/service/service-roof.png"
-            alt="Asia Tech Roofing — Services"
-            fill
-            className="object-cover object-center -scale-x-100"
-            priority
-            sizes="100vw"
-          />
+          <div className="absolute inset-0">
+            <Image
+              src="/service/service-roof.png"
+              alt="Asia Tech Roofing — Services"
+              fill
+              className="object-cover object-center -scale-x-100"
+              priority
+              sizes="100vw"
+            />
+          </div>
         </div>
       </div>
 

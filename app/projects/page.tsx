@@ -270,14 +270,16 @@ export default function ProjectsPage() {
       {/* Reveal Image */}
       <div style={{ position: 'relative', zIndex: 2, height: '100vh' }}>
         <div style={{ position: 'sticky', top: 0, height: '100vh', overflow: 'hidden' }}>
-          <Image
-            src="/assets/project-roof.png"
-            alt="Asia Tech Roofing — Projects"
-            fill
-            className="object-cover object-center"
-            priority
-            sizes="100vw"
-          />
+          <div className="absolute inset-0">
+            <Image
+              src="/assets/project-roof.png"
+              alt="Asia Tech Roofing — Projects"
+              fill
+              className="object-cover object-center"
+              priority
+              sizes="100vw"
+            />
+          </div>
         </div>
       </div>
 
