@@ -8,7 +8,16 @@ import Image from 'next/image';
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },
-  { href: '/services', label: 'Services' },
+  { 
+    href: '/services', 
+    label: 'Services',
+    subLinks: [
+      { href: '/services/roof-repair', label: 'Roof Repair' },
+      { href: '/services/leak-repair', label: 'Leak Repair' },
+      { href: '/services/waterproofing', label: 'Waterproofing' },
+      { href: '/services/structural-works', label: 'Structural Works' },
+    ]
+  },
   { href: '/projects', label: 'Projects' },
   { href: '/ratings', label: 'Ratings' },
 ];
@@ -19,7 +28,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-5 md:px-6 md:px-[60px] h-[76px] bg-[rgba(255,255,255,0.92)] backdrop-blur-[14px] border-b border-[rgba(201,168,76,0.2)]">
+      <nav className="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-5 md:px-6 md:px-[60px] h-[76px] bg-[rgba(255,255,255,0.92)] backdrop-blur-[14px] border-b-3 border-[#C9A84C]">
         <Link href="/" className="flex items-center gap-3 no-underline relative z-[110]" onClick={() => setIsOpen(false)}>
           <Image 
             src="/asialogo.png" 
@@ -35,15 +44,32 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <ul className="hidden md:flex items-center gap-9 list-none">
           {navLinks.map((link) => (
-            <li key={link.href}>
+            <li key={link.href} className="relative group">
               <Link
                 href={link.href}
                 className={`no-underline text-[12px] tracking-[1.5px] uppercase font-medium transition-colors duration-200 ${
-                  pathname === link.href ? 'text-[#C9A84C]' : 'text-[#111827] hover:text-[#C9A84C]'
+                  pathname === link.href || (link.subLinks && pathname.startsWith(link.href + '/')) ? 'text-[#C9A84C]' : 'text-[#111827] hover:text-[#C9A84C]'
                 }`}
               >
                 {link.label}
               </Link>
+              {link.subLinks && (
+                <div className="absolute top-full left-0 pt-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[120]">
+                  <div className="w-56 bg-white border-t-2 border-[#C9A84C] shadow-lg flex flex-col py-2">
+                    {link.subLinks.map((subLink) => (
+                      <Link
+                        key={subLink.href}
+                        href={subLink.href}
+                        className={`px-5 py-3 text-[11px] tracking-[1.5px] uppercase font-medium transition-colors duration-200 ${
+                          pathname === subLink.href ? 'text-[#C9A84C] bg-gray-50' : 'text-[#111827] hover:text-[#C9A84C] hover:bg-gray-50'
+                        }`}
+                      >
+                        {subLink.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
             </li>
           ))}
         </ul>
@@ -81,25 +107,41 @@ export default function Navbar() {
         onClick={() => setIsOpen(false)}
       />
 
-      {/* Mobile Menu Dropdown (Half Screen, Top to Bottom) */}
+      {/* Mobile Menu Dropdown (Top to Bottom) */}
       <div 
-        className={`fixed top-0 left-0 right-0 h-[36vh] min-h-[310px] z-[90] bg-[#FFFFFF] border-b border-[rgba(201,168,76,0.2)] shadow-[0_20px_50px_rgba(0,0,0,0.15)] flex flex-col justify-center items-center pt-[76px] px-6 md:hidden transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+        className={`fixed top-0 left-0 right-0 max-h-[85vh] overflow-y-auto pb-8 z-[90] bg-[#FFFFFF] border-b border-[rgba(201,168,76,0.2)] shadow-[0_20px_50px_rgba(0,0,0,0.15)] flex flex-col justify-start items-center pt-[96px] px-6 md:hidden transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           isOpen ? 'translate-y-0' : '-translate-y-full'
         }`}
       >
-        <ul className="flex flex-col items-center gap-3 list-none p-0 w-full mb-4">
+        <ul className="flex flex-col items-center gap-4 list-none p-0 w-full mb-6">
           {navLinks.map((link) => (
-            <li key={link.href} className="w-full text-center">
+            <li key={link.href} className="w-full text-center flex flex-col items-center">
               <Link
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className={`block w-full py-0.5 no-underline text-[12px] tracking-[2px] uppercase font-bold transition-colors duration-200 ${
-                  pathname === link.href ? 'text-[#C9A84C]' : 'text-[#111827] hover:text-[#C9A84C]'
+                className={`block w-full py-1 no-underline text-[12px] tracking-[2px] uppercase font-bold transition-colors duration-200 ${
+                  pathname === link.href || (link.subLinks && pathname.startsWith(link.href + '/')) ? 'text-[#C9A84C]' : 'text-[#111827] hover:text-[#C9A84C]'
                 }`}
                 style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
               >
                 {link.label}
               </Link>
+              {link.subLinks && (
+                <div className="flex flex-col items-center w-full mt-2 gap-3">
+                  {link.subLinks.map((subLink) => (
+                    <Link
+                      key={subLink.href}
+                      href={subLink.href}
+                      onClick={() => setIsOpen(false)}
+                      className={`block w-full py-0.5 no-underline text-[10px] tracking-[1.5px] uppercase font-medium transition-colors duration-200 ${
+                        pathname === subLink.href ? 'text-[#C9A84C]' : 'text-[#6B7280] hover:text-[#C9A84C]'
+                      }`}
+                    >
+                      - {subLink.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </li>
           ))}
         </ul>

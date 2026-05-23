@@ -159,6 +159,7 @@ export default function ServicesPage() {
           title={<>OUR<br />SERVICES</>}
           subtitle="Comprehensive roofing solutions for every type of property — delivered with precision, quality, and two decades of expertise."
           minHeight="100vh"
+          bgImage="/service/service.png"
         />
       </div>
 

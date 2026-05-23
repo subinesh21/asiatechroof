@@ -254,6 +254,20 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${bebasNeue.variable} ${montserrat.variable} ${inter.variable} overflow-x-hidden w-full max-w-full`}>
       <head>
+        {/* Google Analytics Placeholder - Replace G-XXXXXXXXXX with your actual GA4 Measurement ID */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-XXXXXXXXXX', {
+                page_path: window.location.pathname,
+              });
+            `,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}

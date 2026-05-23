@@ -27,7 +27,7 @@ const faqSchema = {
       "name": "How much does roof repair cost in Singapore in 2026?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Roof repair costs in Singapore typically range from $200 for minor leaks to $2,000+ for major structural repairs. The final price depends on material type, accessibility, and the extent of the damage. Asia Tech Roofing offers free on-site inspections for accurate quoting."
+        "text": "Roof repair costs in Singapore vary depending on material type, accessibility, and the extent of the damage. Asia Tech Roofing offers free on-site inspections for accurate quoting without hidden fees."
       }
     },
     {

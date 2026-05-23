@@ -22,12 +22,15 @@ export default function PageHero({
       <div
         className="absolute inset-0"
         style={{
-          background: `linear-gradient(135deg, rgba(13,15,18,0.96) 40%, rgba(13,15,18,0.7) 100%), url('${bgImage}') center/cover`,
+          backgroundImage: `linear-gradient(135deg, rgba(13,15,18,0.8) 0%, rgba(13,15,18,0.4) 100%), url('${bgImage}')`,
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
         }}
       />
       <div
         className="absolute inset-0"
-        style={{ background: 'linear-gradient(to bottom, transparent 60%, #0D0F12 100%)' }}
+        style={{ backgroundImage: 'linear-gradient(to bottom, transparent 60%, #0D0F12 100%)' }}
       />
 
       {/* Content */}

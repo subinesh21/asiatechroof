@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   },
 };
 
+
 const services = [
   { num: '01', label: 'Roof Repair', href: '/services/roof-repair', active: true },
   { num: '02', label: 'Leak Repair', href: '/services/leak-repair', active: false },
@@ -35,13 +36,46 @@ const bullets = [
 ];
 
 export default function RoofRepairPage() {
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Roof Repair",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Asia Tech Roofing Specialist",
+      "image": "https://asiatechroof.sg/og-image.jpg"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Singapore"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Roof Repair Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Minor Leak Repair"
+          }
+        }
+      ]
+    }
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <Navbar />
       <PageHero
         breadcrumb="Services / Roof Repair"
         title={<>ROOF<br />REPAIR</>}
         subtitle="Professional roof repair for all roof types — metal, concrete, tile, and membrane. From minor patches to full replacements."
+        bgImage="/service/roof-service.webp"
       />
 
       {/* Service Nav */}

@@ -91,12 +91,15 @@ export default function AboutPage() {
           <div
             className="absolute inset-0"
             style={{
-              background: `linear-gradient(135deg, rgba(13,15,18,0.96) 40%, rgba(13,15,18,0.7) 100%), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1400&q=80') center/cover`,
+              backgroundImage: `linear-gradient(135deg, rgba(13,15,18,0.8) 0%, rgba(13,15,18,0.4) 100%), url('/about/about.png')`,
+              backgroundPosition: '30% center',
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
             }}
           />
           <div
             className="absolute inset-0"
-            style={{ background: 'linear-gradient(to bottom, transparent 60%, #0D0F12 100%)' }}
+            style={{ backgroundImage: 'linear-gradient(to bottom, transparent 60%, #0D0F12 100%)' }}
           />
 
           {/* Content */}
@@ -241,13 +244,13 @@ export default function AboutPage() {
                 Built on<br />Trust &<br />Expertise
               </h2>
               <p className="text-[13px] sm:text-[14px] md:text-[16px] text-[#111827] leading-[1.7] md:leading-[1.8] mb-3 md:mb-4">
-                Asia Tech Roofing was founded with a single purpose: to provide Singapore's properties with roofing solutions they can trust.
+                Since 2004, Asia Tech Roofing has been driven by a single purpose: to provide Singapore's properties with superior roofing and waterproofing solutions they can trust.
               </p>
               <p className="text-[12px] sm:text-[13px] md:text-[14px] text-[#111827] leading-[1.7] md:leading-[1.8] mb-3 md:mb-4">
-                Over two decades, we've completed more than 500 projects across Singapore's residential, commercial, and industrial sectors.
+                With over 20 years of experience, we've successfully completed more than 500 projects. From minor leak repairs to complex structural works, our 100% certified team brings unparalleled expertise to every residential, commercial, and industrial project.
               </p>
               <p className="text-[12px] sm:text-[13px] md:text-[14px] text-[#111827] leading-[1.7] md:leading-[1.8]">
-                Our team of certified workers brings not just technical skill, but genuine care for every client's property. We treat each roof as if it were our own.
+                We believe in complete transparency. That's why we offer expert consultation and free site inspections. We use only proven materials and cutting-edge techniques, treating every roof with the utmost care and precision as if it were our own.
               </p>
               <div className="mt-6 md:mt-8 pt-6 md:pt-8 border-t border-[rgba(201,168,76,0.2)]">
                 <span className="text-[8px] sm:text-[9px] md:text-[10px] tracking-[2.5px] sm:tracking-[3px] md:tracking-[4px] uppercase text-[#C9A84C] mb-3 block font-bold">Our Track Record</span>

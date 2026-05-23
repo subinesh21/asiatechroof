@@ -5,6 +5,7 @@ import Reveal from '@/components/Reveal';
 import Hero from '@/components/Hero';
 import HomeProjects from '@/components/HomeProjects';
 import HomeBlog from '@/components/HomeBlog';
+import MapSection from '@/components/MapSection';
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
@@ -171,11 +172,55 @@ export default function HomePage() {
     ]
   };
 
+  const reviewSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Asia Tech Roofing Specialist",
+    "image": "https://asiatechroof.sg/og-image.jpg",
+    "@id": "https://asiatechroof.sg",
+    "url": "https://asiatechroof.sg",
+    "telephone": "+6590545431",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "SG",
+      "addressLocality": "Singapore"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "128"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Mr. Tan" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "We had a persistent leak in our HDB flat that 3 other contractors couldn't fix. Asia Tech Roofing came in, accurately diagnosed the issue with their moisture tools, and fixed it permanently within a day."
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Sarah L." },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "Their team handled the complete re-roofing of our commercial warehouse in Tuas. Extremely professional, maintained high safety standards (bizSAFE), and delivered on time without hidden costs."
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "David C." },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "I engaged them for terrace waterproofing. The transparency in their pricing and the detailed inspection report gave me total peace of mind. Excellent workmanship."
+      }
+    ]
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
       />
       <Navbar />
       <Hero />
@@ -412,9 +457,17 @@ export default function HomePage() {
             >
               &quot;Built on <em className="text-[#C9A84C] not-italic">trust.</em><br />Proven by<br /><em className="text-[#C9A84C] not-italic">results.</em>&quot;
             </blockquote>
-            <p className="text-[13px] sm:text-[15px] text-[#6B7280] leading-[1.8]">
-              For over 20 years, Asia Tech Roofing has delivered quality craftsmanship and lasting protection to hundreds of properties across Singapore. Our certified team brings unparalleled expertise to every project — big or small.
-            </p>
+            <div className="text-[13px] sm:text-[15px] text-[#6B7280] leading-[1.8] space-y-4">
+              <p>
+                Since 2004, Asia Tech Roofing has delivered quality craftsmanship and lasting protection to hundreds of properties across Singapore. With over 20 years of experience, we specialize in expert roof repair, leak repair, and advanced waterproofing solutions.
+              </p>
+              <p>
+                Our commitment to excellence drives us to use cutting-edge techniques and proven materials, ensuring reliable solutions that protect your property for years to come. We proudly serve residential, commercial, and industrial properties with tailored services.
+              </p>
+              <p>
+                Our 100% certified team brings unparalleled expertise to every project, offering expert consultation, free site inspections, and durable solutions that enhance the safety and longevity of your building.
+              </p>
+            </div>
           </Reveal>
 
           <div className="flex flex-col">
@@ -540,17 +593,30 @@ export default function HomePage() {
                 </p>
               </Reveal>
               <Reveal delay={3}>
-                <div>
-                  <span className="text-[9px] sm:text-[10px] tracking-[2px] uppercase text-[#374151] font-bold mb-2.5 block" style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}>Areas We Serve:</span>
-                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                    {['Jurong', 'Tampines', 'Bukit Timah', 'Orchard', 'Tuas', 'Woodlands', 'Sentosa', 'CBD'].map((area, idx) => (
-                      <span 
-                        key={idx} 
-                        className="bg-white border border-[#E5E7EB] text-[#374151] text-[10px] sm:text-[12px] px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-full font-medium transition-all hover:border-[#C9A84C] hover:text-[#C9A84C]"
-                      >
-                        📍 {area}
-                      </span>
-                    ))}
+                <div className="space-y-3">
+                  <div>
+                    <span className="text-[9px] sm:text-[10px] tracking-[2px] uppercase text-[#374151] font-bold mb-1.5 block" style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}>West Region</span>
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                      {['Jurong', 'Tuas', 'Bukit Batok', 'Clementi'].map((area, idx) => (
+                        <span key={`west-${idx}`} className="bg-white border border-[#E5E7EB] text-[#374151] text-[10px] sm:text-[12px] px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-full font-medium transition-all hover:border-[#C9A84C] hover:text-[#C9A84C]">📍 {area}</span>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <span className="text-[9px] sm:text-[10px] tracking-[2px] uppercase text-[#374151] font-bold mb-1.5 block" style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}>Central & South</span>
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                      {['CBD', 'Orchard', 'Bukit Timah', 'Sentosa'].map((area, idx) => (
+                        <span key={`central-${idx}`} className="bg-white border border-[#E5E7EB] text-[#374151] text-[10px] sm:text-[12px] px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-full font-medium transition-all hover:border-[#C9A84C] hover:text-[#C9A84C]">📍 {area}</span>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <span className="text-[9px] sm:text-[10px] tracking-[2px] uppercase text-[#374151] font-bold mb-1.5 block" style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}>East & North</span>
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                      {['Tampines', 'Woodlands', 'Yishun', 'Pasir Ris'].map((area, idx) => (
+                        <span key={`east-${idx}`} className="bg-white border border-[#E5E7EB] text-[#374151] text-[10px] sm:text-[12px] px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-full font-medium transition-all hover:border-[#C9A84C] hover:text-[#C9A84C]">📍 {area}</span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </Reveal>
@@ -642,11 +708,83 @@ export default function HomePage() {
             </div>
           </div>
 
+          {/* ROW 4: Certifications */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 items-center border-t border-[rgba(201,168,76,0.1)] pt-12 md:pt-16 mt-12 md:mt-16">
+            <div className="lg:col-span-12 text-center space-y-4 sm:space-y-6">
+              <Reveal>
+                <span className="text-[9px] sm:text-[10px] tracking-[4px] uppercase text-[#C9A84C] font-semibold block">
+                  04 · INDUSTRY CERTIFICATIONS
+                </span>
+              </Reveal>
+              <Reveal delay={1}>
+                <h2 
+                  className="text-[#111827] leading-[1.1] mb-3 sm:mb-4" 
+                  style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(28px, 5vw, 56px)' }}
+                >
+                  Certified &<br />
+                  <span className="text-[#C9A84C]">Recognised Standards</span>
+                </h2>
+              </Reveal>
+              <Reveal delay={2}>
+                <div className="flex flex-wrap justify-center gap-4 sm:gap-8 pt-4">
+                  {[
+                    { icon: '✓', name: 'BCA Licensed', desc: 'Building & Construction Authority' },
+                    { icon: '★', name: 'bizSAFE Level 3', desc: 'Workplace Safety Certified' },
+                    { icon: '◈', name: 'ISO Compliant', desc: 'Quality Management Standards' },
+                    { icon: '⬡', name: 'MOM Registered', desc: 'Ministry of Manpower' }
+                  ].map((cert, idx) => (
+                    <div key={idx} className="bg-[#F9FAFB] border border-[#E5E7EB] p-4 sm:p-6 rounded-lg flex flex-col items-center text-center w-[160px] sm:w-[200px]">
+                      <div className="w-10 h-10 border border-[#C9A84C] flex items-center justify-center text-[#C9A84C] text-lg mb-3 rounded-full">{cert.icon}</div>
+                      <div className="font-bold text-[13px] sm:text-[15px] text-[#111827] mb-1">{cert.name}</div>
+                      <div className="text-[10px] sm:text-[12px] text-[#6B7280]">{cert.desc}</div>
+                    </div>
+                  ))}
+                </div>
+              </Reveal>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* TESTIMONIALS SECTION */}
+      <section className="bg-[#F9FAFB] py-16 md:py-[100px] px-6 md:px-[60px] border-t border-[rgba(201,168,76,0.1)]">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="text-center mb-12">
+            <Reveal><span className="text-[10px] tracking-[4px] uppercase text-[#C9A84C] mb-4 block">Client Success Stories</span></Reveal>
+            <Reveal delay={1}>
+              <h2 className="leading-none text-[#111827]" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(44px, 6vw, 72px)' }}>
+                Trusted By Property<br />Owners <span className="text-[#C9A84C]">Across Singapore</span>
+              </h2>
+            </Reveal>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            {[
+              { text: "We had a persistent leak in our HDB flat that 3 other contractors couldn't fix. Asia Tech Roofing came in, accurately diagnosed the issue with their moisture tools, and fixed it permanently within a day.", author: "Mr. Tan", property: "HDB Owner, Tampines" },
+              { text: "Their team handled the complete re-roofing of our commercial warehouse in Tuas. Extremely professional, maintained high safety standards (bizSAFE), and delivered on time without hidden costs.", author: "Sarah L.", property: "Facility Manager, Tuas" },
+              { text: "I engaged them for terrace waterproofing. The transparency in their pricing and the detailed inspection report gave me total peace of mind. Excellent workmanship.", author: "David C.", property: "Landed Property, Bukit Timah" }
+            ].map((testimonial, idx) => (
+              <Reveal key={idx} delay={(idx % 3) as 0 | 1 | 2}>
+                <div className="bg-white border border-[#E5E7EB] p-8 rounded-xl h-full flex flex-col relative shadow-sm">
+                  <div className="text-[#C9A84C] text-[40px] leading-none absolute top-4 left-6 opacity-30" style={{ fontFamily: 'serif' }}>&quot;</div>
+                  <div className="flex gap-1 mb-4 z-10 text-[#C9A84C]">★★★★★</div>
+                  <p className="text-[14px] text-[#6B7280] leading-[1.8] italic mb-6 flex-grow z-10 relative">&quot;{testimonial.text}&quot;</p>
+                  <div className="mt-auto border-t border-[rgba(201,168,76,0.1)] pt-4">
+                    <div className="font-bold text-[14px] text-[#111827]">{testimonial.author}</div>
+                    <div className="text-[11px] uppercase tracking-[1px] text-[#C9A84C] mt-1">{testimonial.property}</div>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* BLOG SECTION */}
       <HomeBlog />
+      <MapSection />
+
 
       {/* CTA BANNER - REORDERED */}
       <CTABanner
@@ -654,7 +792,6 @@ export default function HomePage() {
         title={<>READY TO PROTECT<br /><span className="text-[#C9A84C]">YOUR PROPERTY?</span></>}
         description="Get a free on-site inspection from Singapore's most trusted roofing specialists. No obligation, just expert advice."
       />
-
       <Footer />
     </>
   );

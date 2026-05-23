@@ -12,6 +12,69 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'ultimate-guide-hdb-roof-leaks-2026',
+    title: 'The Ultimate Guide to Identifying and Fixing HDB Roof Leaks in 2026',
+    excerpt: 'HDB leaks can cause severe damage if ignored. Learn the early warning signs, understand Town Council responsibilities, and discover the most effective repair methods for Singaporean flats.',
+    date: 'May 22, 2026',
+    author: 'Asia Tech Editorial',
+    category: 'HDB Solutions',
+    image: '/Blog/blog-4.webp',
+    content: `
+      <h2>Why Do HDB Roofs Leak?</h2>
+      <p>Despite Singapore's stringent building standards, the combination of intense tropical sunlight and heavy monsoon rains inevitably takes a toll on concrete structures. The expansion and contraction over time lead to micro-cracks in the roof slab, allowing water to seep through.</p>
+      
+      <h3>Early Warning Signs You Shouldn't Ignore</h3>
+      <ul>
+        <li><strong>Yellowing or Water Marks:</strong> Faint discoloration on your ceiling is often the first sign.</li>
+        <li><strong>Peeling Paint or Bubbling Plaster:</strong> Moisture compromises the adhesion of interior paint.</li>
+        <li><strong>Damp Musty Smells:</strong> Especially noticeable in enclosed rooms after heavy rainfall.</li>
+      </ul>
+
+      <h3>Who is Responsible for the Repair?</h3>
+      <p>For top-floor units, water seeping directly from the main roof is typically the responsibility of the <strong>Town Council</strong>. However, if the leak originates from the floor above you (such as a bathroom or kitchen), the responsibility is usually shared equally (50/50) between you and the upper-floor neighbor under HDB guidelines.</p>
+
+      <h3>The Most Effective Repair Method: PU Injection</h3>
+      <p>For intra-floor leaks, <strong>Polyurethane (PU) Injection Grouting</strong> has become the industry standard. This no-hacking method involves injecting expanding foam into the concrete slab from below, filling the cracks and creating a watertight seal without the need to tear up the neighbor's tiles.</p>
+    `,
+    faqs: [
+      { q: "How much does PU Injection cost?", a: "Prices typically range from $200 to $500 per point depending on the severity of the crack." },
+      { q: "Does the repair come with a warranty?", a: "Yes, Asia Tech Roofing provides comprehensive warranties for our PU injection services." }
+    ]
+  },
+  {
+    slug: 'importance-of-waterproofing-in-singapore',
+    title: 'Why Premium Waterproofing is Non-Negotiable in Singapore\'s Climate',
+    excerpt: 'With an average of 167 raining days a year, waterproofing isn\'t a luxury—it\'s a necessity. Learn why investing in quality membranes saves you thousands in structural repairs.',
+    date: 'May 18, 2026',
+    author: 'Tech Specialist',
+    category: 'Expert Advice',
+    image: '/Blog/blog-5.webp',
+    content: `
+      <h2>The Reality of Singapore's Weather</h2>
+      <p>Singapore experiences a tropical rainforest climate with abundant rainfall throughout the year, especially during the Northeast and Southwest Monsoons. This relentless moisture, combined with high UV exposure, puts immense stress on building exteriors and flat roofs.</p>
+      
+      <h3>The True Cost of Poor Waterproofing</h3>
+      <p>Opting for cheap, substandard waterproofing can lead to catastrophic failures. Water ingress can cause:</p>
+      <ul>
+        <li><strong>Concrete Spalling:</strong> Water reaches the rebar inside the concrete, causing it to rust, expand, and break the concrete apart.</li>
+        <li><strong>Electrical Hazards:</strong> Seepage can reach internal wiring, posing severe fire and shock risks.</li>
+        <li><strong>Health Issues:</strong> Persistent dampness encourages toxic mold growth, affecting indoor air quality.</li>
+      </ul>
+
+      <h3>Modern Waterproofing Systems Explained</h3>
+      <p>At Asia Tech Roofing, we employ several advanced systems tailored to specific needs:</p>
+      <ul>
+        <li><strong>Torch-On Bitumen Membranes:</strong> The gold standard for flat RC roofs. A thick, robust layer that provides excellent puncture resistance and longevity.</li>
+        <li><strong>Liquid Polyurethane (PU) Coatings:</strong> Ideal for complex geometries and balconies. It forms a seamless, highly flexible barrier that bridges existing micro-cracks.</li>
+        <li><strong>Cementitious Waterproofing:</strong> Frequently used in wet areas like bathrooms and water tanks before tiling.</li>
+      </ul>
+      <p>Don't wait for the first drop of water to hit your floor. A proactive waterproofing inspection can extend the lifespan of your property by decades.</p>
+    `,
+    faqs: [
+      { q: "How long does a Torch-On membrane last?", a: "When professionally installed, it can easily last 10 to 15 years in Singapore's climate." }
+    ]
+  },
+  {
     slug: 'roof-repair-cost-singapore-2026',
     title: 'Roof Repair Cost Singapore 2026: The Comprehensive Pricing Guide',
     excerpt: 'How much should you pay for roof repairs in Singapore? We break down the costs for HDB, landed property, and industrial roofing in 2026.',

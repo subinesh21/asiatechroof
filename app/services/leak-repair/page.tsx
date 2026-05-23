@@ -35,13 +35,46 @@ const bullets = [
 ];
 
 export default function LeakRepairPage() {
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Leak Repair",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Asia Tech Roofing Specialist",
+      "image": "https://asiatechroof.sg/og-image.jpg"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Singapore"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Leak Repair Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Emergency Leak Repair"
+          }
+        }
+      ]
+    }
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <Navbar />
       <PageHero
         breadcrumb="Services / Leak Repair"
         title={<>LEAK<br />REPAIR</>}
-        subtitle="Fast, accurate leak diagnosis and durable repairs — protecting your property from water damage and further deterioration."
+        subtitle="Fast, accurate leak detection and durable repair solutions to stop water ingress at the source."
+        bgImage="/service/leak-service.webp"
       />
 
       <div className="bg-[#F9FAFB] border-b border-[rgba(201,168,76,0.2)]">
@@ -62,8 +95,8 @@ export default function LeakRepairPage() {
           <Reveal delay={1}>
             <div className="leading-none mb-[-12px]" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: '96px', color: 'rgba(201,168,76,0.12)' }}>02</div>
             <div className="text-[#111827] mb-5" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: '56px' }}>LEAK REPAIR</div>
-            <p className="text-[15px] text-[#111827] leading-[1.9] mb-8">Water leaks can escalate quickly if left unaddressed. Our team provides rapid response, accurate diagnosis using moisture detection tools, and durable repairs that stop leaks from returning.</p>
-            <p className="text-[15px] text-[#111827] leading-[1.9] mb-8">We trace leaks to their source — not just the visible symptoms — ensuring the repair addresses the actual problem and delivers lasting protection.</p>
+            <p className="text-[13px] sm:text-[15px] text-[#111827] leading-[1.9] mb-4">Water leaks can escalate quickly if left unaddressed. Our team provides rapid response, accurate diagnosis using moisture detection tools, and durable repairs that stop leaks from returning.</p>
+            <p className="text-[13px] sm:text-[15px] text-[#111827] leading-[1.9] mb-4">We trace leaks to their source — not just the visible symptoms — ensuring the repair addresses the actual problem and delivers lasting protection.</p>
             <ul className="list-none mb-9">
               {bullets.map((b, i) => (
                 <li key={i} className="text-[13px] text-[#111827] py-2.5 border-b border-[rgba(201,168,76,0.2)] flex gap-3 items-start"><span className="text-[#C9A84C] flex-shrink-0">→</span>{b}</li>

@@ -59,9 +59,35 @@ export default function ContactPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic here
+    try {
+      const response = await fetch("https://formspree.io/f/xredlpwl", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert("Thank you! Your message has been sent successfully.");
+        setFormData({
+          firstName: '',
+          lastName: '',
+          phone: '',
+          email: '',
+          propertyType: '',
+          serviceType: '',
+          message: '',
+        });
+      } else {
+        alert("Oops! There was a problem submitting your form.");
+      }
+    } catch (error) {
+      alert("Oops! There was a problem submitting your form.");
+    }
   };
 
   return (
@@ -70,7 +96,8 @@ export default function ContactPage() {
       <PageHero
         breadcrumb="Contact"
         title={<>GET IN<br />TOUCH</>}
-        subtitle="Free on-site inspections, expert advice, and transparent pricing. Contact our team today."
+        subtitle="Need emergency roof repairs or a free site inspection? Contact our team today for professional roofing services across Singapore."
+        bgImage="/contact/contact.png"
         minHeight="50vh"
       />
 
@@ -170,7 +197,7 @@ export default function ContactPage() {
                     placeholder={field.placeholder}
                     value={formData[field.name as keyof typeof formData]}
                     onChange={handleChange}
-                    className="bg-[#F3F4F6] border border-[rgba(201,168,76,0.2)] text-[#111827] px-4 py-3 md:px-[18px] md:py-3.5 text-[13px] md:text-[14px] outline-none transition-colors focus:border-[#C9A84C] placeholder-[#111827] w-full"
+                    className="bg-[#F3F4F6] border border-[rgba(201,168,76,0.2)] text-[#111827] px-4 py-3 md:px-[18px] md:py-3.5 text-[13px] md:text-[14px] outline-none transition-colors focus:border-[#C9A84C] placeholder-[#9CA3AF] w-full"
                     style={{ fontFamily: 'var(--font-inter, sans-serif)' }}
                   />
                 </div>
@@ -186,7 +213,8 @@ export default function ContactPage() {
                     name={select.name}
                     value={formData[select.name as keyof typeof formData]}
                     onChange={handleChange}
-                    className="select-custom bg-[#F3F4F6] border border-[rgba(201,168,76,0.2)] text-[#111827] px-4 py-3 md:px-[18px] md:py-3.5 text-[13px] md:text-[14px] outline-none transition-colors focus:border-[#C9A84C] w-full cursor-pointer"
+                    className={`select-custom bg-[#F3F4F6] border border-[rgba(201,168,76,0.2)] px-4 py-3 md:px-[18px] md:py-3.5 text-[13px] md:text-[14px] outline-none transition-colors focus:border-[#C9A84C] w-full cursor-pointer ${formData[select.name as keyof typeof formData] === '' ? 'text-[#9CA3AF]' : 'text-[#111827]'
+                      }`}
                     style={{ fontFamily: 'var(--font-inter, sans-serif)' }}
                   >
                     {select.options.map((opt, i) => (
@@ -206,7 +234,7 @@ export default function ContactPage() {
                   value={formData.message}
                   onChange={handleChange}
                   rows={5}
-                  className="bg-[#F3F4F6] border border-[rgba(201,168,76,0.2)] text-[#111827] px-4 py-3 md:px-[18px] md:py-3.5 text-[13px] md:text-[14px] outline-none transition-colors focus:border-[#C9A84C] placeholder-[#111827] w-full resize-vertical"
+                  className="bg-[#F3F4F6] border border-[rgba(201,168,76,0.2)] text-[#111827] px-4 py-3 md:px-[18px] md:py-3.5 text-[13px] md:text-[14px] outline-none transition-colors focus:border-[#C9A84C] placeholder-[#9CA3AF] w-full resize-vertical"
                   style={{ fontFamily: 'var(--font-inter, sans-serif)' }}
                 />
               </div>

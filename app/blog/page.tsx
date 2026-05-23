@@ -21,7 +21,7 @@ export default function BlogListingPage() {
         breadcrumb="Resources"
         title={<>EXPERT<br /><span className="text-[#C9A84C]">INSIGHTS</span></>}
         subtitle="Your complete guide to roofing and waterproofing in Singapore. Practical tips from 20+ years in the industry."
-        bgImage="https://images.unsplash.com/photo-1541888941295-1e3ff2ca51cb?w=1400&q=80"
+        bgImage="/Blog/blog-1.webp"
       />
 
       <section className="bg-[#F9FAFB] py-20 px-6 md:px-[60px]">

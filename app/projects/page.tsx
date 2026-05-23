@@ -258,9 +258,10 @@ export default function ProjectsPage() {
       <div style={{ position: 'fixed', top: 0, left: 0, right: 0, height: '100vh', zIndex: 1 }}>
         <PageHero
           breadcrumb="Projects"
-          title={<>OUR<br />PORTFOLIO</>}
-          subtitle="500+ completed projects across Singapore's residential, commercial, and industrial sectors. Work that stands the test of time."
+          title={<>OUR<br />PROJECTS</>}
+          subtitle="Browse our recent roofing and waterproofing projects across residential, commercial, and industrial sectors."
           minHeight="100vh"
+          bgImage="/Projects/project.png"
         />
       </div>
 
@@ -381,56 +382,87 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* FEATURED CASE STUDY */}
+      {/* DETAILED CASE STUDIES */}
       <section className="bg-[#F9FAFB] py-12 md:py-20 px-4 md:px-[60px]">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 items-center">
-          <Reveal>
-            <div
-              className="h-[300px] sm:h-[450px] md:h-[520px] relative"
-              style={{ backgroundImage: "url('/Projects/IMG-20250413-WA0049.webp')", backgroundSize: 'cover', backgroundPosition: 'center' }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-5 md:p-7">
-                <span className="text-[8px] md:text-[9px] tracking-[2.5px] md:tracking-[3px] uppercase text-[#C9A84C] mb-1.5 block">Case Study · Industrial</span>
-                <div className="text-[26px] md:text-[32px] text-white" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>
-                  JURONG INDUSTRIAL<br />COMPLEX
+        <div className="text-center mb-12 md:mb-16">
+          <Reveal><span className="text-[9px] md:text-[10px] tracking-[3px] md:tracking-[4px] uppercase text-[#C9A84C] mb-2 md:mb-3 block font-semibold">Project Spotlights</span></Reveal>
+          <Reveal delay={1}>
+            <h2 className="leading-none text-[#111827]" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(32px, 5vw, 64px)' }}>
+              Detailed Case Studies
+            </h2>
+          </Reveal>
+        </div>
+
+        <div className="flex flex-col gap-12 md:gap-20">
+          {/* Case Study 1 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+            <Reveal>
+              <div
+                className="h-[300px] sm:h-[400px] w-full rounded-xl overflow-hidden shadow-md relative"
+                style={{ backgroundImage: "url('/Projects/IMG-20250413-WA0049.webp')", backgroundSize: 'cover', backgroundPosition: 'center' }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-5 md:p-7">
+                  <span className="text-[8px] md:text-[9px] tracking-[2.5px] uppercase text-[#C9A84C] mb-1.5 block">Industrial Re-Roofing</span>
+                  <div className="text-[26px] md:text-[32px] text-white leading-tight" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>
+                    JURONG WAREHOUSE<br />COMPLEX
+                  </div>
                 </div>
               </div>
-            </div>
-          </Reveal>
-
-          <Reveal delay={1}>
-            <span className="text-[9px] md:text-[10px] tracking-[3px] md:tracking-[4px] uppercase text-[#C9A84C] mb-2 md:mb-4 block font-semibold">Featured Project</span>
-            <h2 className="leading-none text-[#111827] mb-4 md:mb-5" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(32px, 5vw, 64px)' }}>
-              Complete Industrial<br />Roof Overhaul
-            </h2>
-            <p className="text-[13px] md:text-[15px] text-[#111827] leading-[1.8] md:leading-[1.9] mb-4 md:mb-6">
-              A major full roof replacement and waterproofing project for a 12,000 sqm industrial facility in Jurong West. The existing IBR metal roof had deteriorated severely after 18 years, with multiple active leaks disrupting factory operations.
-            </p>
-            <p className="text-[13px] md:text-[15px] text-[#111827] leading-[1.8] md:leading-[1.9] mb-6 md:mb-8">
-              Our team completed the full re-roofing with minimal disruption to the client&apos;s production schedule — working in phases over 3 weeks with zero safety incidents.
-            </p>
-            <div className="grid grid-cols-2 gap-3 md:gap-4 mb-6 md:mb-8">
-              {[
-                { label: 'Project Type', value: 'Full Re-Roofing' },
-                { label: 'Area', value: '12,000 sqm' },
-                { label: 'Duration', value: '3 Weeks' },
-                { label: 'Location', value: 'Jurong West' },
-              ].map((d, i) => (
-                <div key={i} className="bg-[#F3F4F6] p-3 md:p-4 px-4 md:px-5">
-                  <div className="text-[8px] md:text-[9px] tracking-[1.5px] md:tracking-[2px] uppercase text-[#C9A84C] mb-1 md:mb-1.5">{d.label}</div>
-                  <div className="text-[12px] md:text-[14px] text-[#111827] font-semibold">{d.value}</div>
+            </Reveal>
+            <Reveal delay={1}>
+              <h3 className="text-[20px] md:text-[24px] font-bold text-[#111827] mb-4">Complete Metal Roof Overhaul</h3>
+              <div className="space-y-4 text-[13px] md:text-[14px] text-[#6B7280]">
+                <div>
+                  <strong className="text-[#111827] block mb-1">The Challenge:</strong>
+                  The 12,000 sqm industrial facility had an aging IBR metal roof (18+ years old) suffering from severe rust and multiple active leaks, disrupting factory operations during heavy downpours.
                 </div>
-              ))}
-            </div>
-            <Link
-              href="/contact"
-              className="bg-[#C9A84C] text-[#111827] border-2 border-[#C9A84C] px-5 py-3 md:px-8 md:py-[15px] font-bold text-[10px] md:text-[12px] tracking-[1.5px] md:tracking-[2px] uppercase transition-all duration-200 hover:bg-transparent hover:text-[#C9A84C] no-underline inline-block"
-              style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
-            >
-              Start Your Project
-            </Link>
-          </Reveal>
+                <div>
+                  <strong className="text-[#111827] block mb-1">The Solution:</strong>
+                  A phased, full roof replacement using premium anti-corrosive metal panels. Our team operated strictly during off-peak hours to ensure zero downtime for the client's production line.
+                </div>
+                <div>
+                  <strong className="text-[#111827] block mb-1">The Result:</strong>
+                  Project completed in 3 weeks with zero safety incidents. The facility is now 100% watertight and backed by a 10-year workmanship and material warranty.
+                </div>
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Case Study 2 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+            <Reveal delay={1}>
+              <h3 className="text-[20px] md:text-[24px] font-bold text-[#111827] mb-4">Sentosa Cove Landed Waterproofing</h3>
+              <div className="space-y-4 text-[13px] md:text-[14px] text-[#6B7280]">
+                <div>
+                  <strong className="text-[#111827] block mb-1">The Challenge:</strong>
+                  A luxury 3-story landed property experienced persistent water seepage through its flat RC roof and terrace, leading to interior ceiling damage and mold growth.
+                </div>
+                <div>
+                  <strong className="text-[#111827] block mb-1">The Solution:</strong>
+                  Comprehensive moisture detection followed by the application of a 3-layer liquid polyurethane waterproofing membrane over the entire 300 sqm flat roof area.
+                </div>
+                <div>
+                  <strong className="text-[#111827] block mb-1">The Result:</strong>
+                  Complete eradication of water ingress. The new membrane successfully passed a 48-hour flood test, fully restoring the home's interior safety and comfort within just 4 days.
+                </div>
+              </div>
+            </Reveal>
+            <Reveal className="md:order-last order-first">
+              <div
+                className="h-[300px] sm:h-[400px] w-full rounded-xl overflow-hidden shadow-md relative"
+                style={{ backgroundImage: "url('/Projects/Waterproofing/image-2.webp')", backgroundSize: 'cover', backgroundPosition: 'center' }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-5 md:p-7">
+                  <span className="text-[8px] md:text-[9px] tracking-[2.5px] uppercase text-[#C9A84C] mb-1.5 block">Residential Waterproofing</span>
+                  <div className="text-[26px] md:text-[32px] text-white leading-tight" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>
+                    SENTOSA COVE<br />VILLA
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 

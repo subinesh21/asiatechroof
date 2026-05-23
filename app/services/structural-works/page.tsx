@@ -35,10 +35,42 @@ const bullets = [
 ];
 
 export default function StructuralWorksPage() {
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Structural Works",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Asia Tech Roofing Specialist",
+      "image": "https://asiatechroof.sg/og-image.jpg"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Singapore"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Structural Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Roof Framework Restoration"
+          }
+        }
+      ]
+    }
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <Navbar />
-      <PageHero breadcrumb="Services / Structural Works" title={<>STRUCTURAL<br />WORKS</>} subtitle="Beyond surface repairs — we address the structural integrity of your roof framework for long-lasting protection." />
+      <PageHero breadcrumb="Services / Structural Works" title={<>STRUCTURAL<br />WORKS</>} subtitle="Beyond surface repairs — we address the structural integrity of your roof framework for long-lasting protection." bgImage="/service/structural-service.webp" />
       <div className="bg-[#F9FAFB] border-b border-[rgba(201,168,76,0.2)]">
         <div className="flex px-6 md:px-[60px]">
           {services.map((s) => (<Link key={s.href} href={s.href} className={`px-6 py-4 text-[11px] tracking-[2px] uppercase font-semibold no-underline transition-all duration-200 border-b-[2px] ${s.active ? 'border-[#C9A84C] text-[#C9A84C]' : 'border-transparent text-[#111827] hover:text-[#C9A84C] hover:border-[#C9A84C]'}`} style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}>{s.label}</Link>))}
@@ -54,7 +86,7 @@ export default function StructuralWorksPage() {
           <Reveal delay={1}>
             <div className="leading-none mb-[-12px]" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: '96px', color: 'rgba(201,168,76,0.12)' }}>04</div>
             <div className="text-[#111827] mb-5" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: '56px' }}>STRUCTURAL WORKS</div>
-            <p className="text-[15px] text-[#111827] leading-[1.9] mb-8">Beyond surface repairs, we address the structural integrity of your roof framework. Our team carries out reinforcement and restoration work that extends the lifespan of your building's roofing system.</p>
+            <p className="text-[13px] sm:text-[15px] text-[#111827] leading-[1.9] mb-4">Beyond surface repairs, we address the structural integrity of your roof framework. Our team carries out reinforcement and restoration work that extends the lifespan of your building's roofing system.</p>
             <ul className="list-none mb-9">
               {bullets.map((b, i) => (<li key={i} className="text-[13px] text-[#111827] py-2.5 border-b border-[rgba(201,168,76,0.2)] flex gap-3 items-start"><span className="text-[#C9A84C] flex-shrink-0">→</span>{b}</li>))}
             </ul>
