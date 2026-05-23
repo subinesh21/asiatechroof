@@ -152,7 +152,7 @@ export default function AboutPage() {
         >
           <div className="absolute inset-0">
             <Image
-              src="/assets/about-roof.png"
+              src="/about/about-roof.png"
               alt="Asia Tech Roofing — quality craftsmanship"
               fill
               className="object-cover object-center"

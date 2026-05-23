@@ -272,7 +272,7 @@ export default function ProjectsPage() {
         <div style={{ position: 'sticky', top: 0, height: '100vh', overflow: 'hidden' }}>
           <div className="absolute inset-0">
             <Image
-              src="/assets/project-roof.png"
+              src="/Projects/project-roof.png"
               alt="Asia Tech Roofing — Projects"
               fill
               className="object-cover object-center"
