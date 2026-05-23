@@ -139,10 +139,9 @@ export default function AboutPage() {
         style={{
           position: 'relative',
           zIndex: 2,
-          height: '100vh',      // 100vh of scroll dedicated to the reveal
+          height: '100vh',      
         }}
       >
-        {/* Sticky roof image — fills viewport while its section scrolls */}
         <div
           style={{
             position: 'sticky',

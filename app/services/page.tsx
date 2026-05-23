@@ -169,10 +169,10 @@ export default function ServicesPage() {
       <div style={{ position: 'relative', zIndex: 2, height: '100vh' }}>
         <div style={{ position: 'sticky', top: 0, height: '100vh', overflow: 'hidden' }}>
           <Image
-            src="/assets/service-roof.png"
+            src="/service/service-roof.png"
             alt="Asia Tech Roofing — Services"
             fill
-            className="object-cover object-center"
+            className="object-cover object-center -scale-x-100"
             priority
             sizes="100vw"
           />
