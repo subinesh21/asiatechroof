@@ -152,15 +152,36 @@ export default function ServicesPage() {
   return (
     <>
       <Navbar />
-      <PageHero
-        breadcrumb="Services"
-        title={<>OUR<br />SERVICES</>}
-        subtitle="Comprehensive roofing solutions for every type of property — delivered with precision, quality, and two decades of expertise."
-        minHeight="100vh"
-      />
 
-      {/* SERVICES OVERVIEW */}
-      <section className="bg-[#F9FAFB] py-12 md:py-[100px] px-4 md:px-[60px]">
+      <div style={{ position: 'fixed', top: 0, left: 0, right: 0, height: '100vh', zIndex: 1 }}>
+        <PageHero
+          breadcrumb="Services"
+          title={<>OUR<br />SERVICES</>}
+          subtitle="Comprehensive roofing solutions for every type of property — delivered with precision, quality, and two decades of expertise."
+          minHeight="100vh"
+        />
+      </div>
+
+      {/* Spacer */}
+      <div style={{ height: '100vh' }} aria-hidden="true" />
+
+      {/* Reveal Image */}
+      <div style={{ position: 'relative', zIndex: 2, height: '100vh' }}>
+        <div style={{ position: 'sticky', top: 0, height: '100vh', overflow: 'hidden' }}>
+          <Image
+            src="/assets/service-roof.png"
+            alt="Asia Tech Roofing — Services"
+            fill
+            className="object-cover object-center"
+            priority
+            sizes="100vw"
+          />
+        </div>
+      </div>
+
+      <div style={{ position: 'relative', zIndex: 3, backgroundColor: '#F9FAFB' }}>
+        {/* SERVICES OVERVIEW */}
+        <section className="bg-[#F9FAFB] py-12 md:py-[100px] px-4 md:px-[60px]">
         <Reveal><span className="text-[9px] md:text-[10px] tracking-[3px] md:tracking-[4px] uppercase text-[#C9A84C] mb-3 md:mb-4 block">What We Do</span></Reveal>
         <Reveal delay={1}>
           <h2 className="leading-none text-[#111827] mb-8 md:mb-[60px]" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(32px, 5vw, 64px)' }}>
@@ -326,30 +347,80 @@ export default function ServicesPage() {
           </Reveal>
         </div>
         <Reveal>
-          <div className="max-w-[800px]">
-            {faqs.map((faq, i) => (
-              <div key={i} className="border-b border-[rgba(201,168,76,0.2)]">
-                <button
-                  className="w-full text-left bg-none border-none py-4 md:py-6 flex justify-between items-center cursor-pointer text-[#111827] font-semibold text-[13px] sm:text-[15px]"
-                  style={{ fontFamily: 'var(--font-montserrat, sans-serif)', background: 'none' }}
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                >
-                  {faq.q}
-                  <span
-                    className="text-[#C9A84C] text-lg sm:text-xl transition-transform duration-300"
-                    style={{ transform: openFaq === i ? 'rotate(45deg)' : 'none' }}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
+            {/* Accordions */}
+            <div>
+              {faqs.map((faq, i) => (
+                <div key={i} className="border-b border-[rgba(201,168,76,0.2)]">
+                  <button
+                    className="w-full text-left bg-none border-none py-4 md:py-6 flex justify-between items-center cursor-pointer text-[#111827] font-semibold text-[13px] sm:text-[15px]"
+                    style={{ fontFamily: 'var(--font-montserrat, sans-serif)', background: 'none' }}
+                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
                   >
-                    +
-                  </span>
-                </button>
-                <div className={`faq-answer ${openFaq === i ? 'open' : ''}`}>
-                  <p className="pb-4 md:pb-6 text-[12px] sm:text-[14px] text-[#6B7280] leading-[1.8] max-w-[680px]">{faq.a}</p>
+                    {faq.q}
+                    <span
+                      className="text-[#C9A84C] text-lg sm:text-xl transition-transform duration-300 ml-4 shrink-0"
+                      style={{ transform: openFaq === i ? 'rotate(45deg)' : 'none' }}
+                    >
+                      +
+                    </span>
+                  </button>
+                  <div className={`faq-answer ${openFaq === i ? 'open' : ''}`}>
+                    <p className="pb-4 md:pb-6 text-[12px] sm:text-[14px] text-[#6B7280] leading-[1.8] max-w-[600px]">{faq.a}</p>
+                  </div>
                 </div>
+              ))}
+            </div>
+
+            {/* Image Panel */}
+            <div className="hidden lg:block sticky top-24">
+              <div className="relative h-[480px] w-full rounded-2xl overflow-hidden shadow-lg">
+                {[
+                  '/service/roof-service.webp',
+                  '/service/leak-service.webp',
+                  '/service/singapore-coverage.png',
+                  '/service/waterproof-service.webp',
+                  '/service/trusted-contractor.png',
+                ].map((img, i) => (
+                  <Image
+                    key={i}
+                    src={img}
+                    alt={faqs[i]?.q || 'FAQ image'}
+                    fill
+                    className="object-cover transition-opacity duration-500"
+                    style={{ opacity: openFaq === i ? 1 : 0 }}
+                    sizes="50vw"
+                  />
+                ))}
+                {/* Fallback when nothing open */}
+                <Image
+                  src="/service/roof-service.webp"
+                  alt="Roofing FAQ"
+                  fill
+                  className="object-cover transition-opacity duration-500"
+                  style={{ opacity: openFaq === null ? 1 : 0 }}
+                  sizes="50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                {openFaq !== null && (
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <p
+                      className="text-[11px] tracking-[2px] uppercase text-[#C9A84C] font-bold mb-1"
+                      style={{ fontFamily: 'var(--font-montserrat, sans-serif)' }}
+                    >
+                      FAQ 0{openFaq + 1}
+                    </p>
+                    <p className="text-white text-[14px] font-semibold leading-snug">
+                      {faqs[openFaq]?.q}
+                    </p>
+                  </div>
+                )}
               </div>
-            ))}
+            </div>
           </div>
         </Reveal>
       </section>
+
 
       <CTABanner
         label="Get Started"
@@ -360,6 +431,7 @@ export default function ServicesPage() {
       />
 
       <Footer />
+      </div>
     </>
   );
 }

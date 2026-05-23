@@ -18,7 +18,7 @@ export const blogPosts: BlogPost[] = [
     date: 'April 5, 2026',
     author: 'Asia Tech Editorial',
     category: 'Costs & Pricing',
-    image: 'https://images.unsplash.com/photo-1541888941295-1e3ff2ca51cb?w=1000&q=80',
+    image: '/Blog/blog-1.webp',
     content: `
       <h2>The True Cost of Roofing in Singapore (2026)</h2>
       <p>Roofing costs in Singapore are subject to material inflation and specialized labor shifts. In this guide, we provide a transparent look at what you should expect to pay for professional repairs.</p>
@@ -39,7 +39,7 @@ export const blogPosts: BlogPost[] = [
     date: 'March 28, 2026',
     author: 'Tech Specialist',
     category: 'HDB Solutions',
-    image: 'https://images.unsplash.com/photo-1513584684374-8bdb74838a0f?w=1000&q=80',
+    image: '/Blog/blog-2.webp',
     content: `
       <h2>Solving HDB Ceiling Leaks</h2>
       <p>HDB inter-floor leaks are a common grievance in Singapore. The first step is identifying if the leak is a <strong>top-floor main roof leak</strong> or a <strong>mid-floor bathroom leak</strong>.</p>
@@ -57,7 +57,7 @@ export const blogPosts: BlogPost[] = [
     date: 'March 20, 2026',
     author: 'Site Supervisor',
     category: 'Maintenance',
-    image: 'https://images.unsplash.com/photo-1632759162403-0558a41366f6?w=1000&q=80',
+    image: '/Blog/blog-3.webp',
     content: `
       <h2>Monsoon Preparedness for Singapore Homes</h2>
       <p>The Northeast Monsoon brings high winds and persistent rain that will expose any weakness in your roof.</p>
@@ -78,7 +78,7 @@ export const blogPosts: BlogPost[] = [
     date: 'March 15, 2026',
     author: 'Waterproofing Expert',
     category: 'Expert Advice',
-    image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1000&q=80',
+    image: '/Blog/blog-4.webp',
     content: `
       <h2>Choosing the Right Waterproofing System</h2>
       <p>In the Singaporean climate, UV resistance and water ponding durability are the most critical factors.</p>
@@ -97,7 +97,7 @@ export const blogPosts: BlogPost[] = [
     date: 'March 10, 2026',
     author: 'Project Manager',
     category: 'Materials',
-    image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1000&q=80',
+    image: '/Blog/blog-5.webp',
     content: `
       <h2>What is protecting your home?</h2>
       <p>The material of your roof determines how often you need to call a specialist for "roof repair Singapore."</p>
@@ -114,7 +114,7 @@ export const blogPosts: BlogPost[] = [
     date: 'March 2, 2026',
     author: 'Business Lead',
     category: 'Maintenance',
-    image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1000&q=80',
+    image: '/Blog/blog-6(1).webp',
     content: `
       <h2>The Proactive Homeowner</h2>
       <p>A blocked gutter causes water to back up under your tiles, leading to rot and slab failure. Regular maintenance prevents this.</p>
@@ -127,7 +127,7 @@ export const blogPosts: BlogPost[] = [
     date: 'February 24, 2026',
     author: 'Safety Officer',
     category: 'Commercial',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1000&q=80',
+    image: '/Blog/blog-6(2).webp',
     content: `
       <h2>Safety First in industrial Roofing</h2>
       <p>Hiring a non-compliant contractor exposes you to massive liabilities. Always check for BizSafe certification.</p>
@@ -140,7 +140,7 @@ export const blogPosts: BlogPost[] = [
     date: 'February 15, 2026',
     author: 'Technical Director',
     category: 'Expert Advice',
-    image: 'https://images.unsplash.com/photo-1541888941295-1e3ff2ca51cb?w=1000&q=80',
+    image: '/Blog/blog-1.webp',
     content: `
       <h2>The Waterproofing Debate</h2>
       <p>Membranes are for prevention; PU injection is for cure. Understand where each applies.</p>
@@ -153,7 +153,7 @@ export const blogPosts: BlogPost[] = [
     date: 'February 5, 2026',
     author: 'Meteorology Enthusiast',
     category: 'Maintenance',
-    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1000&q=80',
+    image: '/Blog/blog-2.webp',
     content: `
       <h2>Monsoon Resilience</h2>
       <p>Tropical rain is heavy and persistent. Learn how wind loads can loosen your roof components.</p>
@@ -166,7 +166,7 @@ export const blogPosts: BlogPost[] = [
     date: 'January 28, 2026',
     author: 'Founder',
     category: 'Expert Advice',
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1000&q=80',
+    image: '/Blog/blog-3.webp',
     content: `
       <h2>Trust in Worksmanship</h2>
       <p>How to verify certifications and why the cheapest quote often costs the most in the long run.</p>

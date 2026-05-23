@@ -7,6 +7,7 @@ import CTABanner from '@/components/CTABanner';
 import PageHero from '@/components/PageHero';
 import Reveal from '@/components/Reveal';
 import Link from 'next/link';
+import Image from 'next/image';
 
 
 const stats = [
@@ -253,28 +254,35 @@ export default function ProjectsPage() {
   return (
     <>
       <Navbar />
-      <PageHero
-        breadcrumb="Projects"
-        title={<>OUR<br />PORTFOLIO</>}
-        subtitle="500+ completed projects across Singapore's residential, commercial, and industrial sectors. Work that stands the test of time."
-        minHeight="100vh"
-      />
 
-      {/* STATS BAR */}
-      <div className="bg-[#F9FAFB] py-10 px-4 md:px-[60px] border-b border-[rgba(201,168,76,0.2)]">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 md:gap-y-0 justify-around">
-          {stats.map((stat, i) => (
-            <Reveal key={i} delay={i as 0 | 1 | 2 | 3}>
-              <div className={`text-center md:px-10 ${i % 2 === 0 ? 'border-r border-[rgba(201,168,76,0.2)]' : 'border-r-0'} ${i < stats.length - 1 ? 'md:border-r md:border-[rgba(201,168,76,0.2)]' : 'md:border-r-0'}`}>
-                <div className="text-[40px] md:text-[52px] text-[#C9A84C] leading-none" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>{stat.num}</div>
-                <div className="text-[9px] md:text-[11px] text-[#111827] tracking-[1.5px] md:tracking-[2px] uppercase mt-1">{stat.label}</div>
-              </div>
-            </Reveal>
-          ))}
+      <div style={{ position: 'fixed', top: 0, left: 0, right: 0, height: '100vh', zIndex: 1 }}>
+        <PageHero
+          breadcrumb="Projects"
+          title={<>OUR<br />PORTFOLIO</>}
+          subtitle="500+ completed projects across Singapore's residential, commercial, and industrial sectors. Work that stands the test of time."
+          minHeight="100vh"
+        />
+      </div>
+
+      {/* Spacer */}
+      <div style={{ height: '100vh' }} aria-hidden="true" />
+
+      {/* Reveal Image */}
+      <div style={{ position: 'relative', zIndex: 2, height: '100vh' }}>
+        <div style={{ position: 'sticky', top: 0, height: '100vh', overflow: 'hidden' }}>
+          <Image
+            src="/assets/project-roof.png"
+            alt="Asia Tech Roofing — Projects"
+            fill
+            className="object-cover object-center"
+            priority
+            sizes="100vw"
+          />
         </div>
       </div>
 
-      {/* PORTFOLIO */}
+      <div style={{ position: 'relative', zIndex: 3, backgroundColor: '#F9FAFB' }}>
+        {/* PORTFOLIO */}
       <section className="bg-[#FFFFFF] py-12 md:py-20 px-4 md:px-[60px] pb-[60px] md:pb-[100px]">
         <div className="flex overflow-x-auto whitespace-nowrap gap-1.5 md:gap-1 pb-4 md:pb-0 mb-8 md:mb-12 scrollbar-none w-full [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {filterTabs.map((tab, i) => (
@@ -349,6 +357,28 @@ export default function ProjectsPage() {
         )}
       </section>
 
+      {/* STATS BAR */}
+      <section className="bg-[#F9FAFB] py-12 md:py-20 px-4 md:px-[60px] border-b border-[rgba(201,168,76,0.2)]">
+        <div className="text-center mb-10 md:mb-14">
+          <Reveal><span className="text-[9px] md:text-[10px] tracking-[3px] md:tracking-[4px] uppercase text-[#C9A84C] mb-2 md:mb-3 block font-semibold">Our Impact</span></Reveal>
+          <Reveal delay={1}>
+            <h2 className="leading-none text-[#111827]" style={{ fontFamily: 'var(--font-bebas, sans-serif)', fontSize: 'clamp(32px, 5vw, 64px)' }}>
+              By The Numbers
+            </h2>
+          </Reveal>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 md:gap-y-0 justify-around">
+          {stats.map((stat, i) => (
+            <Reveal key={i} delay={i as 0 | 1 | 2 | 3}>
+              <div className={`text-center md:px-10 ${i % 2 === 0 ? 'border-r border-[rgba(201,168,76,0.2)]' : 'border-r-0'} ${i < stats.length - 1 ? 'md:border-r md:border-[rgba(201,168,76,0.2)]' : 'md:border-r-0'}`}>
+                <div className="text-[40px] md:text-[52px] text-[#C9A84C] leading-none" style={{ fontFamily: 'var(--font-bebas, sans-serif)' }}>{stat.num}</div>
+                <div className="text-[9px] md:text-[11px] text-[#111827] tracking-[1.5px] md:tracking-[2px] uppercase mt-1">{stat.label}</div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
       {/* FEATURED CASE STUDY */}
       <section className="bg-[#F9FAFB] py-12 md:py-20 px-4 md:px-[60px]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 items-center">
@@ -409,6 +439,7 @@ export default function ProjectsPage() {
       />
 
       <Footer />
+      </div>
     </>
   );
 }

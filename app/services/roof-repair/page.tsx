@@ -70,7 +70,7 @@ export default function RoofRepairPage() {
           <Reveal>
             <div
               className="h-[560px] bg-cover bg-center relative"
-              style={{ backgroundImage: "url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80')" }}
+              style={{ backgroundImage: "url('/service/roof-service.webp')" }}
             >
               <div className="absolute bottom-0 left-0 bg-[#C9A84C] text-[#111827] px-5 py-2.5 text-[10px] font-bold tracking-[2px] uppercase">
                 Roof Repair Specialists

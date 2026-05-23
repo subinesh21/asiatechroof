@@ -4,6 +4,7 @@ import CTABanner from '@/components/CTABanner';
 import Reveal from '@/components/Reveal';
 import Hero from '@/components/Hero';
 import HomeProjects from '@/components/HomeProjects';
+import HomeBlog from '@/components/HomeBlog';
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
@@ -643,6 +644,9 @@ export default function HomePage() {
 
         </div>
       </section>
+
+      {/* BLOG SECTION */}
+      <HomeBlog />
 
       {/* CTA BANNER - REORDERED */}
       <CTABanner

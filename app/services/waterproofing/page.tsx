@@ -47,7 +47,7 @@ export default function WaterproofingPage() {
       <section className="bg-[#FFFFFF] py-16 md:py-[100px] px-6 md:px-[60px]">
         <div className="grid grid-cols-2 gap-20 items-center">
           <Reveal>
-            <div className="h-[560px] bg-cover bg-center relative" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80')" }}>
+            <div className="h-[560px] bg-cover bg-center relative" style={{ backgroundImage: "url('/service/waterproof-service.webp')" }}>
               <div className="absolute bottom-0 left-0 bg-[#C9A84C] text-[#111827] px-5 py-2.5 text-[10px] font-bold tracking-[2px] uppercase">Waterproofing Specialists</div>
             </div>
           </Reveal>

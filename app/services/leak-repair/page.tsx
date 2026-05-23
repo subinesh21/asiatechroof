@@ -55,7 +55,7 @@ export default function LeakRepairPage() {
       <section className="bg-[#FFFFFF] py-16 md:py-[100px] px-6 md:px-[60px]">
         <div className="grid grid-cols-2 gap-20 items-center">
           <Reveal>
-            <div className="h-[560px] bg-cover bg-center relative" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80')" }}>
+            <div className="h-[560px] bg-cover bg-center relative" style={{ backgroundImage: "url('/service/leak-service.webp')" }}>
               <div className="absolute bottom-0 left-0 bg-[#C9A84C] text-[#111827] px-5 py-2.5 text-[10px] font-bold tracking-[2px] uppercase">Leak Repair Experts</div>
             </div>
           </Reveal>
